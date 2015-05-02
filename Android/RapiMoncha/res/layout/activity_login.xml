@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/imagecurso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/icon_keylogin"
+        android:contentDescription="@string/activity_login_icono_descripcion" />
+
+    <EditText
+        android:id="@+id/txtusername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtpassword"
+        android:layout_below="@+id/imagecurso"
+        android:layout_marginTop="65dp"
+        android:ems="10"
+        android:hint="@string/activity_login_usernamehint"
+        android:text="" />
+
+        <requestFocus />
+    <EditText
+        android:id="@+id/txtpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtusername"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
+        android:inputType="textPassword"  
+        android:hint="@string/activity_login_passwordhint"
+        android:text=""      
+        android:ems="10" >
+
+    </EditText>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtpassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:text="@string/activity_login_btnlogin" />
+
+
+</RelativeLayout>

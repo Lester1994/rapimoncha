@@ -1,0 +1,110 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:weightSum="4"
+    tools:context="una.android.rapimoncha.Main" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_weight="0.5"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <ImageButton
+            android:id="@+id/btn_main_promociones"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/activity_main_descripcion_btn_promociones"
+            android:src="@drawable/icon_promo" />
+
+        <ImageButton
+            android:id="@+id/btn_main_home"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/activity_main_descripcion_btn_home"
+            android:src="@drawable/icon_home" >
+        </ImageButton>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <ImageButton
+            android:id="@+id/btn_main_myhome"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/activity_main_descripcion_btn_myhome"
+            android:src="@drawable/icon_myhome" />
+
+        <ImageButton
+            android:id="@+id/btn_main_solicitudes"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:src="@drawable/icon_request"
+            android:contentDescription="@string/activity_main_descripcion_btn_solicitudes"
+             />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <ImageButton
+            android:id="@+id/btn_main_pedidos"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:src="@drawable/icon_subscripciones"
+            android:contentDescription="@string/activity_main_descripcion_btn_pedidos"
+            
+             />
+
+        <ImageButton
+            android:id="@+id/btn_main_productos"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:src="@drawable/icon_product" 
+            android:contentDescription="@string/activity_main_descripcion_btn_productos"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/btn_main_configuracion"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:src="@drawable/icon_configuration"
+            android:contentDescription="@string/activity_main_descripcion_btn_configuraciones"
+             />
+    </LinearLayout>
+
+</LinearLayout>

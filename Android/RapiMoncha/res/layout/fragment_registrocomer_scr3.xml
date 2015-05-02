@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="3" >
+
+    <TextView
+        android:id="@+id/lbl_registrocomer_tituloscr5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.20"
+        android:gravity="center_horizontal"
+        android:text="@string/fragment_registrocomercio3_lbl_tituloscr3"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.7" />
+    
+    <TextView
+        android:id="@+id/lbl_rc3regresar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:gravity="right"
+        android:text="@string/fragment_registrocomerciosky_lbl_notas"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</LinearLayout>

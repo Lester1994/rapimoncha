@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RapiMoncha</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- ACTIVITY splash screen -->
+    <string name="activity_splashscreen_titulo">Inicio</string>
+    <string name="activity_splashscreen_descripcionimagen">Logo de la aplicación. RapiMoncha</string>
+    <string name="activity_splashscreen_default_lblproceso">...</string>
+    <string name="activity_splashscreen_progress_fase1">Cargando Aplicación...</string>
+    <string name="activity_splashscreen_progress_fase2">Cargando componentes...</string>
+    <string name="activity_splashscreen_progress_fase3">Cargando gráficos...</string>
+    <string name="activity_splashscreen_progress_fase4">La aplicación se iniciará en cualquier momento...</string>
+    <string name="activity_splashscreen_progress_fase5">Lanzando activity...</string>
+
+    <!-- ACTIVITY welcome screen -->
+    <string name="activity_welcomescreen_btnregistro">Agregar tu empresa</string>
+    <string name="activity_welcomescreen_lblirlogin">Ya tengo una cuenta!</string>
+    <string name="activity_welcomescreen_titulo">Bienvenido</string>
+
+    <!-- ACTIVITY login -->
+    <string name="activity_login_usernamehint">Nombre de Usuario</string>
+    <string name="activity_login_passwordhint">Contraseña</string>
+    <string name="activity_login_btnlogin">Login</string>
+    <string name="activity_login_titulo">Ingreso al Sistema</string>
+    <string name="activity_login_icono_descripcion">Pantalla de Login, la imagen es una llave.</string>
+
+    <!-- ACTIVITY registrocomercio -->
+    <string name="activity_registrocomercio_btnnext">Siguiente</string>
+    <string name="activity_registrocomercio_btnprev">Anterior</string>
+    <string name="activity_registrocomercio_titulo">Registro de comercio</string>
+    <string name="activity_registrocomercio_java_noiratras">No puedes ir mas atrás!</string>
+    <string name="activity_registrocomercio_java_noiradelante">No puedes ir mas adelante!</string>
+    <string name="activity_registrocomercio_"></string>
+    <!-- FRAGMENT registro comercio sky -->
+    <string name="fragment_registrocomerciosky_lbl_datosimportantes">A continuación se le pedirán una serie de informaciones</string>
+    <string name="fragment_registrocomerciosky_lbl_titulobienvenida">Procedamos a registrarte!</string>
+    <string name="fragment_registrocomerciosky_lbl_notas">Puede regresar a inicio</string>
+    <string name="fragment_registrocomerciosky_img_icon_description">Icono de la ventana, registro de comercio</string>
+    <string name="fragment_registrocomerciosky_"></string>
+
+    <!-- FRAGMENT registro comercio 1 -->
+    <string name="fragment_registrocomercio1_lblnocomercio">Nombre del comercio</string>
+    <string name="fragment_registrocomercio1_lblprocomercio">Propietario</string>
+    <string name="fragment_registrocomercio1_lblt1comercio">Telefono 1</string>
+    <string name="fragment_registrocomercio1_lblt2comercio">Teléfono 2</string>
+    <string name="fragment_registrocomercio1_lblemcomercio">Email</string>
+    <string name="fragment_registrocomercio1_lbldicomercio">Dirección Comercio</string>
+    <string name="fragment_registrocomercio1_lblnocomercio_hint">e.g PolloFast</string>
+    <string name="fragment_registrocomercio1_lblprocomercio_hint">e.g Juan Pérez</string>
+    <string name="fragment_registrocomercio1_lblt1comercio_hint">#######</string>
+    <string name="fragment_registrocomercio1_lblt2comercio_hint">#######</string>
+    <string name="fragment_registrocomercio1_lblemcomercio_hint">e.g ejemplo@ejemplo.com</string>
+    <string name="fragment_registrocomercio1_lbldicomercio_hint">e.g 100 m de allá</string>
+    <string name="fragment_registrocomercio1_lbltitulofragmentrc01">Datos del comercio</string>
+    <string name="fragment_registrocomercio1_lbl_rc01notas">Puede regresar a inicio</string>
+
+    <!-- FRAGMENT registro comercio 2 -->
+    <string name="fragment_registrocomercio2_lbl_tituloscr2">¿En qué categorías entras?</string>
+
+    <!-- FRAGMENT registro comercio 3 -->
+    <string name="fragment_registrocomercio3_lbl_tituloscr3">Selecciona tu ubicación</string>
+    <!-- FRAGMENT registro comercio 4 -->
+    <string name="fragment_registrocomercio4_lbl_tituloscr4">Selecciona imagen aquí</string>
+
+    <!-- FRAGMENT registro comercio 5 -->
+    <string name="fragment_registrocomercio5_lbl_src5_titulo_pref">Tus preferencias!</string>
+    <string name="fragment_registrocomercio5_lblcontactosinsub">Contactar sin subcripción</string>
+    <string name="fragment_registrocomercio5_lblprodusinsub">Ver Catálogo sin subcripción</string>
+    <string name="fragment_registrocomercio5_lblsevicioexpress">Servicio Express</string>
+    <string name="fragment_registrocomercio5_switch_on">Si</string>
+    <string name="fragment_registrocomercio5_switch_off">No</string>
+
+    <!-- FRAGMENT registro comercio 6 -->
+    <string name="fragment_registrocomercio5_lbl_tituloscr5">Ya casi terminamos!</string>
+    <string name="fragment_registrocomercio5_img_imagendescripsc5">Imagen de meta, ya casi se termina el proceso de registro</string>
+    <string name="fragment_registrocomercio5_lbl_scr5notasextra">Su empresa está a punto de registrarse, sólo queda aceptar
+	    los terminos del contrato. Ojalá te guste!</string>
+    <string name="fragment_registrocomercio5_lbl_src5aceptacontrato">¿Acepta términos?</string>
+    <string name="fragment_registrocomercio5_lbl_agradecimientorc">Esperamos que sea de mucha ayuda!</string>
+    <string name="fragment_registrocomercio5_btn_finalizar">Realizar registro</string>
+    <string name="fragment_registrocomercio5_java_msgaceptarterminos">Debes aceptar los términos!</string>
+
+    <!-- ACTIVITY main -->
+    <string name="activity_main_descripcion_btn_promociones">Módulo de promociones</string>
+    <string name="activity_main_descripcion_btn_home">Módulo de Inicio</string>
+    <string name="activity_main_descripcion_btn_myhome">Módulo de mi perfil</string>
+    <string name="activity_main_descripcion_btn_solicitudes">Módulo de solicitudes</string>
+    <string name="activity_main_descripcion_btn_pedidos">Módulo de pedidos</string>
+    <string name="activity_main_descripcion_btn_configuraciones">Módulo de configuraciones</string>
+    <string name="activity_main_descripcion_btn_productos">Módulo de productos.</string>
+
+    <!-- ACTIVITY registro comercio -->
+    <string name="activity_registroproducto_lbl_titulobienvenida_product">Registro de Producto</string>
+    <string name="activity_registroproducto_img_icon_product">Imagen para el registro del producto. No tiene utilidad.</string>
+    <string name="activity_registroproducto_lbl_datosimportantes_product">A continuación se te pediran datos importantes para realizar el registro del nuevo producto a ofrecer.</string>
+    <string name="activity_registroproducto_lbl_notassky_product">Puede regresar al panel de control.</string>
+    <string name="activity_registroproducto_titulo">Registro de Producto</string>
+    <string name="activity_registroproducto_btnnext">Siguiente</string>
+    <string name="activity_registroproducto_btnprev">Anterior</string>
+    <string name="activity_registroproducto_java_noiratras">No puedes ir mas atrás!</string>
+    <string name="activity_registroproducto_java_noiradelante">No puedes ir mas adelante!</string>
+    <string name="activity_registroproducto_"></string>
+
+    <!-- FRAGMENT 01 registro producto -->
+    <string name="fragment_registroproducto1_lblnoproducto">Nombre del Producto</string>
+    <string name="fragment_registroproducto1_lbltitulofragmentrc01">Datos del Producto</string>
+    <string name="fragment_registroproducto1_lblnoproducto_hint">Ej. Pizza</string>
+    <string name="fragment_registroproducto1_lbldeproducto">Descripción del Producto</string>
+    <string name="fragment_registroproducto1_lbldeproducto_hint">Ej. Pizza con jamón</string>
+    <string name="fragment_registroproducto1_lblpeproducto">Precio del Producto</string>
+    <string name="fragment_registroproducto1_lblpeproducto_hint">Ej. 5000</string>
+    <string name="fragment_registroproducto1_lbl_rc01notas">Regresar al panel de control</string>
+
+    <!-- FRAGMENT 02 registro producto -->
+    <string name="fragment_registroproducto2_lbl_tituloscr2_product">Imágenes del producto</string>
+    <string name="fragment_registroproducto2_lbl_rc2regresar_producto">Regresar al panel de control</string>
+    <string name="fragment_registroproducto2_"></string>
+
+    <!-- FRAGMENT 03 registro producto -->
+    <string name="fragment_registroproducto3_lbl_registroproduct03_titulo">Esta por terminar!</string>
+    <string name="fragment_registroproducto3_lbl_scr5notasextra_product">Esta a punto de agregar un nuevo producto, pulsa en el boton de envío</string>
+    <string name="fragment_registroproducto3_btn_finalizar_product">Registrar Producto</string>
+    <string name="fragment_registroproducto3_lbl_agradecimientorc_product">by rapimoncha</string>
+    <string name="fragment_registroproducto3_"></string>
+
+    <!-- SERVICIO WEB comercio todas sus operaciones -->
+    <string name="sw_comercio_java_msginicioregistrocomer">Registrando Comercio...</string>
+    <string name="sw_comercio_java_msgfinregistrocomer_error">No se pudo hacer el registro</string>
+
+    <!-- SERVICIO WEB producto todas sus operaciones -->
+    <string name="sw_comercio_java_msginicioregistroproduct">Registrando Producto...</string>
+    <string name="sw_comercio_java_msgfinregistroproduct_error">No se pudo hacer el registro</string>
+    
+    <!-- ACTIVITY registro usuario -->
+    <string name="activity_registrousuario_lblnousuario">Tu nombre</string>
+    <string name="activity_registrousuario_txtnousuario_hint">Ej. Pablo</string>
+    <string name="activity_registrousuario_lblap1usuario">Tu primer apellido</string>
+    <string name="activity_registrousuario_txtap1usuario_hint">Ej. Rodriguez</string>
+        <string name="activity_registrousuario_lblap2usuario">Tu segundo apellido</string>
+    <string name="activity_registrousuario_txtap2usuario_hint">Ej. Rodriguez</string>
+    <string name="activity_registrousuario_lblfechanacimiento">Naciste el</string>
+    <string name="activity_registrousuario_lblfechanac">Selecciona aquí</string>
+    <string name="activity_registrousuario_lblusername">Nombre de Usuario</string>
+    <string name="activity_registrousuario_txtusername_hint">user01ab</string>
+    <string name="activity_registrousuario_lblrpassword1">Contraseña</string>
+    <string name="activity_registrousuario_txtrpassword1_hint">*******</string>
+        <string name="activity_registrousuario_lblrpassword2">Nuevamente Contraseña</string>
+    <string name="activity_registrousuario_txtrpassword2_hint">*******</string>
+    <string name="activity_registrousuario_lblsexo">Sexo</string>
+    <string name="activity_registrousuario_titulo">Registro de Usuario</string>
+    <string name="activity_registrousuario_menu_action_registrar">Guardar</string>
+    <string name="sw_usuario_java_msgfinregistrouser_error">No se pudo registrar el usaurio</string>
+    <string name="sw_usuario_java_msginicioregistrouser">Registrandote!</string>
+    <string name="activity_registrousuario_"></string>    
+    
+
+</resources>

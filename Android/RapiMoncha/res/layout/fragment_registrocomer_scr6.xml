@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/lbl_registrocomer_tituloscr5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="46dp"
+        android:layout_toLeftOf="@+id/img_imagendescripsc5"
+        android:text="@string/fragment_registrocomercio5_lbl_tituloscr5"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/lbl_scr5notasextra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbl_registrocomer_tituloscr5"
+        android:layout_alignRight="@+id/img_imagendescripsc5"
+        android:layout_below="@+id/img_imagendescripsc5"
+        android:layout_marginTop="40dp"
+        android:text="@string/fragment_registrocomercio5_lbl_scr5notasextra"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageView
+        android:id="@+id/img_imagendescripsc5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/icon_finishregistro"
+        android:contentDescription="@string/fragment_registrocomercio5_img_imagendescripsc5" />
+
+    <CheckBox
+        android:id="@+id/chck_aceptaterminos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lbl_src5aceptacontrato"
+        android:layout_alignBottom="@+id/lbl_src5aceptacontrato"
+        android:layout_alignRight="@+id/lbl_scr5notasextra" />
+
+    <TextView
+        android:id="@+id/lbl_agradecimientorc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/fragment_registrocomercio5_lbl_agradecimientorc"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/lbl_src5aceptacontrato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbl_scr5notasextra"
+        android:layout_below="@+id/lbl_scr5notasextra"
+        android:layout_marginTop="25dp"
+        android:layout_toLeftOf="@+id/chck_aceptaterminos"
+        android:text="@string/fragment_registrocomercio5_lbl_src5aceptacontrato"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/btn_finalizar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lbl_agradecimientorc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="54dp"
+        android:text="@string/fragment_registrocomercio5_btn_finalizar" />
+
+</RelativeLayout>

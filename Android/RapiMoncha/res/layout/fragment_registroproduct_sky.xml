@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+   
+    <TextView
+        android:id="@+id/lbl_datosimportantes_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbl_titulobienvenida_product"
+        android:layout_alignRight="@+id/img_icon_product"
+        android:layout_below="@+id/img_icon_product"
+        android:layout_marginTop="27dp"
+        android:text="@string/activity_registroproducto_lbl_datosimportantes_product"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/lbl_titulobienvenida_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/img_icon_product"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="24dp"
+        android:layout_toLeftOf="@+id/img_icon_product"
+        android:text="@string/activity_registroproducto_lbl_titulobienvenida_product"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/lbl_notas_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:gravity="right"
+        android:text="@string/activity_registroproducto_lbl_notassky_product"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <ImageView
+        android:id="@+id/img_icon_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="28dp"
+        android:contentDescription="@string/activity_registroproducto_img_icon_product"
+        android:src="@drawable/icon_addproduct" />
+
+</RelativeLayout>
