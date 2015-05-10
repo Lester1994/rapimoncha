@@ -7,6 +7,7 @@
     require_once $RM_DATAACCESS_DIR.'Preferencias.php';
     require_once $RM_DATAACCESS_DIR.'Producto.php';
     require_once $RM_DATAACCESS_DIR.'Promocion.php';
+require_once $RM_DATAACCESS_DIR.'Usuario.php';
 
     class DS_Comercio{
         function agregarPromocionesComercio($comercio,$db=null){
@@ -226,6 +227,7 @@
              $ds_Clasificacion=new DS_CategoriaComercio();
              $ds_Geolocalizacion=new DS_Geolocalizacion();
              $ds_Preferencia=new DS_Preferencias();
+				$ds_Usuario=new DS_Usuario();
              $respuestas=array();
             $SQLstr = "call rm_sp_registrar_comercio
                     ('" . $comercio->noComercio . "','" . $comercio->diComercio . "','" . $comercio->prComercio . "','" .
@@ -324,8 +326,13 @@
                //    echo "agregando preferencia >>----<<<<<br>";
                     //$db->close();
                  } 
-                 
-                                  
+				 
+				 
+				 //seccion usuario comercio
+				 $userrr=$comercio->getUsuario();
+                 $res= $ds_Usuario->agregarUsuarioComercio($userrr,$comercio->getIdComercio(),$db);
+				 array_push($respuestas,$res);
+                                
              }
              else{
            //   echo "<br>voy por aquiiii333<br>".var_dump($resultado).$msg;   

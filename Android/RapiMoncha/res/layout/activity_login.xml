@@ -48,5 +48,17 @@
         android:layout_marginTop="56dp"
         android:text="@string/activity_login_btnlogin" />
 
+    <TextView
+        android:id="@+id/lblregistrarse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtpassword"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/txtusername"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/activity_login_lblregistrarse"
+        android:clickable="true"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

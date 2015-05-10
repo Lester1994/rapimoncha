@@ -7,20 +7,37 @@
     <Button
         android:id="@+id/btnregistro"
         android:layout_width="250dp"
-        android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="140dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="#CCCCCC"
         android:text="@string/activity_welcomescreen_btnregistro" />
 
     <TextView
-        android:id="@+id/lblirlogin"
+        android:id="@+id/lblmiempresas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:clickable="true"
-        android:text="@string/activity_welcomescreen_lblirlogin"
+        android:layout_alignBottom="@+id/spinnerempresas"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="65dp"
+        android:text="@string/activity_welcomescreen_lblmiempresas"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Spinner
+        android:id="@+id/spinnerempresas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="165dp" />
+
+    <Button
+        android:id="@+id/btniniciarempresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerempresas"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:text="@string/activity_welcomescreen_btniniciarempresa" />
 
 </RelativeLayout>

@@ -42,6 +42,15 @@
             android:name="una.android.rapimoncha.activities.LoginScreen"
             android:label="@string/activity_login_titulo" >
         </activity>
+                <activity
+            android:name="una.android.rapimoncha.activities.modulos.producto.ActualizarProductoScreen"
+            android:label="@string/fragment_updateproducto3_titulo" >
+        </activity>
+        
+        <activity
+            android:name="una.android.rapimoncha.activities.modulos.producto.ListadoProductosScreen"
+            android:label="@string/activity_listadoproductos_titulo" >
+        </activity>        
         <activity
             android:name="una.android.rapimoncha.activities.RegistroComercioScreen"
             android:label="@string/activity_registrocomercio_titulo" >
@@ -54,6 +63,10 @@
             android:name="una.android.rapimoncha.activities.modulos.usuario.RegistroUsuarioScreen"
             android:label="@string/activity_registrousuario_titulo" >
         </activity>
+         <activity
+            android:name="una.android.rapimoncha.activities.modulos.usuario.DatosLoginUsuarioScreen"
+            android:label="@string/activity_datosloginusuario_titulo" >
+        </activity>        
         <activity
             android:name="una.android.rapimoncha.activities.SplashScreen"
             android:configChanges="orientation"
@@ -66,6 +79,7 @@
             </intent-filter>
         </activity>
     </application>
+    
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />

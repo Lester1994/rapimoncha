@@ -1,15 +1,22 @@
-package una.android.rapimoncha.activities.modulos;
+package una.android.rapimoncha.activities.modulos.producto;
+
+
 
 import una.android.rapimoncha.R;
 import una.android.rapimoncha.entidades.Comercio;
 import una.android.rapimoncha.entidades.Producto;
 import una.android.rapimoncha.entidades.Usuario;
+import una.android.rapimoncha.fragments.ActualizarProducto1Fragment;
+import una.android.rapimoncha.fragments.ActualizarProducto2Fragment;
+import una.android.rapimoncha.fragments.ActualizarProducto3Fragment;
+import una.android.rapimoncha.fragments.ActualizarProductoSkyFragment;
 import una.android.rapimoncha.fragments.RegistroProducto1Fragment;
 import una.android.rapimoncha.fragments.RegistroProducto2Fragment;
 import una.android.rapimoncha.fragments.RegistroProducto3Fragment;
 import una.android.rapimoncha.fragments.RegistroProductoSkyFragment;
 import una.android.rapimoncha.interfaces.IGenComercio;
 import una.android.rapimoncha.interfaces.IGenProducto;
+import una.android.rapimoncha.sw.SwProducto;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -22,7 +29,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class RegistroProductoScreen extends Activity{
+public class ActualizarProductoScreen extends Activity{
 	public static final int MIN_REGISTROFRAGMENTS_INDEX = 0;
 	public static final int MAX_REGISTROFRAGMENTS_INDEX = 4;
 	Fragment fragment;
@@ -31,7 +38,7 @@ public class RegistroProductoScreen extends Activity{
 	Button btn_next;
 	Comercio comercio;
 	Producto producto;
-
+	int idcomercio;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +48,27 @@ public class RegistroProductoScreen extends Activity{
 		btn_next = (Button) findViewById(R.id.btn_next_product);
 		btn_prev = (Button) findViewById(R.id.btnprev_product);
 		fragment = null;
-		comercio = new Comercio();
-		SharedPreferences sharedPref =getApplication().getSharedPreferences("rapimoncha",Context.MODE_PRIVATE);
-		int idempresa = sharedPref.getInt("idcomercio", -1);
+		initProducto();
+
 		
-		comercio.setIdComercio(idempresa);		
-		Log.i("agregando producto idempresa ",comercio.getIdComercio()+":"+idempresa);
-		producto=new Producto();
+
+	}
+	
+	private void initProducto(){
+		comercio = new Comercio();
+		
+		Bundle bundle=getIntent().getExtras();
+		producto=(Producto) bundle.getSerializable("producto");//de aqui sacamos el id 
+		SharedPreferences sharedPref = getApplication().getSharedPreferences(
+				"rapimoncha", Context.MODE_PRIVATE);
+		idcomercio = sharedPref.getInt("idcomercio", 0);
+		comercio.setIdComercio(idcomercio);
+		new SwProducto().getProducto(idcomercio,producto.getIdProducto(), this);
+	}
+
+	public void setProducto(Producto producto){
+		this.producto=producto;
+		cargarFragment(0);
 		btn_next.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -61,7 +82,7 @@ public class RegistroProductoScreen extends Activity{
 				} else {
 					btn_next.setEnabled(false);
 					btn_prev.setEnabled(true);
-					Toast.makeText(RegistroProductoScreen.this,
+					Toast.makeText(ActualizarProductoScreen.this,
 							R.string.activity_registroproducto_java_noiradelante, Toast.LENGTH_LONG).show();
 				}
 			}
@@ -80,15 +101,14 @@ public class RegistroProductoScreen extends Activity{
 				} else {
 					btn_prev.setEnabled(false);
 					btn_next.setEnabled(true);
-					Toast.makeText(RegistroProductoScreen.this,
+					Toast.makeText(ActualizarProductoScreen.this,
 							R.string.activity_registroproducto_java_noiratras, Toast.LENGTH_LONG).show();
 				}
 			}
 		});
-		cargarFragment(0);
-
+		
+		
 	}
-
 	private void cargarFragment(int index) {
 		
 
@@ -100,20 +120,20 @@ public class RegistroProductoScreen extends Activity{
 		}
 		switch (index) {
 		case 0:
-			fragment = new RegistroProductoSkyFragment();
+			fragment = new ActualizarProductoSkyFragment();
 			break;
 		case 1:
-			fragment = new RegistroProducto1Fragment();
-			((RegistroProducto1Fragment) fragment).setProducto(producto);
+			fragment = new ActualizarProducto1Fragment();
+			((ActualizarProducto1Fragment) fragment).setProducto(producto);
 			break;
 		case 2:
-			fragment = new RegistroProducto2Fragment();
-			((RegistroProducto2Fragment) fragment).setProducto(producto);
+			fragment = new ActualizarProducto2Fragment();
+			((ActualizarProducto2Fragment) fragment).setProducto(producto);
 			break;	
 		case 3:
-			fragment = new RegistroProducto3Fragment();
-			((RegistroProducto3Fragment) fragment).setProducto(producto);
-			((RegistroProducto3Fragment) fragment).setComercio(comercio);
+			fragment = new ActualizarProducto3Fragment();
+			((ActualizarProducto3Fragment) fragment).setProducto(producto);
+			((ActualizarProducto3Fragment) fragment).setComercio(comercio);
 			break;				
 		
 		default:

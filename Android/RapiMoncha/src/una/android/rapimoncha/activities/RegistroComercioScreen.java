@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import una.android.rapimoncha.R;
 import una.android.rapimoncha.entidades.CategoriaComercio;
 import una.android.rapimoncha.entidades.Comercio;
+import una.android.rapimoncha.entidades.Usuario;
 import una.android.rapimoncha.fragments.RegistroComercio1Fragment;
 import una.android.rapimoncha.fragments.RegistroComercio2Fragment;
 import una.android.rapimoncha.fragments.RegistroComercio3Fragment;
@@ -13,9 +14,12 @@ import una.android.rapimoncha.fragments.RegistroComercio5Fragment;
 import una.android.rapimoncha.fragments.RegistroComercio6Fragment;
 import una.android.rapimoncha.fragments.RegistroComercioSkyFragment;
 import una.android.rapimoncha.interfaces.IGenComercio;
+import una.android.rapimoncha.sw.SwCategoriasComercio;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -42,6 +46,14 @@ public class RegistroComercioScreen extends Activity {
 		btn_prev = (Button) findViewById(R.id.btnprev);
 		fragment = null;
 		comercio = new Comercio();
+		
+		//asignar el usuario 
+		SharedPreferences sharedPref =getApplication().getSharedPreferences("rapimoncha",Context.MODE_PRIVATE);
+		String username = sharedPref.getString(getResources().getString(R.string.function_userloginstatus_usernamekey), null);
+		Usuario usuario=new Usuario();
+		usuario.setUsername(username);
+		comercio.setUsuario(usuario);
+		
 		initCategorias();
 		btn_next.setOnClickListener(new OnClickListener() {
 			@Override
@@ -135,25 +147,12 @@ public class RegistroComercioScreen extends Activity {
 	}
 
 	private void initCategorias() {
-		categorias = new ArrayList<CategoriaComercio>();
-		CategoriaComercio cate = new CategoriaComercio();
-		cate = new CategoriaComercio();
-		cate.setIdTipoCategoria(1);
-		cate.setNoTipoCategoria("Restaurante");
-		categorias.add(cate);
-		cate = new CategoriaComercio();
-		cate.setIdTipoCategoria(2);
-		cate.setNoTipoCategoria("Comercio");
-		categorias.add(cate);
-		cate = new CategoriaComercio();
-		cate.setIdTipoCategoria(3);
-		cate.setNoTipoCategoria("Express");
-		categorias.add(cate);
-		cate = new CategoriaComercio();
-		cate.setIdTipoCategoria(4);
-		cate.setNoTipoCategoria("Otra");
-		categorias.add(cate);
+		new SwCategoriasComercio().obtenerCategoriasComercio(this, categorias);
 
+	}
+	
+	public void setCategoriasComercio(ArrayList<CategoriaComercio>categorias){
+		this.categorias=categorias;
 	}
 
 }

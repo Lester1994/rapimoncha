@@ -32,6 +32,25 @@
              return false;   
             }
         }
+		
+		function generarProducto($json2){
+				$json=json_decode($json2,true);
+			 $this->setIdProducto($json['idproducto']);
+			 $this->setNoProducto($json['noproducto']);
+			 $this->setDeProducto($json['deproducto']);
+			 $this->setPrProducto($json['precio']);
+
+							   $imgaux=$json['imagenes'];
+
+								foreach($imgaux as $imagen){
+								  //  echo var_dump($imagen);
+									   $imagen1=new EN_Galeria();
+									   $imagen1->setIdImagen($imagen['idimagen']);
+									   $imagen1->setDtImagen($imagen['dtimagen']);
+									   $this->addImagen($imagen1);
+								}      			
+			
+		}
         
     }
 

@@ -1,6 +1,8 @@
 package una.android.rapimoncha.entidades;
 
 
+import java.io.Serializable;
+
 import org.json.JSONObject;
 
 import una.android.rapimoncha.interfaces.IJsonable;
@@ -8,7 +10,7 @@ import una.android.rapimoncha.interfaces.IJsonable;
 /**
  * Created by Lester on 31/03/2015.
  */
-public class Galeria implements IJsonable {
+public class Galeria implements IJsonable,Serializable {
     private int idImagen;
     private String dtImagen;
 

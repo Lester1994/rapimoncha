@@ -8,6 +8,7 @@
     require_once $RM_ENTITIES_DIR.'Subscripcion.php';
     require_once $RM_ENTITIES_DIR.'Producto.php';
     require_once $RM_ENTITIES_DIR.'Promocion.php';
+	require_once $RM_ENTITIES_DIR.'Usuario.php';
     require_once $RM_ENTITIES_DIR.'SolicitudCliente.php';
 
 
@@ -27,6 +28,7 @@ var $subcripciones;
 var $promociones;
 var $productos;
 var $solicitudes;
+var $usuario;
     
 function setImagenes($imagenes) { $this->imagenes = $imagenes; }
 function getImagenes() { return $this->imagenes; }
@@ -58,7 +60,9 @@ function setProductos($productos) { $this->productos = $productos; }
 function getProductos() { return $this->productos; }
 function setSolicitudes($solicitudes) { $this->solicitudes = $solicitudes; }
 function getSolicitudes() { return $this->solicitudes; }    
-
+        function setUsuario($usuario) { $this->usuario = $usuario; }
+        function getUsuario() { return $this->usuario; }
+	
  function addPromocion($promocion=null){
      if($promocion!=null){
           if($this->promociones==null){
@@ -175,6 +179,22 @@ function generarComercio($json){
             $this->setT2Comercio($comer[0]['t2comercio']);
             $this->setEmComercio($comer[0]['emcomercio']);
            
+			
+			$usaux=$comer[0]['usuario'];
+            $user=new EN_Usuario();
+                         //obtener los datos
+                foreach ($usaux as $miuser) {      
+                          $user->setIdUsuario($miuser['idusuario']);
+                          $user->setNoUsuario($miuser['nousuario']);
+                          $user->setA1Usuario($miuser['a1usuario']);
+                          $user->setA2Usuario($miuser['a2usuario']);
+                          $user->setFeNacimie($miuser['fenacimiento']);
+                          $user->setSeUsuario($miuser['sexo']);
+                          $user->setUser($miuser['user']);
+                          $user->setPassword($miuser['password']);					
+                 }
+            $this->setUsuario($user);		
+		
             $imgaux=$comer[0]['imagenes'];
             
             foreach($imgaux as $imagen){

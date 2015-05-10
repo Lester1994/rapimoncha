@@ -33,16 +33,16 @@ function generarUsuario($json){
          
              $data = json_decode($json,true);
          
-            $user=$data['usuario'];
+            $user=$data;
             
-            $this->setIdUsuario($user[0]['idusuario']);
-            $this->setNoUsuario($user[0]['nousuario']);
-            $this->setA1Usuario($user[0]['a1usuario']);
-            $this->setA2Usuario($user[0]['a2usuario']);
-            $this->setFeNacimie($user[0]['fenacimiento']);
-            $this->setSeUsuario($user[0]['sexo']);
-		    $this->setUser($user[0]['user']);
-            $this->setPassword($user[0]['password']);
+            $this->setIdUsuario($user['idusuario']);
+            $this->setNoUsuario($user['nousuario']);
+            $this->setA1Usuario($user['a1usuario']);
+            $this->setA2Usuario($user['a2usuario']);
+            $this->setFeNacimie($user['fenacimiento']);
+            $this->setSeUsuario($user['sexo']);
+		    $this->setUser($user['user']);
+            $this->setPassword($user['password']);
            
 	  }
 	

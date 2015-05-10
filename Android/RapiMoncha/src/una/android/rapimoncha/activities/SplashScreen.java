@@ -2,12 +2,10 @@ package una.android.rapimoncha.activities;
 
 
 import una.android.rapimoncha.R;
-import una.android.rapimoncha.activities.modulos.usuario.RegistroUsuarioScreen;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -54,8 +52,9 @@ public class SplashScreen extends Activity {
 												lbl_proceso
 														.setText(R.string.activity_splashscreen_progress_fase5);
 												prg_proceso.setProgress(100);
-												Intent intent=new Intent(SplashScreen.this,RegistroUsuarioScreen.class);
+												Intent intent=new Intent(SplashScreen.this,LoginScreen.class);
 												startActivity(intent);
+												SplashScreen.this.finish();
 											}
 										}, 500);
 									}

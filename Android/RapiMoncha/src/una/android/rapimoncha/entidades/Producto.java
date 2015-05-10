@@ -5,16 +5,20 @@ package una.android.rapimoncha.entidades;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.util.Log;
+
 import una.android.rapimoncha.interfaces.IJsonable;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
  * Created by Lester on 31/03/2015.
  */
-public class Producto implements IJsonable {
-    private int idProducto;
+public class Producto implements IJsonable,Serializable {
+
+	private int idProducto;
     private String noProducto;
     private Double prProducto;
     private String deProducto;
@@ -101,6 +105,32 @@ public class Producto implements IJsonable {
         }
 
         return obaux;
+    }
+    
+    public boolean generateFromJson(JSONObject json){
+    	boolean resp=true;
+    	try{
+    	this.idProducto=json.getInt("idProducto");
+    	this.noProducto=json.getString("noProducto");
+    	this.prProducto=json.getDouble("prProducto");
+    	this.deProducto=json.getString("deProducto");
+    	
+    	JSONArray imagenes=json.getJSONArray("imagenes");
+    	int imasize=imagenes.length();
+    	for(int a=0;a<imasize;a++){
+    		JSONObject ima=imagenes.getJSONObject(a);
+    		Galeria gale=new Galeria();
+    		gale.setIdImagen(ima.getInt("idimagen"));
+    		gale.setDtImagen(ima.getString("dtimagen"));
+    		Log.i("info generate ","entrooo a mimage");
+    		this.addImagen(gale);
+    	}
+    	
+    	}catch(Exception ex){
+    		ex.printStackTrace();
+    	}
+    	
+    	return resp;
     }
     
 }

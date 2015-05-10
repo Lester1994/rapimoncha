@@ -89,6 +89,8 @@
             echo json_encode($resp);
 
         }
+		
+		
         
         function getNoCategoriasComercio($idcomercio,$bd){
              $this->categoriasarray=array();
@@ -117,7 +119,36 @@
             
             echo json_encode($resp);
 
-        }        
+        }
+		
+        function getCategoriasComercios($bd){
+            $this->categoriasarray=array();
+            $SQLstr = "call rm_sp_obtener_categoriascomercios();";
+                $sql=mysqli_query($bd,$SQLstr);
+          //  echo 'entre'.mysqli_error();
+                    if($sql){
+                          // echo 'entre';
+                         //obtener los datos
+                        $resp['codigo']=2;
+                        $resp['mensaje']='Entro a ver categorías';
+                             while ($row=mysqli_fetch_row($sql)) {
+                                  $categoria=new EN_CategoriaComercio();
+                                  $categoria->setIdCategoria ($row[0]);
+                                  $categoria->setNoCategoria($row[1]);
+                               //  echo 'entre';
+                                 array_push( $this->categoriasarray,$categoria);
+                             }
+                        $resp['detalles']=$this->categoriasarray;
+
+                    }else{
+                         $resp['codigo']=3;
+                        $resp['mensaje']='No entro a ver categorías';                       
+                    }
+            
+            
+            echo json_encode($resp);
+
+        }		
     }
 
 ?>

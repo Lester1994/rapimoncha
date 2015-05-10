@@ -1,6 +1,7 @@
 package una.android.rapimoncha;
 
 import una.android.rapimoncha.activities.modulos.RegistroProductoScreen;
+import una.android.rapimoncha.activities.modulos.producto.ListadoProductosScreen;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,7 +24,7 @@ public class Main extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent intent=new Intent(Main.this,RegistroProductoScreen.class);
+				Intent intent=new Intent(Main.this,ListadoProductosScreen.class);
 				startActivity(intent);
 				
 			}

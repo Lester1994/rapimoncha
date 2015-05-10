@@ -465,173 +465,197 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f02001e;
         public static final int icon_addproduct=0x7f02001f;
         public static final int icon_configuration=0x7f020020;
-        public static final int icon_finishregistro=0x7f020021;
-        public static final int icon_home=0x7f020022;
-        public static final int icon_keylogin=0x7f020023;
-        public static final int icon_myhome=0x7f020024;
-        public static final int icon_product=0x7f020025;
-        public static final int icon_promo=0x7f020026;
-        public static final int icon_registro=0x7f020027;
-        public static final int icon_request=0x7f020028;
-        public static final int icon_splash=0x7f020029;
-        public static final int icon_subscripciones=0x7f02002a;
-        public static final int powered_by_google_dark=0x7f02002b;
-        public static final int powered_by_google_light=0x7f02002c;
+        public static final int icon_editproduct=0x7f020021;
+        public static final int icon_finishregistro=0x7f020022;
+        public static final int icon_home=0x7f020023;
+        public static final int icon_keylogin=0x7f020024;
+        public static final int icon_myhome=0x7f020025;
+        public static final int icon_product=0x7f020026;
+        public static final int icon_productitem=0x7f020027;
+        public static final int icon_promo=0x7f020028;
+        public static final int icon_registro=0x7f020029;
+        public static final int icon_request=0x7f02002a;
+        public static final int icon_splash=0x7f02002b;
+        public static final int icon_subscripciones=0x7f02002c;
+        public static final int powered_by_google_dark=0x7f02002d;
+        public static final int powered_by_google_light=0x7f02002e;
     }
     public static final class id {
-        public static final int action_registrar=0x7f0c007b;
-        public static final int action_settings=0x7f0c007a;
+        public static final int action_registrar=0x7f0c008d;
+        public static final int action_settings=0x7f0c0089;
         public static final int adjust_height=0x7f0c0000;
         public static final int adjust_width=0x7f0c0001;
         public static final int book_now=0x7f0c0010;
-        public static final int btn_finalizar=0x7f0c005b;
-        public static final int btn_finalizar_product=0x7f0c0073;
-        public static final int btn_login=0x7f0c001a;
-        public static final int btn_main_configuracion=0x7f0c0021;
-        public static final int btn_main_home=0x7f0c001c;
-        public static final int btn_main_myhome=0x7f0c001d;
-        public static final int btn_main_pedidos=0x7f0c001f;
-        public static final int btn_main_productos=0x7f0c0020;
-        public static final int btn_main_promociones=0x7f0c001b;
-        public static final int btn_main_solicitudes=0x7f0c001e;
-        public static final int btn_next=0x7f0c0024;
-        public static final int btn_next_product=0x7f0c0028;
-        public static final int btnprev=0x7f0c0025;
-        public static final int btnprev_product=0x7f0c0029;
-        public static final int btnregistro=0x7f0c003d;
+        public static final int btn_finalizar=0x7f0c0066;
+        public static final int btn_finalizar_product=0x7f0c007e;
+        public static final int btn_login=0x7f0c0022;
+        public static final int btn_main_configuracion=0x7f0c002a;
+        public static final int btn_main_home=0x7f0c0025;
+        public static final int btn_main_myhome=0x7f0c0026;
+        public static final int btn_main_pedidos=0x7f0c0028;
+        public static final int btn_main_productos=0x7f0c0029;
+        public static final int btn_main_promociones=0x7f0c0024;
+        public static final int btn_main_solicitudes=0x7f0c0027;
+        public static final int btn_next=0x7f0c002d;
+        public static final int btn_next_product=0x7f0c0031;
+        public static final int btniniciarempresa=0x7f0c0049;
+        public static final int btnprev=0x7f0c002e;
+        public static final int btnprev_product=0x7f0c0032;
+        public static final int btnregistro=0x7f0c0046;
         public static final int buyButton=0x7f0c000c;
         public static final int buy_now=0x7f0c0011;
         public static final int buy_with_google=0x7f0c0012;
-        public static final int chck_aceptaterminos=0x7f0c0058;
-        public static final int check=0x7f0c0078;
+        public static final int chck_aceptaterminos=0x7f0c0063;
+        public static final int check=0x7f0c0083;
         public static final int classic=0x7f0c0014;
         public static final int donate_with_google=0x7f0c0013;
-        public static final int frg_container=0x7f0c0022;
-        public static final int frg_container_product=0x7f0c0026;
+        public static final int frg_container=0x7f0c002b;
+        public static final int frg_container_product=0x7f0c002f;
         public static final int grayscale=0x7f0c0015;
-        public static final int grid_imgcomercio=0x7f0c0054;
-        public static final int grid_imgproducto=0x7f0c006d;
+        public static final int grid_imgcomercio=0x7f0c005f;
+        public static final int grid_imgproducto=0x7f0c0078;
         public static final int holo_dark=0x7f0c0007;
         public static final int holo_light=0x7f0c0008;
         public static final int hybrid=0x7f0c0003;
-        public static final int image_element=0x7f0c0079;
-        public static final int imagecurso=0x7f0c0017;
-        public static final int img_icon=0x7f0c003a;
-        public static final int img_icon_product=0x7f0c0076;
-        public static final int img_imagendescrip_product=0x7f0c0070;
-        public static final int img_imagendescripsc5=0x7f0c0056;
-        public static final int lbl_agradecimientorc=0x7f0c005a;
-        public static final int lbl_agradecimientorc_product=0x7f0c0072;
-        public static final int lbl_datosimportantes=0x7f0c005c;
-        public static final int lbl_datosimportantes_product=0x7f0c0074;
-        public static final int lbl_notas=0x7f0c005e;
-        public static final int lbl_notas_product=0x7f0c0077;
-        public static final int lbl_proceso=0x7f0c003b;
-        public static final int lbl_rc1notas=0x7f0c0041;
-        public static final int lbl_rc2regresar_producto=0x7f0c006e;
-        public static final int lbl_rc3regresar=0x7f0c0052;
-        public static final int lbl_rc4regresar=0x7f0c0055;
-        public static final int lbl_registrocomer_tituloscr5=0x7f0c0050;
-        public static final int lbl_registroproduct03_titulo=0x7f0c006f;
-        public static final int lbl_scr5notasextra=0x7f0c0057;
-        public static final int lbl_scr5notasextra_product=0x7f0c0071;
-        public static final int lbl_src5_titulo_pref=0x7f0c005f;
-        public static final int lbl_src5aceptacontrato=0x7f0c0059;
-        public static final int lbl_titulobienvenida=0x7f0c005d;
-        public static final int lbl_titulobienvenida_product=0x7f0c0075;
-        public static final int lbl_tituloelementocategoria=0x7f0c004f;
-        public static final int lbl_tituloscr2=0x7f0c004d;
-        public static final int lbl_tituloscr2_product=0x7f0c006c;
-        public static final int lbl_tituloscr4=0x7f0c0053;
-        public static final int lblap1usuario=0x7f0c002c;
-        public static final int lblap2usuario=0x7f0c002e;
-        public static final int lblcontactosinsub=0x7f0c0060;
-        public static final int lbldeproducto=0x7f0c0068;
-        public static final int lbldicomercio=0x7f0c004b;
-        public static final int lblemcomercio=0x7f0c0049;
-        public static final int lblfechanac=0x7f0c0033;
-        public static final int lblfechanacimiento=0x7f0c002f;
-        public static final int lblirlogin=0x7f0c003e;
-        public static final int lblnocomercio=0x7f0c003f;
-        public static final int lblnoproducto=0x7f0c0066;
-        public static final int lblnousuario=0x7f0c002a;
-        public static final int lblpeproducto=0x7f0c006a;
-        public static final int lblprocomercio=0x7f0c0044;
-        public static final int lblprodusinsub=0x7f0c0062;
-        public static final int lblrpassword1=0x7f0c0034;
-        public static final int lblrpassword2=0x7f0c0036;
-        public static final int lblsevicioexpress=0x7f0c0064;
-        public static final int lblsexo=0x7f0c0038;
-        public static final int lblt1comercio=0x7f0c0045;
-        public static final int lblt2comercio=0x7f0c0047;
-        public static final int lbltitulofragmentrc01=0x7f0c0040;
-        public static final int lblusername=0x7f0c0032;
-        public static final int lstcatcomercio=0x7f0c004e;
-        public static final int map=0x7f0c0051;
+        public static final int image_element=0x7f0c0084;
+        public static final int imagecurso=0x7f0c001f;
+        public static final int img_icon=0x7f0c0043;
+        public static final int img_icon_product=0x7f0c0081;
+        public static final int img_imagendescrip_product=0x7f0c007b;
+        public static final int img_imagendescripsc5=0x7f0c0061;
+        public static final int lbl_agradecimientorc=0x7f0c0065;
+        public static final int lbl_agradecimientorc_product=0x7f0c007d;
+        public static final int lbl_datosimportantes=0x7f0c0067;
+        public static final int lbl_datosimportantes_product=0x7f0c007f;
+        public static final int lbl_notas=0x7f0c0069;
+        public static final int lbl_notas_product=0x7f0c0082;
+        public static final int lbl_proceso=0x7f0c0044;
+        public static final int lbl_rc1notas=0x7f0c004c;
+        public static final int lbl_rc2regresar_producto=0x7f0c0079;
+        public static final int lbl_rc3regresar=0x7f0c005d;
+        public static final int lbl_rc4regresar=0x7f0c0060;
+        public static final int lbl_registrocomer_tituloscr5=0x7f0c005b;
+        public static final int lbl_registroproduct03_titulo=0x7f0c007a;
+        public static final int lbl_scr5notasextra=0x7f0c0062;
+        public static final int lbl_scr5notasextra_product=0x7f0c007c;
+        public static final int lbl_src5_titulo_pref=0x7f0c006a;
+        public static final int lbl_src5aceptacontrato=0x7f0c0064;
+        public static final int lbl_titulobienvenida=0x7f0c0068;
+        public static final int lbl_titulobienvenida_product=0x7f0c0080;
+        public static final int lbl_tituloelementocategoria=0x7f0c005a;
+        public static final int lbl_tituloscr2=0x7f0c0058;
+        public static final int lbl_tituloscr2_product=0x7f0c0077;
+        public static final int lbl_tituloscr4=0x7f0c005e;
+        public static final int lblap1usuario=0x7f0c0035;
+        public static final int lblap2usuario=0x7f0c0037;
+        public static final int lblcontactosinsub=0x7f0c006b;
+        public static final int lbldatosloginiralogin=0x7f0c001d;
+        public static final int lbldatosloginnotas=0x7f0c001c;
+        public static final int lbldatosloginpassword=0x7f0c001a;
+        public static final int lbldatosloginpassworddata=0x7f0c001b;
+        public static final int lbldatoslogintitulo=0x7f0c0017;
+        public static final int lbldatosloginusername=0x7f0c0019;
+        public static final int lbldatosloginusernamedata=0x7f0c0018;
+        public static final int lbldeproducto=0x7f0c0073;
+        public static final int lbldicomercio=0x7f0c0056;
+        public static final int lblemcomercio=0x7f0c0054;
+        public static final int lblfechanac=0x7f0c003c;
+        public static final int lblfechanacimiento=0x7f0c0038;
+        public static final int lblmiempresas=0x7f0c0047;
+        public static final int lblnocomercio=0x7f0c004a;
+        public static final int lblnoproducto=0x7f0c0071;
+        public static final int lblnousuario=0x7f0c0033;
+        public static final int lblpeproducto=0x7f0c0075;
+        public static final int lblprocomercio=0x7f0c004f;
+        public static final int lblprodusinsub=0x7f0c006d;
+        public static final int lblregistrarse=0x7f0c0023;
+        public static final int lblrpassword1=0x7f0c003d;
+        public static final int lblrpassword2=0x7f0c003f;
+        public static final int lblsevicioexpress=0x7f0c006f;
+        public static final int lblsexo=0x7f0c0041;
+        public static final int lblt1comercio=0x7f0c0050;
+        public static final int lblt2comercio=0x7f0c0052;
+        public static final int lbltitulofragmentrc01=0x7f0c004b;
+        public static final int lblusername=0x7f0c003b;
+        public static final int list_todosproductos=0x7f0c001e;
+        public static final int lprodudeproduc=0x7f0c0088;
+        public static final int lproduimgprodu=0x7f0c0085;
+        public static final int lprodulblnoproduct=0x7f0c0086;
+        public static final int lprodupeprodu=0x7f0c0087;
+        public static final int lstcatcomercio=0x7f0c0059;
+        public static final int map=0x7f0c005c;
         public static final int match_parent=0x7f0c000e;
+        public static final int menu_mproducto_agregar=0x7f0c008c;
+        public static final int menu_mproducto_editar=0x7f0c008a;
+        public static final int menu_mproducto_eliminar=0x7f0c008b;
         public static final int monochrome=0x7f0c0016;
         public static final int none=0x7f0c0002;
         public static final int normal=0x7f0c0004;
-        public static final int prg_barraprogreso=0x7f0c003c;
+        public static final int prg_barraprogreso=0x7f0c0045;
         public static final int production=0x7f0c0009;
-        public static final int relativeLayout1=0x7f0c0023;
-        public static final int relativeLayout1_product=0x7f0c0027;
+        public static final int relativeLayout1=0x7f0c002c;
+        public static final int relativeLayout1_product=0x7f0c0030;
         public static final int sandbox=0x7f0c000a;
         public static final int satellite=0x7f0c0005;
         public static final int selectionDetails=0x7f0c000d;
-        public static final int spinnersexo=0x7f0c0039;
+        public static final int spinnerempresas=0x7f0c0048;
+        public static final int spinnersexo=0x7f0c0042;
         public static final int strict_sandbox=0x7f0c000b;
-        public static final int switchcontactosinsub=0x7f0c0061;
-        public static final int switchprodusinsub=0x7f0c0063;
-        public static final int switchservicioexpress=0x7f0c0065;
+        public static final int switchcontactosinsub=0x7f0c006c;
+        public static final int switchprodusinsub=0x7f0c006e;
+        public static final int switchservicioexpress=0x7f0c0070;
         public static final int terrain=0x7f0c0006;
-        public static final int txtap1usuario=0x7f0c002d;
-        public static final int txtap2usuario=0x7f0c0030;
-        public static final int txtdeproducto=0x7f0c0069;
-        public static final int txtdicomercio=0x7f0c004c;
-        public static final int txtemcomercio=0x7f0c004a;
-        public static final int txtnocomercio=0x7f0c0042;
-        public static final int txtnoproducto=0x7f0c0067;
-        public static final int txtnousuario=0x7f0c002b;
-        public static final int txtpassword=0x7f0c0019;
-        public static final int txtpeproducto=0x7f0c006b;
-        public static final int txtprocomercio=0x7f0c0043;
-        public static final int txtrpassword1=0x7f0c0035;
-        public static final int txtrpassword2=0x7f0c0037;
-        public static final int txtrusername=0x7f0c0031;
-        public static final int txtt1comercio=0x7f0c0046;
-        public static final int txtt2comercio=0x7f0c0048;
-        public static final int txtusername=0x7f0c0018;
+        public static final int txtap1usuario=0x7f0c0036;
+        public static final int txtap2usuario=0x7f0c0039;
+        public static final int txtdeproducto=0x7f0c0074;
+        public static final int txtdicomercio=0x7f0c0057;
+        public static final int txtemcomercio=0x7f0c0055;
+        public static final int txtnocomercio=0x7f0c004d;
+        public static final int txtnoproducto=0x7f0c0072;
+        public static final int txtnousuario=0x7f0c0034;
+        public static final int txtpassword=0x7f0c0021;
+        public static final int txtpeproducto=0x7f0c0076;
+        public static final int txtprocomercio=0x7f0c004e;
+        public static final int txtrpassword1=0x7f0c003e;
+        public static final int txtrpassword2=0x7f0c0040;
+        public static final int txtrusername=0x7f0c003a;
+        public static final int txtt1comercio=0x7f0c0051;
+        public static final int txtt2comercio=0x7f0c0053;
+        public static final int txtusername=0x7f0c0020;
         public static final int wrap_content=0x7f0c000f;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f080000;
     }
     public static final class layout {
-        public static final int activity_login=0x7f030000;
-        public static final int activity_main=0x7f030001;
-        public static final int activity_registrocomercio=0x7f030002;
-        public static final int activity_registroproducto=0x7f030003;
-        public static final int activity_registrousuario=0x7f030004;
-        public static final int activity_splashscreen=0x7f030005;
-        public static final int activity_welcomescreen=0x7f030006;
-        public static final int fragment_registrocomer_scr1=0x7f030007;
-        public static final int fragment_registrocomer_scr2=0x7f030008;
-        public static final int fragment_registrocomer_scr3=0x7f030009;
-        public static final int fragment_registrocomer_scr4=0x7f03000a;
-        public static final int fragment_registrocomer_scr6=0x7f03000b;
-        public static final int fragment_registrocomer_sky=0x7f03000c;
-        public static final int fragment_registrocomer_src5=0x7f03000d;
-        public static final int fragment_registroproduct_scr1=0x7f03000e;
-        public static final int fragment_registroproduct_scr2=0x7f03000f;
-        public static final int fragment_registroproduct_scr3=0x7f030010;
-        public static final int fragment_registroproduct_sky=0x7f030011;
-        public static final int layout_categoriacomercio_listviewitem=0x7f030012;
-        public static final int layout_galeriaimagen_gridviewitem=0x7f030013;
+        public static final int activity_datosloginusuario=0x7f030000;
+        public static final int activity_listado_productos=0x7f030001;
+        public static final int activity_login=0x7f030002;
+        public static final int activity_main=0x7f030003;
+        public static final int activity_registrocomercio=0x7f030004;
+        public static final int activity_registroproducto=0x7f030005;
+        public static final int activity_registrousuario=0x7f030006;
+        public static final int activity_splashscreen=0x7f030007;
+        public static final int activity_welcomescreen=0x7f030008;
+        public static final int fragment_registrocomer_scr1=0x7f030009;
+        public static final int fragment_registrocomer_scr2=0x7f03000a;
+        public static final int fragment_registrocomer_scr3=0x7f03000b;
+        public static final int fragment_registrocomer_scr4=0x7f03000c;
+        public static final int fragment_registrocomer_scr6=0x7f03000d;
+        public static final int fragment_registrocomer_sky=0x7f03000e;
+        public static final int fragment_registrocomer_src5=0x7f03000f;
+        public static final int fragment_registroproduct_scr1=0x7f030010;
+        public static final int fragment_registroproduct_scr2=0x7f030011;
+        public static final int fragment_registroproduct_scr3=0x7f030012;
+        public static final int fragment_registroproduct_sky=0x7f030013;
+        public static final int layout_categoriacomercio_listviewitem=0x7f030014;
+        public static final int layout_galeriaimagen_gridviewitem=0x7f030015;
+        public static final int layout_producto_listviewitem=0x7f030016;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;
-        public static final int menu_registrousuario=0x7f0b0001;
+        public static final int menu_modulo_productos=0x7f0b0001;
+        public static final int menu_registrousuario=0x7f0b0002;
     }
     public static final class raw {
         public static final int gtm_analytics=0x7f040000;
@@ -639,62 +663,80 @@ containing a value of this type.
     public static final class string {
         public static final int accept=0x7f060002;
         public static final int action_settings=0x7f060025;
-        public static final int activity_login_btnlogin=0x7f060033;
-        public static final int activity_login_icono_descripcion=0x7f060035;
-        public static final int activity_login_passwordhint=0x7f060032;
-        public static final int activity_login_titulo=0x7f060034;
+        public static final int activity_datosloginusuario_=0x7f0600af;
+        public static final int activity_datosloginusuario_lbldatosloginiralogin=0x7f0600ae;
+        public static final int activity_datosloginusuario_lbldatosloginnotas=0x7f0600ac;
+        public static final int activity_datosloginusuario_lbldatosloginpassword=0x7f0600aa;
+        public static final int activity_datosloginusuario_lbldatosloginpassworddata=0x7f0600ab;
+        /**  ACTIVITY datos login usuario 
+         */
+        public static final int activity_datosloginusuario_lbldatoslogintitulo=0x7f0600a7;
+        public static final int activity_datosloginusuario_lbldatosloginusername=0x7f0600a8;
+        public static final int activity_datosloginusuario_lbldatosloginusernamedata=0x7f0600a9;
+        public static final int activity_datosloginusuario_titulo=0x7f0600ad;
+        public static final int activity_listadoproductos_=0x7f0600b5;
+        /**  activity listado de productos para s u modulo 
+         */
+        public static final int activity_listadoproductos_titulo=0x7f0600b4;
+        public static final int activity_login_btnlogin=0x7f060036;
+        public static final int activity_login_icono_descripcion=0x7f060038;
+        public static final int activity_login_java_msgfinalloginusuarioerror=0x7f06003b;
+        public static final int activity_login_java_msginiciologinusuario=0x7f06003a;
+        public static final int activity_login_lblregistrarse=0x7f060039;
+        public static final int activity_login_passwordhint=0x7f060035;
+        public static final int activity_login_titulo=0x7f060037;
         /**  ACTIVITY login 
          */
-        public static final int activity_login_usernamehint=0x7f060031;
-        public static final int activity_main_descripcion_btn_configuraciones=0x7f060064;
-        public static final int activity_main_descripcion_btn_home=0x7f060060;
-        public static final int activity_main_descripcion_btn_myhome=0x7f060061;
-        public static final int activity_main_descripcion_btn_pedidos=0x7f060063;
-        public static final int activity_main_descripcion_btn_productos=0x7f060065;
+        public static final int activity_login_usernamehint=0x7f060034;
+        public static final int activity_main_descripcion_btn_configuraciones=0x7f06006a;
+        public static final int activity_main_descripcion_btn_home=0x7f060066;
+        public static final int activity_main_descripcion_btn_myhome=0x7f060067;
+        public static final int activity_main_descripcion_btn_pedidos=0x7f060069;
+        public static final int activity_main_descripcion_btn_productos=0x7f06006b;
         /**  ACTIVITY main 
          */
-        public static final int activity_main_descripcion_btn_promociones=0x7f06005f;
-        public static final int activity_main_descripcion_btn_solicitudes=0x7f060062;
-        public static final int activity_registrocomercio_=0x7f06003b;
+        public static final int activity_main_descripcion_btn_promociones=0x7f060065;
+        public static final int activity_main_descripcion_btn_solicitudes=0x7f060068;
+        public static final int activity_registrocomercio_=0x7f060041;
         /**  ACTIVITY registrocomercio 
          */
-        public static final int activity_registrocomercio_btnnext=0x7f060036;
-        public static final int activity_registrocomercio_btnprev=0x7f060037;
-        public static final int activity_registrocomercio_java_noiradelante=0x7f06003a;
-        public static final int activity_registrocomercio_java_noiratras=0x7f060039;
-        public static final int activity_registrocomercio_titulo=0x7f060038;
-        public static final int activity_registroproducto_=0x7f06006f;
-        public static final int activity_registroproducto_btnnext=0x7f06006b;
-        public static final int activity_registroproducto_btnprev=0x7f06006c;
-        public static final int activity_registroproducto_img_icon_product=0x7f060067;
-        public static final int activity_registroproducto_java_noiradelante=0x7f06006e;
-        public static final int activity_registroproducto_java_noiratras=0x7f06006d;
-        public static final int activity_registroproducto_lbl_datosimportantes_product=0x7f060068;
-        public static final int activity_registroproducto_lbl_notassky_product=0x7f060069;
-        /**  ACTIVITY registro comercio 
+        public static final int activity_registrocomercio_btnnext=0x7f06003c;
+        public static final int activity_registrocomercio_btnprev=0x7f06003d;
+        public static final int activity_registrocomercio_java_noiradelante=0x7f060040;
+        public static final int activity_registrocomercio_java_noiratras=0x7f06003f;
+        public static final int activity_registrocomercio_titulo=0x7f06003e;
+        public static final int activity_registroproducto_=0x7f060075;
+        public static final int activity_registroproducto_btnnext=0x7f060071;
+        public static final int activity_registroproducto_btnprev=0x7f060072;
+        public static final int activity_registroproducto_img_icon_product=0x7f06006d;
+        public static final int activity_registroproducto_java_noiradelante=0x7f060074;
+        public static final int activity_registroproducto_java_noiratras=0x7f060073;
+        public static final int activity_registroproducto_lbl_datosimportantes_product=0x7f06006e;
+        public static final int activity_registroproducto_lbl_notassky_product=0x7f06006f;
+        /**  ACTIVITY registro producto 
          */
-        public static final int activity_registroproducto_lbl_titulobienvenida_product=0x7f060066;
-        public static final int activity_registroproducto_titulo=0x7f06006a;
-        public static final int activity_registrousuario_=0x7f060097;
-        public static final int activity_registrousuario_lblap1usuario=0x7f060086;
-        public static final int activity_registrousuario_lblap2usuario=0x7f060088;
-        public static final int activity_registrousuario_lblfechanac=0x7f06008b;
-        public static final int activity_registrousuario_lblfechanacimiento=0x7f06008a;
+        public static final int activity_registroproducto_lbl_titulobienvenida_product=0x7f06006c;
+        public static final int activity_registroproducto_titulo=0x7f060070;
+        public static final int activity_registrousuario_=0x7f0600a6;
+        public static final int activity_registrousuario_lblap1usuario=0x7f060095;
+        public static final int activity_registrousuario_lblap2usuario=0x7f060097;
+        public static final int activity_registrousuario_lblfechanac=0x7f06009a;
+        public static final int activity_registrousuario_lblfechanacimiento=0x7f060099;
         /**  ACTIVITY registro usuario 
          */
-        public static final int activity_registrousuario_lblnousuario=0x7f060084;
-        public static final int activity_registrousuario_lblrpassword1=0x7f06008e;
-        public static final int activity_registrousuario_lblrpassword2=0x7f060090;
-        public static final int activity_registrousuario_lblsexo=0x7f060092;
-        public static final int activity_registrousuario_lblusername=0x7f06008c;
-        public static final int activity_registrousuario_menu_action_registrar=0x7f060094;
-        public static final int activity_registrousuario_titulo=0x7f060093;
-        public static final int activity_registrousuario_txtap1usuario_hint=0x7f060087;
-        public static final int activity_registrousuario_txtap2usuario_hint=0x7f060089;
-        public static final int activity_registrousuario_txtnousuario_hint=0x7f060085;
-        public static final int activity_registrousuario_txtrpassword1_hint=0x7f06008f;
-        public static final int activity_registrousuario_txtrpassword2_hint=0x7f060091;
-        public static final int activity_registrousuario_txtusername_hint=0x7f06008d;
+        public static final int activity_registrousuario_lblnousuario=0x7f060093;
+        public static final int activity_registrousuario_lblrpassword1=0x7f06009d;
+        public static final int activity_registrousuario_lblrpassword2=0x7f06009f;
+        public static final int activity_registrousuario_lblsexo=0x7f0600a1;
+        public static final int activity_registrousuario_lblusername=0x7f06009b;
+        public static final int activity_registrousuario_menu_action_registrar=0x7f0600a3;
+        public static final int activity_registrousuario_titulo=0x7f0600a2;
+        public static final int activity_registrousuario_txtap1usuario_hint=0x7f060096;
+        public static final int activity_registrousuario_txtap2usuario_hint=0x7f060098;
+        public static final int activity_registrousuario_txtnousuario_hint=0x7f060094;
+        public static final int activity_registrousuario_txtrpassword1_hint=0x7f06009e;
+        public static final int activity_registrousuario_txtrpassword2_hint=0x7f0600a0;
+        public static final int activity_registrousuario_txtusername_hint=0x7f06009c;
         public static final int activity_splashscreen_default_lblproceso=0x7f060028;
         public static final int activity_splashscreen_descripcionimagen=0x7f060027;
         public static final int activity_splashscreen_progress_fase1=0x7f060029;
@@ -705,10 +747,17 @@ containing a value of this type.
         /**  ACTIVITY splash screen 
          */
         public static final int activity_splashscreen_titulo=0x7f060026;
+        public static final int activity_updateproducto_lbl_datosimportantes_product=0x7f060077;
+        /**  ACTIVITY update producto 
+         */
+        public static final int activity_updateproducto_lbl_titulobienvenida_product=0x7f060076;
+        public static final int activity_welcomescreen_=0x7f060033;
+        public static final int activity_welcomescreen_btniniciarempresa=0x7f060032;
         /**  ACTIVITY welcome screen 
          */
         public static final int activity_welcomescreen_btnregistro=0x7f06002e;
         public static final int activity_welcomescreen_lblirlogin=0x7f06002f;
+        public static final int activity_welcomescreen_lblmiempresas=0x7f060031;
         public static final int activity_welcomescreen_titulo=0x7f060030;
         public static final int app_name=0x7f060023;
         /**   Text for notification shown when the Android Wear apps needs to be updated. Only shown on the wearable. [CHAR LIMIT=NONE] 
@@ -813,90 +862,114 @@ containing a value of this type.
         public static final int create_calendar_message=0x7f060005;
         public static final int create_calendar_title=0x7f060004;
         public static final int decline=0x7f060003;
-        public static final int fragment_registrocomercio1_lbl_rc01notas=0x7f06004e;
-        public static final int fragment_registrocomercio1_lbldicomercio=0x7f060046;
-        public static final int fragment_registrocomercio1_lbldicomercio_hint=0x7f06004c;
-        public static final int fragment_registrocomercio1_lblemcomercio=0x7f060045;
-        public static final int fragment_registrocomercio1_lblemcomercio_hint=0x7f06004b;
+        public static final int fragment_registrocomercio1_lbl_rc01notas=0x7f060054;
+        public static final int fragment_registrocomercio1_lbldicomercio=0x7f06004c;
+        public static final int fragment_registrocomercio1_lbldicomercio_hint=0x7f060052;
+        public static final int fragment_registrocomercio1_lblemcomercio=0x7f06004b;
+        public static final int fragment_registrocomercio1_lblemcomercio_hint=0x7f060051;
         /**  FRAGMENT registro comercio 1 
          */
-        public static final int fragment_registrocomercio1_lblnocomercio=0x7f060041;
-        public static final int fragment_registrocomercio1_lblnocomercio_hint=0x7f060047;
-        public static final int fragment_registrocomercio1_lblprocomercio=0x7f060042;
-        public static final int fragment_registrocomercio1_lblprocomercio_hint=0x7f060048;
-        public static final int fragment_registrocomercio1_lblt1comercio=0x7f060043;
-        public static final int fragment_registrocomercio1_lblt1comercio_hint=0x7f060049;
-        public static final int fragment_registrocomercio1_lblt2comercio=0x7f060044;
-        public static final int fragment_registrocomercio1_lblt2comercio_hint=0x7f06004a;
-        public static final int fragment_registrocomercio1_lbltitulofragmentrc01=0x7f06004d;
+        public static final int fragment_registrocomercio1_lblnocomercio=0x7f060047;
+        public static final int fragment_registrocomercio1_lblnocomercio_hint=0x7f06004d;
+        public static final int fragment_registrocomercio1_lblprocomercio=0x7f060048;
+        public static final int fragment_registrocomercio1_lblprocomercio_hint=0x7f06004e;
+        public static final int fragment_registrocomercio1_lblt1comercio=0x7f060049;
+        public static final int fragment_registrocomercio1_lblt1comercio_hint=0x7f06004f;
+        public static final int fragment_registrocomercio1_lblt2comercio=0x7f06004a;
+        public static final int fragment_registrocomercio1_lblt2comercio_hint=0x7f060050;
+        public static final int fragment_registrocomercio1_lbltitulofragmentrc01=0x7f060053;
         /**  FRAGMENT registro comercio 2 
          */
-        public static final int fragment_registrocomercio2_lbl_tituloscr2=0x7f06004f;
+        public static final int fragment_registrocomercio2_lbl_tituloscr2=0x7f060055;
         /**  FRAGMENT registro comercio 3 
          */
-        public static final int fragment_registrocomercio3_lbl_tituloscr3=0x7f060050;
+        public static final int fragment_registrocomercio3_lbl_tituloscr3=0x7f060056;
         /**  FRAGMENT registro comercio 4 
          */
-        public static final int fragment_registrocomercio4_lbl_tituloscr4=0x7f060051;
-        public static final int fragment_registrocomercio5_btn_finalizar=0x7f06005d;
-        public static final int fragment_registrocomercio5_img_imagendescripsc5=0x7f060059;
-        public static final int fragment_registrocomercio5_java_msgaceptarterminos=0x7f06005e;
-        public static final int fragment_registrocomercio5_lbl_agradecimientorc=0x7f06005c;
-        public static final int fragment_registrocomercio5_lbl_scr5notasextra=0x7f06005a;
+        public static final int fragment_registrocomercio4_lbl_tituloscr4=0x7f060057;
+        public static final int fragment_registrocomercio5_btn_finalizar=0x7f060063;
+        public static final int fragment_registrocomercio5_img_imagendescripsc5=0x7f06005f;
+        public static final int fragment_registrocomercio5_java_msgaceptarterminos=0x7f060064;
+        public static final int fragment_registrocomercio5_lbl_agradecimientorc=0x7f060062;
+        public static final int fragment_registrocomercio5_lbl_scr5notasextra=0x7f060060;
         /**  FRAGMENT registro comercio 5 
          */
-        public static final int fragment_registrocomercio5_lbl_src5_titulo_pref=0x7f060052;
-        public static final int fragment_registrocomercio5_lbl_src5aceptacontrato=0x7f06005b;
+        public static final int fragment_registrocomercio5_lbl_src5_titulo_pref=0x7f060058;
+        public static final int fragment_registrocomercio5_lbl_src5aceptacontrato=0x7f060061;
         /**  FRAGMENT registro comercio 6 
          */
-        public static final int fragment_registrocomercio5_lbl_tituloscr5=0x7f060058;
-        public static final int fragment_registrocomercio5_lblcontactosinsub=0x7f060053;
-        public static final int fragment_registrocomercio5_lblprodusinsub=0x7f060054;
-        public static final int fragment_registrocomercio5_lblsevicioexpress=0x7f060055;
-        public static final int fragment_registrocomercio5_switch_off=0x7f060057;
-        public static final int fragment_registrocomercio5_switch_on=0x7f060056;
-        public static final int fragment_registrocomerciosky_=0x7f060040;
-        public static final int fragment_registrocomerciosky_img_icon_description=0x7f06003f;
+        public static final int fragment_registrocomercio5_lbl_tituloscr5=0x7f06005e;
+        public static final int fragment_registrocomercio5_lblcontactosinsub=0x7f060059;
+        public static final int fragment_registrocomercio5_lblprodusinsub=0x7f06005a;
+        public static final int fragment_registrocomercio5_lblsevicioexpress=0x7f06005b;
+        public static final int fragment_registrocomercio5_switch_off=0x7f06005d;
+        public static final int fragment_registrocomercio5_switch_on=0x7f06005c;
+        public static final int fragment_registrocomerciosky_=0x7f060046;
+        public static final int fragment_registrocomerciosky_img_icon_description=0x7f060045;
         /**  FRAGMENT registro comercio sky 
          */
-        public static final int fragment_registrocomerciosky_lbl_datosimportantes=0x7f06003c;
-        public static final int fragment_registrocomerciosky_lbl_notas=0x7f06003e;
-        public static final int fragment_registrocomerciosky_lbl_titulobienvenida=0x7f06003d;
-        public static final int fragment_registroproducto1_lbl_rc01notas=0x7f060077;
-        public static final int fragment_registroproducto1_lbldeproducto=0x7f060073;
-        public static final int fragment_registroproducto1_lbldeproducto_hint=0x7f060074;
+        public static final int fragment_registrocomerciosky_lbl_datosimportantes=0x7f060042;
+        public static final int fragment_registrocomerciosky_lbl_notas=0x7f060044;
+        public static final int fragment_registrocomerciosky_lbl_titulobienvenida=0x7f060043;
+        public static final int fragment_registroproducto1_lbl_rc01notas=0x7f060082;
+        public static final int fragment_registroproducto1_lbldeproducto=0x7f06007e;
+        public static final int fragment_registroproducto1_lbldeproducto_hint=0x7f06007f;
         /**  FRAGMENT 01 registro producto 
          */
-        public static final int fragment_registroproducto1_lblnoproducto=0x7f060070;
-        public static final int fragment_registroproducto1_lblnoproducto_hint=0x7f060072;
-        public static final int fragment_registroproducto1_lblpeproducto=0x7f060075;
-        public static final int fragment_registroproducto1_lblpeproducto_hint=0x7f060076;
-        public static final int fragment_registroproducto1_lbltitulofragmentrc01=0x7f060071;
-        public static final int fragment_registroproducto2_=0x7f06007a;
-        public static final int fragment_registroproducto2_lbl_rc2regresar_producto=0x7f060079;
+        public static final int fragment_registroproducto1_lblnoproducto=0x7f06007b;
+        public static final int fragment_registroproducto1_lblnoproducto_hint=0x7f06007d;
+        public static final int fragment_registroproducto1_lblpeproducto=0x7f060080;
+        public static final int fragment_registroproducto1_lblpeproducto_hint=0x7f060081;
+        public static final int fragment_registroproducto1_lbltitulofragmentrc01=0x7f06007c;
+        public static final int fragment_registroproducto2_=0x7f060085;
+        public static final int fragment_registroproducto2_lbl_rc2regresar_producto=0x7f060084;
         /**  FRAGMENT 02 registro producto 
          */
-        public static final int fragment_registroproducto2_lbl_tituloscr2_product=0x7f060078;
-        public static final int fragment_registroproducto3_=0x7f06007f;
-        public static final int fragment_registroproducto3_btn_finalizar_product=0x7f06007d;
-        public static final int fragment_registroproducto3_lbl_agradecimientorc_product=0x7f06007e;
+        public static final int fragment_registroproducto2_lbl_tituloscr2_product=0x7f060083;
+        public static final int fragment_registroproducto3_=0x7f06008a;
+        public static final int fragment_registroproducto3_btn_finalizar_product=0x7f060088;
+        public static final int fragment_registroproducto3_lbl_agradecimientorc_product=0x7f060089;
         /**  FRAGMENT 03 registro producto 
          */
-        public static final int fragment_registroproducto3_lbl_registroproduct03_titulo=0x7f06007b;
-        public static final int fragment_registroproducto3_lbl_scr5notasextra_product=0x7f06007c;
+        public static final int fragment_registroproducto3_lbl_registroproduct03_titulo=0x7f060086;
+        public static final int fragment_registroproducto3_lbl_scr5notasextra_product=0x7f060087;
+        public static final int fragment_updateproducto3_btn_finalizar_product=0x7f060079;
+        public static final int fragment_updateproducto3_lbl_scr5notasextra_product=0x7f060078;
+        public static final int fragment_updateproducto3_titulo=0x7f06007a;
+        public static final int function_userloginstatus_statusdefault=0x7f0600b3;
+        public static final int function_userloginstatus_statuskey=0x7f0600b1;
+        public static final int function_userloginstatus_usernamedefault=0x7f0600b2;
+        /**  Funcionalidad autenticacion de usuario esta no se traduce 
+         */
+        public static final int function_userloginstatus_usernamekey=0x7f0600b0;
         public static final int hello_world=0x7f060024;
+        public static final int menu_mproducto_=0x7f0600b9;
+        /**  SECCION DE MENUS 
+ Menú modulo de productos 
+         */
+        public static final int menu_mproducto_itemadd=0x7f0600b6;
+        public static final int menu_mproducto_itemdelete=0x7f0600b8;
+        public static final int menu_mproducto_itemedit=0x7f0600b7;
         public static final int store_picture_message=0x7f060001;
         public static final int store_picture_title=0x7f060000;
-        public static final int sw_comercio_java_msgfinregistrocomer_error=0x7f060081;
-        public static final int sw_comercio_java_msgfinregistroproduct_error=0x7f060083;
+        public static final int sw_comercio_java_msgfincategoriacomercio_error=0x7f060090;
+        public static final int sw_comercio_java_msgfinregistrocomer_error=0x7f06008c;
+        public static final int sw_comercio_java_msgfinregistroproduct_error=0x7f06008e;
+        public static final int sw_comercio_java_msgfinusuariocomercioget_error=0x7f060092;
+        /**  SERVICIO WEB categorias comercio todas sus operaciones 
+         */
+        public static final int sw_comercio_java_msginiciocategoriacomercio=0x7f06008f;
         /**  SERVICIO WEB comercio todas sus operaciones 
          */
-        public static final int sw_comercio_java_msginicioregistrocomer=0x7f060080;
+        public static final int sw_comercio_java_msginicioregistrocomer=0x7f06008b;
         /**  SERVICIO WEB producto todas sus operaciones 
          */
-        public static final int sw_comercio_java_msginicioregistroproduct=0x7f060082;
-        public static final int sw_usuario_java_msgfinregistrouser_error=0x7f060095;
-        public static final int sw_usuario_java_msginicioregistrouser=0x7f060096;
+        public static final int sw_comercio_java_msginicioregistroproduct=0x7f06008d;
+        /**  SERVICIO WEB usuarios todas sus operaciones 
+         */
+        public static final int sw_comercio_java_msginiciousuariocomercioget=0x7f060091;
+        public static final int sw_usuario_java_msgfinregistrouser_error=0x7f0600a4;
+        public static final int sw_usuario_java_msginicioregistrouser=0x7f0600a5;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */

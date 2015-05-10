@@ -4,6 +4,8 @@ package una.android.rapimoncha.entidades;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.util.Log;
+
 import una.android.rapimoncha.interfaces.IJsonable;
 
 import java.text.DateFormat;
@@ -94,15 +96,29 @@ public class Usuario implements IJsonable {
            usuariosub.put("sexo", getSeUsuario());
            usuariosub.put("user", getUsername());
            usuariosub.put("password", getPassword());
+          
+          
+           
+           
+           /*
+            *  usuariosub.put("idusuario", getIdUsuario());
+           usuariosub.put("nousuario", getNoUsuario());
+           usuariosub.put("a1usuario", getA1Usuario());
+           usuariosub.put("a2usuario", getA2Usuario());
+           usuariosub.put("fenacimiento", getDateTimeFeNacimiento());
+           usuariosub.put("sexo", getSeUsuario());
+           usuariosub.put("user", getUsername());
+           usuariosub.put("password", getPassword());
            JSONArray json_usuario_=new JSONArray();
            json_usuario_.put(usuariosub);
            finale.put("usuario",json_usuario_);
+            */
        }catch(Exception ex){
            ex.printStackTrace();
 
         }
-
-        return finale;
+       Log.i("Resultado usuario",usuariosub.toString());
+        return usuariosub;
     }
 
 	public String getUsername() {

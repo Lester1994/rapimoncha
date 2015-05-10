@@ -13,364 +13,392 @@ import java.util.Iterator;
  * Created by Lester on 31/03/2015.
  */
 public class Comercio implements IJsonable {
-    private int idComercio;
-    private String noComerncio;
-    private String diComercio;
-    private String prComercio;
-    private String t1Comercio;
-    private String t2Comercio;
-    private String emComercio;
-    private ArrayList<CategoriaComercio> caComercio;
-    private ArrayList<Galeria> imagenes;
-    private ArrayList<Subcripcion> subscriptores;
-    private ArrayList<GeoLocalizacion>geolocalizaciones;
-    private ArrayList<Promocion> promociones;
-    private ArrayList<Producto>productos;
-    private ArrayList<SolicitudCliente>solicitudes;
-    private ArrayList<Preferencia> preferencias;
+	private int idComercio;
+	private String noComerncio;
+	private String diComercio;
+	private String prComercio;
+	private String t1Comercio;
+	private String t2Comercio;
+	private String emComercio;
+	private ArrayList<CategoriaComercio> caComercio;
+	private ArrayList<Galeria> imagenes;
+	private ArrayList<Subcripcion> subscriptores;
+	private ArrayList<GeoLocalizacion> geolocalizaciones;
+	private ArrayList<Promocion> promociones;
+	private ArrayList<Producto> productos;
+	private ArrayList<SolicitudCliente> solicitudes;
+	private ArrayList<Preferencia> preferencias;
+	private Usuario usuario;
 
-    public Comercio() {
-    }
+	public Comercio() {
+	}
 
-    public int getIdComercio() {
-        return idComercio;
-    }
+	public int getIdComercio() {
+		return idComercio;
+	}
 
-    public void setIdComercio(int idComercio) {
-        this.idComercio = idComercio;
-    }
+	public void setIdComercio(int idComercio) {
+		this.idComercio = idComercio;
+	}
 
-    public String getNoComerncio() {
-        return noComerncio;
-    }
-    public void limpiarImagenes(){
-    	if(this.imagenes!=null){
-    		
-    	this.imagenes.clear();
-    	}
-    
-    }
-    public void setNoComerncio(String noComerncio) {
-        this.noComerncio = noComerncio;
-    }
+	public String getNoComerncio() {
+		return noComerncio;
+	}
 
-    public String getDiComercio() {
-        return diComercio;
-    }
+	public void limpiarImagenes() {
+		if (this.imagenes != null) {
 
-    public void setDiComercio(String diComercio) {
-        this.diComercio = diComercio;
-    }
+			this.imagenes.clear();
+		}
 
-    public String getPrComercio() {
-        return prComercio;
-    }
+	}
 
-    public void setPrComercio(String prComercio) {
-        this.prComercio = prComercio;
-    }
+	public void setNoComerncio(String noComerncio) {
+		this.noComerncio = noComerncio;
+	}
 
-    public String getT1Comercio() {
-        return t1Comercio;
-    }
+	public String getDiComercio() {
+		return diComercio;
+	}
 
-    public void setT1Comercio(String t1Comercio) {
-        this.t1Comercio = t1Comercio;
-    }
+	public void setDiComercio(String diComercio) {
+		this.diComercio = diComercio;
+	}
 
-    public String getT2Comercio() {
-        return t2Comercio;
-    }
+	public String getPrComercio() {
+		return prComercio;
+	}
 
-    public void setT2Comercio(String t2Comercio) {
-        this.t2Comercio = t2Comercio;
-    }
+	public void setPrComercio(String prComercio) {
+		this.prComercio = prComercio;
+	}
 
-    public String getEmComercio() {
-        return emComercio;
-    }
+	public String getT1Comercio() {
+		return t1Comercio;
+	}
 
-    public void setEmmComercio(String emmComercio) {
-        this.emComercio = emmComercio;
-    }
+	public void setT1Comercio(String t1Comercio) {
+		this.t1Comercio = t1Comercio;
+	}
 
-    public ArrayList<CategoriaComercio> getCaComercio() {
-        return caComercio;
-    }
+	public String getT2Comercio() {
+		return t2Comercio;
+	}
 
-    public void setCaComercio(ArrayList<CategoriaComercio> caComercio) {
-        this.caComercio = caComercio;
-    }
+	public void setT2Comercio(String t2Comercio) {
+		this.t2Comercio = t2Comercio;
+	}
 
-    public ArrayList<Galeria> getImagenes() {
-        return imagenes;
-    }
+	public String getEmComercio() {
+		return emComercio;
+	}
 
-    public void setImagenes(ArrayList<Galeria> imagenes) {
-        this.imagenes = imagenes;
-    }
+	public void setEmmComercio(String emmComercio) {
+		this.emComercio = emmComercio;
+	}
 
-    public ArrayList<Subcripcion> getSubscriptores() {
-        return subscriptores;
-    }
+	public ArrayList<CategoriaComercio> getCaComercio() {
+		return caComercio;
+	}
 
-    public void setSubscriptores(ArrayList<Subcripcion> subscriptores) {
-        this.subscriptores = subscriptores;
-    }
+	public void setCaComercio(ArrayList<CategoriaComercio> caComercio) {
+		this.caComercio = caComercio;
+	}
 
-    public ArrayList<GeoLocalizacion> getUbicacionmapa() {
-        return geolocalizaciones;
-    }
+	public ArrayList<Galeria> getImagenes() {
+		return imagenes;
+	}
 
-    public void setUbicacionmapa(ArrayList<GeoLocalizacion> ubicacionmapa) {
-        this.geolocalizaciones = ubicacionmapa;
-    }
+	public void setImagenes(ArrayList<Galeria> imagenes) {
+		this.imagenes = imagenes;
+	}
 
-    public ArrayList<Promocion> getPromocion() {
-        return promociones;
-    }
+	public ArrayList<Subcripcion> getSubscriptores() {
+		return subscriptores;
+	}
 
-    public void setPromocion(ArrayList<Promocion> promocion) {
-        this.promociones = promocion;
-    }
+	public void setSubscriptores(ArrayList<Subcripcion> subscriptores) {
+		this.subscriptores = subscriptores;
+	}
 
-    public ArrayList<Producto> getProductos() {
-        return productos;
-    }
+	public ArrayList<GeoLocalizacion> getUbicacionmapa() {
+		return geolocalizaciones;
+	}
 
-    public void setProductos(ArrayList<Producto> productos) {
-        this.productos = productos;
-    }
+	public void setUbicacionmapa(ArrayList<GeoLocalizacion> ubicacionmapa) {
+		this.geolocalizaciones = ubicacionmapa;
+	}
 
-    public ArrayList<SolicitudCliente> getSolicitudes() {
-        return solicitudes;
-    }
+	public ArrayList<Promocion> getPromocion() {
+		return promociones;
+	}
 
-    public void setSolicitudes(ArrayList<SolicitudCliente> solicitudes) {
-        this.solicitudes = solicitudes;
-    }
-    public void addPromocion(Promocion promocion){
-        if(promociones==null){
-            promociones=new ArrayList<Promocion>();
-        }
+	public void setPromocion(ArrayList<Promocion> promocion) {
+		this.promociones = promocion;
+	}
 
-        promociones.add(promocion);
-    }
-    public void addProducto(Producto producto){
-        if(productos==null){
-            productos=new ArrayList<Producto>();
-        }
+	public ArrayList<Producto> getProductos() {
+		return productos;
+	}
 
-        productos.add(producto);
-    }
+	public void setProductos(ArrayList<Producto> productos) {
+		this.productos = productos;
+	}
 
-    public void addSubscripcion(Subcripcion subcripcion){
-        if(subscriptores==null){
-            subscriptores=new ArrayList<Subcripcion>();
-        }
+	public ArrayList<SolicitudCliente> getSolicitudes() {
+		return solicitudes;
+	}
 
-        subscriptores.add(subcripcion);
-    }
+	public void setSolicitudes(ArrayList<SolicitudCliente> solicitudes) {
+		this.solicitudes = solicitudes;
+	}
 
-    public void addSolicitud(SolicitudCliente solicitud){
-        if(solicitudes==null){
-            solicitudes=new ArrayList<SolicitudCliente>();
-        }
+	public void addPromocion(Promocion promocion) {
+		if (promociones == null) {
+			promociones = new ArrayList<Promocion>();
+		}
 
-        solicitudes.add(solicitud);
-    }
-    public void addClasificacion(CategoriaComercio clasificacion){
-        if(this.caComercio==null){
-            caComercio=new ArrayList<CategoriaComercio>();
-        }
+		promociones.add(promocion);
+	}
 
-        caComercio.add(clasificacion);
-    }
-    public void limpiarClasificaciones(){
-    	
-        if(this.caComercio==null){
-            caComercio=new ArrayList<CategoriaComercio>();
-        }
+	public void addProducto(Producto producto) {
+		if (productos == null) {
+			productos = new ArrayList<Producto>();
+		}
 
-        caComercio.clear();  	
-    
-    }
-    public void addImagen(Galeria imagen){
-        if(imagenes==null){
-            imagenes=new ArrayList<Galeria>();
-        }
+		productos.add(producto);
+	}
 
-        imagenes.add(imagen);
-    }
-    public void limpiarPreferencias(){
-    	
-        if(this.preferencias==null){
-        	preferencias=new ArrayList<Preferencia>();
-        }
+	public void addSubscripcion(Subcripcion subcripcion) {
+		if (subscriptores == null) {
+			subscriptores = new ArrayList<Subcripcion>();
+		}
 
-        preferencias.clear();  	
-    
-    }
-    public void addPreferencia(Preferencia preferencia){
-        if(preferencias==null){
-            preferencias=new ArrayList<Preferencia>();
-        }
+		subscriptores.add(subcripcion);
+	}
 
-        preferencias.add(preferencia);
-    }
-    
-    public ArrayList<Preferencia>getPreferenciascomercio(){
-    	return this.preferencias;
-    }
-    public void addGeolocalizacion(GeoLocalizacion geolocalizacion){
-        if(geolocalizaciones==null){
-            geolocalizaciones=new ArrayList<GeoLocalizacion>();
-        }
+	public void addSolicitud(SolicitudCliente solicitud) {
+		if (solicitudes == null) {
+			solicitudes = new ArrayList<SolicitudCliente>();
+		}
 
-        geolocalizaciones.add(geolocalizacion);
-    }
+		solicitudes.add(solicitud);
+	}
 
-    @Override
-    public String toString(){
-        String resp=this.t2Comercio+
-        		(this.geolocalizaciones!=null?this.geolocalizaciones.size():"geofalso")
-        		+(this.caComercio!=null?this.caComercio.size():"categorias falso")
-        		+(noComerncio);
-        
+	public void addClasificacion(CategoriaComercio clasificacion) {
+		if (this.caComercio == null) {
+			caComercio = new ArrayList<CategoriaComercio>();
+		}
 
-        return resp;
-    }
+		caComercio.add(clasificacion);
+	}
 
-    @Override
-    public JSONObject getJson() {
-        JSONObject finale=new JSONObject();
+	public void limpiarClasificaciones() {
 
-        try {
-            JSONObject json_comercio=new JSONObject();
-            json_comercio.put("idcomercio", this.idComercio);
-            json_comercio.put("nocomercio", this.noComerncio);
-            json_comercio.put("dicomercio",this.diComercio);
-            json_comercio.put("prcomercio",this.prComercio);
-            json_comercio.put("t1comercio",this.t1Comercio);
-            json_comercio.put("t2comercio",this.t2Comercio);
-            json_comercio.put("emcomercio",this.emComercio);
+		if (this.caComercio == null) {
+			caComercio = new ArrayList<CategoriaComercio>();
+		}
 
+		caComercio.clear();
 
-            //insertar imagenes
-            Iterator<Galeria>iter_galeria=this.imagenes!=null?this.imagenes.iterator():null;
-            JSONArray js_imagenescomer=new JSONArray();
-            if(iter_galeria!=null){
-            	Log.i("Mi nota","Se agregaron se agrego imagenes");
-                while(iter_galeria.hasNext()){
-                    Galeria aux=iter_galeria.next();
-                    JSONObject obaux=aux.getJson();
-                    js_imagenescomer.put(obaux);
-                }
-            }else{
-            	Log.i("Mi nota","No se agrego imagenes");
-            }
-            json_comercio.put("imagenes",js_imagenescomer);
+	}
 
-            //insertar geolozcalizacion
-            Iterator<GeoLocalizacion>iter_geolocalizacion=this.geolocalizaciones!=null?this.geolocalizaciones.iterator():null;
-            JSONArray js_geolocalizacioncomer=new JSONArray();
-            if(iter_geolocalizacion!=null){
+	public void addImagen(Galeria imagen) {
+		if (imagenes == null) {
+			imagenes = new ArrayList<Galeria>();
+		}
 
-                while(iter_geolocalizacion.hasNext()){
-                    GeoLocalizacion aux=iter_geolocalizacion.next();
-                    JSONObject obaux=aux.getJson();
-                    js_geolocalizacioncomer.put(obaux);
-                }
-            }
-            json_comercio.put("geolocalizaciones",js_geolocalizacioncomer);
+		imagenes.add(imagen);
+	}
 
-            //insertar preferencias
-            Iterator<Preferencia>iter_preferencia=this.preferencias!=null?this.preferencias.iterator():null;
-            JSONArray js_preferencias=new JSONArray();
-            if(iter_preferencia!=null){
+	public void limpiarPreferencias() {
 
-                while(iter_preferencia.hasNext()){
-                    Preferencia aux=iter_preferencia.next();
-                    JSONObject obaux=aux.getJson();
-                    js_preferencias.put(obaux);
-                }
-            }
-            json_comercio.put("preferencias",js_preferencias);
+		if (this.preferencias == null) {
+			preferencias = new ArrayList<Preferencia>();
+		}
 
+		preferencias.clear();
 
-            //insertar clasificaciones
-            Iterator<CategoriaComercio>iter_clasificaciones=this.caComercio!=null?this.caComercio.iterator():null;
-            JSONArray js_clasificaciones=new JSONArray();
-            if(iter_clasificaciones!=null){
+	}
 
-                while(iter_clasificaciones.hasNext()){
-                    CategoriaComercio aux=iter_clasificaciones.next();
-                    JSONObject obaux=aux.getJson();
-                    js_clasificaciones.put(obaux);
-                }
-            }
-            json_comercio.put("clasificaciones",js_clasificaciones);
+	public void addPreferencia(Preferencia preferencia) {
+		if (preferencias == null) {
+			preferencias = new ArrayList<Preferencia>();
+		}
 
+		preferencias.add(preferencia);
+	}
 
+	public ArrayList<Preferencia> getPreferenciascomercio() {
+		return this.preferencias;
+	}
 
+	public void addGeolocalizacion(GeoLocalizacion geolocalizacion) {
+		if (geolocalizaciones == null) {
+			geolocalizaciones = new ArrayList<GeoLocalizacion>();
+		}
 
-            //insertar subscripciones
-            Iterator<Subcripcion>iter_subscripciones=this.subscriptores!=null?this.subscriptores.iterator():null;
-            JSONArray js_subscripciones=new JSONArray();
-            if(iter_subscripciones!=null){
-                while(iter_subscripciones.hasNext()){
-                    Subcripcion aux=iter_subscripciones.next();
-                    JSONObject obaux=aux.getJson();
-                    js_subscripciones.put(obaux);
-                }
-            }
-            json_comercio.put("subscripciones",js_subscripciones);
+		geolocalizaciones.add(geolocalizacion);
+	}
 
+	@Override
+	public String toString() {
+		String resp = this.t2Comercio
+				+ (this.geolocalizaciones != null ? this.geolocalizaciones
+						.size() : "geofalso")
+				+ (this.caComercio != null ? this.caComercio.size()
+						: "categorias falso") + (noComerncio);
 
-            //insertar productos
-            Iterator<Producto>iter_productos=this.productos!=null?this.productos.iterator():null;
-            JSONArray js_productos=new JSONArray();
-            if(iter_productos!=null){
-                while(iter_productos.hasNext()){
-                    Producto aux=iter_productos.next();
-                    JSONObject obaux=aux.getJson();
-                    js_productos.put(obaux);
-                }
-            }
-            json_comercio.put("productos",js_productos);
+		return resp;
+	}
 
-            //insertar solicitudes cliente
-            Iterator<SolicitudCliente>iter_solicitudes=this.solicitudes!=null?this.solicitudes.iterator():null;
-            JSONArray js_solicitudes=new JSONArray();
-            if(iter_solicitudes!=null){
+	@Override
+	public JSONObject getJson() {
+		JSONObject finale = new JSONObject();
 
-                while(iter_solicitudes.hasNext()){
-                    SolicitudCliente aux=iter_solicitudes.next();
-                    JSONObject obaux=aux.getJson();
-                    js_solicitudes.put(obaux);
-                }
-            }
-            json_comercio.put("solicitudes",js_solicitudes);
+		try {
+			JSONObject json_comercio = new JSONObject();
+			json_comercio.put("idcomercio", this.idComercio);
+			json_comercio.put("nocomercio", this.noComerncio);
+			json_comercio.put("dicomercio", this.diComercio);
+			json_comercio.put("prcomercio", this.prComercio);
+			json_comercio.put("t1comercio", this.t1Comercio);
+			json_comercio.put("t2comercio", this.t2Comercio);
+			json_comercio.put("emcomercio", this.emComercio);
 
-            //insertar clasificaciones
-            Iterator<Promocion>iter_promociones=this.promociones!=null?this.promociones.iterator():null;
-            JSONArray js_promociones=new JSONArray();
-            if(iter_promociones!=null){
-                while(iter_promociones.hasNext()){
-                    Promocion aux=iter_promociones.next();
-                    JSONObject obaux=aux.getJson();
-                    js_promociones.put(obaux);
-                }
-            }
-            json_comercio.put("promociones",js_promociones);
-            JSONArray json_comercio_=new JSONArray();
-            json_comercio_.put(json_comercio);
-            finale.put("comercio",json_comercio_);
+			// usuario	
+			if (usuario != null) {
+				JSONArray js_usuariocomer = new JSONArray();
+				JSONObject obauxa = usuario.getJson();
+				js_usuariocomer.put(obauxa);
+				json_comercio.put("usuario", js_usuariocomer);
+			}
+			// insertar imagenes
+			Iterator<Galeria> iter_galeria = this.imagenes != null ? this.imagenes
+					.iterator() : null;
+			JSONArray js_imagenescomer = new JSONArray();
+			if (iter_galeria != null) {
+				Log.i("Mi nota", "Se agregaron se agrego imagenes");
+				while (iter_galeria.hasNext()) {
+					Galeria aux = iter_galeria.next();
+					JSONObject obaux = aux.getJson();
+					js_imagenescomer.put(obaux);
+				}
+			} else {
+				Log.i("Mi nota", "No se agrego imagenes");
+			}
+			json_comercio.put("imagenes", js_imagenescomer);
 
-            Log.i("resultado",finale.toString());
-        }catch(Exception ex){
-            ex.printStackTrace();
-        }
-        return finale;
-    }
+			// insertar geolozcalizacion
+			Iterator<GeoLocalizacion> iter_geolocalizacion = this.geolocalizaciones != null ? this.geolocalizaciones
+					.iterator() : null;
+			JSONArray js_geolocalizacioncomer = new JSONArray();
+			if (iter_geolocalizacion != null) {
+
+				while (iter_geolocalizacion.hasNext()) {
+					GeoLocalizacion aux = iter_geolocalizacion.next();
+					JSONObject obaux = aux.getJson();
+					js_geolocalizacioncomer.put(obaux);
+				}
+			}
+			json_comercio.put("geolocalizaciones", js_geolocalizacioncomer);
+
+			// insertar preferencias
+			Iterator<Preferencia> iter_preferencia = this.preferencias != null ? this.preferencias
+					.iterator() : null;
+			JSONArray js_preferencias = new JSONArray();
+			if (iter_preferencia != null) {
+
+				while (iter_preferencia.hasNext()) {
+					Preferencia aux = iter_preferencia.next();
+					JSONObject obaux = aux.getJson();
+					js_preferencias.put(obaux);
+				}
+			}
+			json_comercio.put("preferencias", js_preferencias);
+
+			// insertar clasificaciones
+			Iterator<CategoriaComercio> iter_clasificaciones = this.caComercio != null ? this.caComercio
+					.iterator() : null;
+			JSONArray js_clasificaciones = new JSONArray();
+			if (iter_clasificaciones != null) {
+
+				while (iter_clasificaciones.hasNext()) {
+					CategoriaComercio aux = iter_clasificaciones.next();
+					JSONObject obaux = aux.getJson();
+					js_clasificaciones.put(obaux);
+				}
+			}
+			json_comercio.put("clasificaciones", js_clasificaciones);
+
+			// insertar subscripciones
+			Iterator<Subcripcion> iter_subscripciones = this.subscriptores != null ? this.subscriptores
+					.iterator() : null;
+			JSONArray js_subscripciones = new JSONArray();
+			if (iter_subscripciones != null) {
+				while (iter_subscripciones.hasNext()) {
+					Subcripcion aux = iter_subscripciones.next();
+					JSONObject obaux = aux.getJson();
+					js_subscripciones.put(obaux);
+				}
+			}
+			json_comercio.put("subscripciones", js_subscripciones);
+
+			// insertar productos
+			Iterator<Producto> iter_productos = this.productos != null ? this.productos
+					.iterator() : null;
+			JSONArray js_productos = new JSONArray();
+			if (iter_productos != null) {
+				while (iter_productos.hasNext()) {
+					Producto aux = iter_productos.next();
+					JSONObject obaux = aux.getJson();
+					js_productos.put(obaux);
+				}
+			}
+			json_comercio.put("productos", js_productos);
+
+			// insertar solicitudes cliente
+			Iterator<SolicitudCliente> iter_solicitudes = this.solicitudes != null ? this.solicitudes
+					.iterator() : null;
+			JSONArray js_solicitudes = new JSONArray();
+			if (iter_solicitudes != null) {
+
+				while (iter_solicitudes.hasNext()) {
+					SolicitudCliente aux = iter_solicitudes.next();
+					JSONObject obaux = aux.getJson();
+					js_solicitudes.put(obaux);
+				}
+			}
+			json_comercio.put("solicitudes", js_solicitudes);
+
+			// insertar clasificaciones
+			Iterator<Promocion> iter_promociones = this.promociones != null ? this.promociones
+					.iterator() : null;
+			JSONArray js_promociones = new JSONArray();
+			if (iter_promociones != null) {
+				while (iter_promociones.hasNext()) {
+					Promocion aux = iter_promociones.next();
+					JSONObject obaux = aux.getJson();
+					js_promociones.put(obaux);
+				}
+			}
+			json_comercio.put("promociones", js_promociones);
+			JSONArray json_comercio_ = new JSONArray();
+			json_comercio_.put(json_comercio);
+			finale.put("comercio", json_comercio_);
+
+			Log.i("resultado", finale.toString());
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return finale;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 }
