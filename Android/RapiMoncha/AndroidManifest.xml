@@ -32,7 +32,7 @@
 
         <activity
             android:name=".Main"
-            android:label="@string/app_name" >
+            android:label="@string/activity_main_titulo" >
         </activity>
         <activity
             android:name="una.android.rapimoncha.activities.WelcomeScreen"
@@ -46,11 +46,22 @@
             android:name="una.android.rapimoncha.activities.modulos.producto.ActualizarProductoScreen"
             android:label="@string/fragment_updateproducto3_titulo" >
         </activity>
-        
+        <activity
+            android:name="una.android.rapimoncha.activities.modulos.otros.EvaluacionAppScreen"
+            android:label="@string/activity_evaluacion_aplicacion_titulo" >
+        </activity>           
         <activity
             android:name="una.android.rapimoncha.activities.modulos.producto.ListadoProductosScreen"
             android:label="@string/activity_listadoproductos_titulo" >
-        </activity>        
+        </activity>     
+        <activity
+            android:name="una.android.rapimoncha.activities.modulos.solicitudes.ListadoSolicitudesScreen"
+            android:label="@string/activity_listadosolicitudes_titulo" >
+        </activity>  
+        <activity
+            android:name="una.android.rapimoncha.activities.modulos.solicitudes.DetalleSolicitudScreen"
+            android:label="@string/activity_detalle_solicitud_titulo" >
+        </activity>                     
         <activity
             android:name="una.android.rapimoncha.activities.RegistroComercioScreen"
             android:label="@string/activity_registrocomercio_titulo" >
@@ -66,7 +77,31 @@
          <activity
             android:name="una.android.rapimoncha.activities.modulos.usuario.DatosLoginUsuarioScreen"
             android:label="@string/activity_datosloginusuario_titulo" >
+        </activity> 
+         <activity
+            android:name="una.android.rapimoncha.activities.modulos.comercio.ActualizarComercioScreen"
+            android:label="@string/activity_datosloginusuario_titulo" >
         </activity>        
+         <activity
+            android:name="una.android.rapimoncha.activities.modulos.usuario.DetalleUsuarioScreen"
+            android:label="@string/activity_detalle_usuario_titulo" >
+        </activity>  
+         <activity
+            android:name="una.android.rapimoncha.activities.modulos.otros.AcercaDeScreen"
+            android:label="@string/activity_acercade_titulo" >
+        </activity> 
+         <activity
+            android:name="una.android.rapimoncha.activities.modulos.usuario.LogoutScreen"
+            android:label="@string/activity_logout_titulo" >
+        </activity>   
+         <activity
+            android:name="una.android.rapimoncha.activities.modulos.otros.ExitScreen"
+            android:label="@string/activity_exit_titulo" >
+        </activity> 
+         <activity
+            android:name="una.android.rapimoncha.activities.modulos.configuracion.ListadoConfiguracionesScreen"
+            android:label="@string/activity_listadoconfiguraciones_titulo" >
+        </activity>                                          
         <activity
             android:name="una.android.rapimoncha.activities.SplashScreen"
             android:configChanges="orientation"
