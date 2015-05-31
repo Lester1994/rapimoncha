@@ -15,9 +15,9 @@ require_once $RM_DATAACCESS_DIR.'Galeria.php';
                $ds_comer=new DS_Comercio();
                $ds_comer->agregarProductosComercio($comercio,$dbase);
       }
-      function eliminarProductosComercio($idproducto,$idcomercio,$dbase){
+      function eliminarProductoComercio($idproducto,$idcomercio,$dbase){
                $ds_producto=new DS_Producto();
-               echo $ds_producto->eliminarProductoComercio($idproducto,$idcomercio,$dbase);
+               $ds_producto->eliminarProductoComercio($idproducto,$idcomercio,$dbase);
       }     
         
       function getProductosComercio($idcomercio,$dbase){
@@ -66,9 +66,14 @@ if(isset($accion)&&(strlen($accion)>3)){
 			  $extra=$_POST["extra"];
 			$pro->actualizarProductoComercio($en,$extra,$dbase);
 			break;
+			case 'eliminar_producto':
+			$pro=new LN_Producto();
+			  $extra=$_POST["extra"];
+			$pro->eliminarProductoComercio($data,$extra,$dbase);
+			break;
 			default:
 					$resp=array();
-					$resp['codigo']=2;
+					$resp['codigo']=3;
 					$resp['mensaje']='Ninguna opcion correcta';
 					echo json_encode($resp);
 			break;
@@ -77,7 +82,7 @@ if(isset($accion)&&(strlen($accion)>3)){
 	
 }else{
 	$resp=array();
-	$resp['codigo']=2;
+	$resp['codigo']=3;
 	$resp['mensaje']='Solicitud incorrecta';
 	echo json_encode($resp);
 	return;

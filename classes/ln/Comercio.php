@@ -15,6 +15,11 @@ require_once $RM_ENTITIES_DIR.'Comercio.php';
                $ds_comer=new DS_Comercio();
                $ds_comer->agregarComercio($comercio,$dbase);
         }
+        function actualizarComercio($comercio,$dbase){
+               $ds_comer=new DS_Comercio();
+               $ds_comer->actualizarComercio($comercio,$dbase);
+        }		
+		
         
        function agregarProductosComercio($comercio,$dbase){
                $ds_comer=new DS_Comercio();
@@ -50,7 +55,12 @@ if(isset($accion)&&(strlen($accion)>3)){
 					$comer->agregarComercio($en_comer,$dbase);
 			
 			break;
-			case 'modificar_comercio':break;
+			case 'modificar_comercio':
+			$en_comer=new EN_Comercio();
+					$en_comer->generarComercio($data);
+					$comer=new LN_Comercio();
+					$comer->actualizarComercio($en_comer,$dbase);
+			break;
 			case 'agregar_producto':
 					$en_comer=new EN_Comercio();
 					$en_comer->generarComercio($data);

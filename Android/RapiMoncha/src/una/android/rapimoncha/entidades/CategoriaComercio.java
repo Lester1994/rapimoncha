@@ -45,4 +45,16 @@ public class CategoriaComercio implements IJsonable{
     public void setIdTipoCategoria(int idTipoCategoria) {
         this.idTipoCategoria = idTipoCategoria;
     }
+    
+    public boolean generateFromJson(JSONObject json){
+		 boolean resp=true;
+		 try{
+			 this.setIdTipoCategoria(json.getInt("idCategoria"));
+			 this.setNoTipoCategoria(json.getString("noCategoria"));
+			 this.seleccionado=true;
+		 }catch(Exception ex){
+			 ex.printStackTrace();
+		 }
+		 return resp;
+    }
 }

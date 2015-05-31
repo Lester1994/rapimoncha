@@ -93,44 +93,46 @@ public class RegistroComercio3Fragment extends Fragment implements IGenComercio 
 
 		// Getting Current Location
 		Location location = locationManager.getLastKnownLocation(provider);
+		try {
+			if (map.isMyLocationEnabled()) {
+				LatLng yo = new LatLng(location.getLatitude(),
+						location.getLongitude());
+				map.addMarker(new MarkerOptions()
+						.title("Estás Aquí, según gps")
+						.icon(BitmapDescriptorFactory
+								.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+						.position(yo));
 
-		if (map.isMyLocationEnabled()) {
-			LatLng yo = new LatLng(location.getLatitude(),
-					location.getLongitude());
-			 map.addMarker(new MarkerOptions()
-					.title("Estás Aquí, según gps")
-					.icon(BitmapDescriptorFactory
-							.defaultMarker(BitmapDescriptorFactory.HUE_RED))
-					.position(yo));
-
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
 		}
 		map.setOnMapClickListener(new OnMapClickListener() {
 
 			@Override
 			public void onMapClick(LatLng arg0) {
 				addMarker(arg0.latitude, arg0.longitude);
-				
 
 			}
 		});
 		map.setOnMarkerClickListener(new OnMarkerClickListener() {
-			
+
 			@Override
 			public boolean onMarkerClick(Marker marker) {
 				// TODO Auto-generated method stub
-				int size=ubicaciones.size();
-				for(int a=0;a<size;a++){
-					if(ubicaciones.get(a).getPosition().latitude==marker.getPosition().latitude&&
-							ubicaciones.get(a).getPosition().longitude==marker.getPosition().longitude){
+				int size = ubicaciones.size();
+				for (int a = 0; a < size; a++) {
+					if (ubicaciones.get(a).getPosition().latitude == marker
+							.getPosition().latitude
+							&& ubicaciones.get(a).getPosition().longitude == marker
+									.getPosition().longitude) {
 						ubicaciones.remove(a);
-						a*=size;
+						a *= size;
 						marker.remove();
 						break;
 					}
 				}
-				
-				
-			
+
 				return true;
 			}
 		});
@@ -140,12 +142,12 @@ public class RegistroComercio3Fragment extends Fragment implements IGenComercio 
 	private void addMarker(double lat, double lon) {
 		LatLng ltn = new LatLng(lat, lon);
 
-		Marker marker=(map.addMarker(new MarkerOptions()
+		Marker marker = (map.addMarker(new MarkerOptions()
 				.title("lat: " + lat + " long: " + lon)
 				.icon(BitmapDescriptorFactory
 						.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
 				.position(ltn)));
-		
+
 		ubicaciones.add(marker);
 	}
 
@@ -164,18 +166,18 @@ public class RegistroComercio3Fragment extends Fragment implements IGenComercio 
 	@Override
 	public boolean actualizarComercio() {
 		// TODO Auto-generated method stub
-		boolean resp= true;
-		try{
+		boolean resp = true;
+		try {
 			for (Marker marker : ubicaciones) {
 				GeoLocalizacion geo = new GeoLocalizacion();
 				geo.setLatitud(marker.getPosition().latitude);
 				geo.setLongitud(marker.getPosition().longitude);
 				comercio.addGeolocalizacion(geo);
 			}
-		}catch(Exception ex){
+		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-		Log.i("Datos finales geo localizacion","tamanio "+ubicaciones.size());
+		Log.i("Datos finales geo localizacion", "tamanio " + ubicaciones.size());
 		return resp;
 	}
 

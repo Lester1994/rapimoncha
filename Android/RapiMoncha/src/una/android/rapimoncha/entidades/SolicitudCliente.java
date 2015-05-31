@@ -4,8 +4,11 @@ package una.android.rapimoncha.entidades;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.util.Log;
+
 import una.android.rapimoncha.interfaces.IJsonable;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -15,7 +18,7 @@ import java.util.Iterator;
 /**
  * Created by Lester on 31/03/2015.
  */
-public class SolicitudCliente implements IJsonable {
+public class SolicitudCliente implements IJsonable, Serializable {
     private int idSolicitud;
     private Calendar feSolicitud;
     private int esSolicitud;
@@ -90,6 +93,12 @@ public class SolicitudCliente implements IJsonable {
         this.detalles = detalles;
     }
 
+    public void addDetalle(Producto producto){
+    	if(this.detalles==null){
+    		this.detalles=new ArrayList<Producto>();
+    	}
+    	detalles.add(producto);
+    }
     @Override
     public JSONObject getJson() {
         JSONObject obaux=new JSONObject();
@@ -123,5 +132,49 @@ public class SolicitudCliente implements IJsonable {
         }
 
         return obaux;
+    }
+    
+    public boolean generateFromJson(JSONObject json){
+    	boolean resp=true;
+    	try{
+    	this.idSolicitud=json.getInt("idSolicitud");
+    	String fechasoli=json.getString("feSolicitud");
+    	this.esSolicitud=json.getInt("esSolicitud");
+    	String eshasta=json.getString("eHastaSoli");
+    	this.coFinalSoli=json.getDouble("coFInalSoli");
+    	JSONObject usuojb=json.getJSONObject("usuario");
+    	this.usuario=new Usuario();
+    	this.usuario.generateFromJson(usuojb);
+    	JSONArray jsonproductos=json.getJSONArray("detalles");
+    	int size=0;
+    	if(jsonproductos!=null){
+    		size=jsonproductos.length();
+    		for(int a=0;a<size;a++){
+    			JSONObject jsonproducto=jsonproductos.getJSONObject(a);
+    			Producto producto=new Producto();
+    			producto.generateFromJson(jsonproducto);
+    			addDetalle(producto);
+    			
+    		}
+    	}
+
+    	DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    	
+    	if(this.feSolicitud==null){
+    		feSolicitud=Calendar.getInstance();
+    	}
+    	feSolicitud.setTime(dateFormat.parse(fechasoli));
+    	
+    	if(this.eHastaSoli==null){
+    		eHastaSoli=Calendar.getInstance();
+    	}
+    	eHastaSoli.setTime(dateFormat.parse(eshasta));
+    	
+    	
+    	}catch(Exception ex){
+    		ex.printStackTrace();
+    	}
+    	
+    	return resp;
     }
 }

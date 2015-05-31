@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/lblusuariosolicitante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Large Text"
+        android:clickable="true"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/lblfechasolicitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lblusuariosolicitante"
+        android:layout_below="@+id/lblusuariosolicitante"
+        android:layout_marginTop="8dp"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/lblproductossolicitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblfechasolicitud"
+        android:layout_alignBottom="@+id/lblfechasolicitud"
+        android:layout_toRightOf="@+id/lblfechasolicitud"
+        android:layout_marginLeft="10dp"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/lblcostofinalsolicitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lblfechasolicitud"
+        android:layout_below="@+id/lblfechasolicitud"
+        android:layout_marginTop="8dp"
+        android:layout_toLeftOf="@+id/lblproductossolicitud"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/lblesperohasta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblcostofinalsolicitud"
+        android:layout_alignBottom="@+id/lblcostofinalsolicitud"
+        android:layout_alignLeft="@+id/lblproductossolicitud"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/lblseparador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/lblcostofinalsolicitud"
+        android:gravity="center_horizontal"
+        android:text="---------------------------"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/btnresolversolicitud"
+    
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:layout_below="@+id/lblusuariosolicitante"
+        android:text="@string/layout_solicitud_listviewitem_btnresolversolicitud" />
+
+</RelativeLayout>

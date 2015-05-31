@@ -4,7 +4,8 @@
 
         function agregarProductoComercio($producto,$idcomercio,$db=null){
                    
-        
+          $sql= mysqli_query($db,"START TRANSACTION");
+              while(mysqli_more_results($db)&&mysqli_next_result($db)); 
               $ds_Galeria=new DS_Galeria();
           // echo "el precio es ".$producto->getPrProducto();
             $SQLstr = "call rm_sp_registrar_productocomercio
@@ -95,12 +96,17 @@
         
         
      function eliminarProductoComercio($idproducto,$idcomercio,$db=null){
+		 
+		    $sql= mysqli_query($db,"START TRANSACTION");
+		 
                 	$SQLstr = "call rm_sp_eliminar_productocomercio
-                    ('"  . $idcomercio ."','"  . $idproducto ."'@resultado);";
+                    ('"  . $idcomercio ."','"  . $idproducto ."',@resultado);";
+		 
             //echo $SQLstr;
             $resultado=array();
              while(mysqli_more_results($db)&&mysqli_next_result($db)); 
             $sql = mysqli_query($db,$SQLstr);
+		 //echo $idcomercio.'......'.$idproducto;
          if(!$sql){
           echo mysqli_error($db);
              exit();
@@ -114,7 +120,7 @@
             $error = (substr($msg, 0, 2) === 'e:');
             if($error){
                 $codigoresultado=3;
-                $mensaje="No se pudo eliminar el producto ";
+                $mensaje="No se pudo eliminar el producto ".$idproducto;
             }else{
                 $codigoresultado=2;
                 $mensaje="Se  pudo eliminar el  producto ".$msg;
@@ -122,9 +128,27 @@
             
             $resultado=array('codigo'=>$codigoresultado,'mensaje'=>$mensaje);
            
+		  $resp_final=array();
+		 
+		 
+             if($codigoresultado!=2){
+              //   echo "entreee rollback";
+                  while(mysqli_more_results($db)&&mysqli_next_result($db));  
+                 mysqli_query($db,"ROLLBACK");
+                $resp_final["codigo"]=3;
+				 $resp_final["mensaje"]="Proceso no completado (con errores)";
+             }else{
+               //   echo "entreee commit";
+                while(mysqli_more_results($db)&&mysqli_next_result($db)); 
+                 mysqli_query($db,"COMMIT"); 
+                $resp_final["codigo"]=2;
+				 $resp_final["mensaje"]="Proceso  completado (sin errores)";
+             }
              
+		 $resp_final["detalles"]=$resultado;
            // echo json_encode($resultado).'JSON LOCALIZACION'.$msg;
-            return $resultado;
+          //  return $resultado;
+		 echo json_encode($resp_final);
         }
         
         function getProductosComercio($idcomercio,$db=null){

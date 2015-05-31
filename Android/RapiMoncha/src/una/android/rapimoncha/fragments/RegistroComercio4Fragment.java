@@ -33,6 +33,7 @@ public class RegistroComercio4Fragment extends Fragment implements IGenComercio 
 
 	private Comercio comercio;
 	private ArrayList<Galeria> imagenes;
+	private ArrayList<Galeria> imagenes2;
 	private static final int RESULT_LOAD_IMAGE = 0;
 	BaseAdapter adapter;
 public RegistroComercio4Fragment() {
@@ -79,8 +80,8 @@ public RegistroComercio4Fragment() {
 			public boolean onItemLongClick(AdapterView<?> parent, View view,
 					int position, long id) {
 
-				imagenes.remove(position);
-				((GaleriaAdapter) adapter).setImagenes(imagenes);
+				imagenes2.remove(position);
+				((GaleriaAdapter) adapter).setImagenes(imagenes2);
 
 				return true;
 			}
@@ -93,6 +94,9 @@ public RegistroComercio4Fragment() {
 		if(comercio!=null&&comercio.getImagenes()!=null){
 			Log.i("Tamaño de la lista","entreeeeeeeeeeeeeeee"+comercio.getImagenes().size());
 			imagenes=comercio.getImagenes();
+			for ( Galeria img :comercio.getImagenes()) {
+				imagenes2.add(img);
+			}
 		}
 	}
 	@Override
@@ -125,8 +129,8 @@ public RegistroComercio4Fragment() {
 			Galeria ga = new Galeria();
 			ga.setDtImagen(b64);
 			Log.i("dato", b64);
-			imagenes.add(ga);
-			((GaleriaAdapter) adapter).setImagenes(imagenes);
+			imagenes2.add(ga);
+			((GaleriaAdapter) adapter).setImagenes(imagenes2);
 			adapter.notifyDataSetChanged();
 
 		}
@@ -138,7 +142,7 @@ public RegistroComercio4Fragment() {
 	boolean resp=true;
 	try{
 		comercio.limpiarImagenes();
-		for(Galeria g:imagenes){
+		for(Galeria g:imagenes2){
 			Log.i("MEnsaje","Agregue imagen");
 			comercio.addImagen(g);
 		}

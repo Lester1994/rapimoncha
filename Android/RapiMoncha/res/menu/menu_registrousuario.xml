@@ -6,5 +6,9 @@
         android:showAsAction="ifRoom"
         android:title="@string/activity_registrousuario_menu_action_registrar"
         android:icon="@android:drawable/ic_menu_save"/>
-
+<item
+        android:id="@+id/menu_registrarusuario_action_gologin"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menu_registrousuario_superior_gologin"/>    
 </menu>

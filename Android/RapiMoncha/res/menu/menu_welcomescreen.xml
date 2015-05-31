@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_welcomescreen_action_agregarempresa"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menu_welcomescreen_superior_gregarempresa"/>
+    <item
+        android:id="@+id/menu_welcomescreen_action_logout"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menu_welcomescreen_superior_logout"/>
+    <item
+        android:id="@+id/menu_welcomescreen_action_exit"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menu_welcomescreen_superior_exit"/>
+
+</menu>

@@ -57,4 +57,17 @@ public class Subcripcion implements IJsonable{
         }
         return obaux;
     }
+    
+    public boolean generateFromJson(JSONObject json){
+		 boolean resp=true;
+		 try{
+			setIdSuscribcion(json.getInt("idSubscripcion"));
+			//por completar
+			
+			 
+		 }catch(Exception ex){
+			 ex.printStackTrace();
+		 }
+		 return resp;
+   }
 }

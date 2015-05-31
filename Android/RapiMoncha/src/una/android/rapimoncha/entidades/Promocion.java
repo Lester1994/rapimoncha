@@ -52,7 +52,9 @@ public class Promocion implements IJsonable {
     public void setFechaVencimiento(Calendar fechaVencimiento) {
         this.fechaVencimiento = fechaVencimiento;
     }
-
+    public void setFechaVencimiento(String fechaVencimiento) {
+        //por terminar
+    }
     public String getDescripcion() {
         return descripcion;
     }
@@ -79,6 +81,10 @@ public class Promocion implements IJsonable {
     public void setFechaPublicacion(Calendar fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
+    
+    public void setFechaPublicacion(String fechaPublicacion) {
+       //por terminar
+    }    
 
     @Override
     public JSONObject getJson() {
@@ -94,4 +100,18 @@ public class Promocion implements IJsonable {
         }
         return obaux;
     }
+    
+    public boolean generateFromJson(JSONObject json){
+		 boolean resp=true;
+		 try{
+			 this.setIdPromocion(json.getInt("idPromocion"));
+			 this.setFechaPublicacion(json.getString("fechaPublicacion"));
+			 this.setFechaVencimiento(json.getString("fechaVencimiento"));
+			 this.setTitulo(json.getString("titulo"));
+			 this.setDescripcion(json.getString("descripcion"));
+		 }catch(Exception ex){
+			 ex.printStackTrace();
+		 }
+		 return resp;
+   }
 }

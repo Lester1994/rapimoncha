@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/lblutilidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:text="@string/activity_evaluacion_aplicacion_utilidad"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <RatingBar
+        android:id="@+id/rtbutilidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblutilidad"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="1.0" />
+
+    <TextView
+        android:id="@+id/lblfacilidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rtbutilidad"
+        android:layout_marginTop="5dp"
+        android:text="@string/activity_evaluacion_aplicacion_facilidad"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <RatingBar
+        android:id="@+id/rtbestilo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rtbfacilidad"
+        android:layout_alignRight="@+id/rtbfacilidad"
+        android:layout_below="@+id/lblestilo"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="1.0" />
+
+    <TextView
+        android:id="@+id/lblsoporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rtbestilo"
+        android:text="@string/activity_evaluacion_aplicacion_soporte"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <RatingBar
+        android:id="@+id/rtbsoporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rtbestilo"
+        android:layout_below="@+id/lblsoporte"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="1.0" />
+
+    <TextView
+        android:id="@+id/lblnotas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rtbsoporte"
+        android:text="@string/activity_evaluacion_aplicacion_notas"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/txtnotas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rtbsoporte"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/rtbsoporte"
+        android:layout_below="@+id/lblnotas"
+        android:ems="10"
+        android:gravity="start"
+        android:hint="@string/activity_evaluacion_aplicacion_notashint" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/lblestilo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rtbfacilidad"
+        android:text="@string/activity_evaluacion_aplicacion_estilo"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <RatingBar
+        android:id="@+id/rtbfacilidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rtbutilidad"
+        android:layout_below="@+id/lblfacilidad"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="1.0" />
+
+</RelativeLayout>

@@ -35,6 +35,15 @@
              return false;   
             }
         }
+	 
+	 function generarSolicitudCliente($json2){
+		 $json=json_decode($json2,true);
+		 $this->setIdSolicitud($json['idsolicitud']);
+		 $this->setFeSolicitud($json['fechasolicitud']);
+		 $this->setEsSolicitud($json['estadosolicitud']);
+		 $this->setEHastaSoli($json['esperohasta']);
+		 $this->setCoFInalSoli($json['costofinal']);
+	 }
      
  }
 ?>

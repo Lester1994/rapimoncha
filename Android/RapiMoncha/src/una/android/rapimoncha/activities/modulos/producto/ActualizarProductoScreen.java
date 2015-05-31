@@ -2,8 +2,15 @@ package una.android.rapimoncha.activities.modulos.producto;
 
 
 
+import java.util.ArrayList;
+
+import una.android.rapimoncha.Main;
 import una.android.rapimoncha.R;
+import una.android.rapimoncha.activities.adapter.MenuAdapter;
+import una.android.rapimoncha.activities.modulos.RegistroProductoScreen;
+import una.android.rapimoncha.activities.modulos.comercio.ActualizarComercioScreen;
 import una.android.rapimoncha.entidades.Comercio;
+import una.android.rapimoncha.entidades.MenuVItem;
 import una.android.rapimoncha.entidades.Producto;
 import una.android.rapimoncha.entidades.Usuario;
 import una.android.rapimoncha.fragments.ActualizarProducto1Fragment;
@@ -16,17 +23,22 @@ import una.android.rapimoncha.fragments.RegistroProducto3Fragment;
 import una.android.rapimoncha.fragments.RegistroProductoSkyFragment;
 import una.android.rapimoncha.interfaces.IGenComercio;
 import una.android.rapimoncha.interfaces.IGenProducto;
+import una.android.rapimoncha.recursos.Recursos;
 import una.android.rapimoncha.sw.SwProducto;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class ActualizarProductoScreen extends Activity{
@@ -40,6 +52,11 @@ public class ActualizarProductoScreen extends Activity{
 	Producto producto;
 	int idcomercio;
 
+	ArrayList<MenuVItem>menuprincipal;
+	MenuAdapter adaptermenu;
+	Intent intent;
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -51,7 +68,19 @@ public class ActualizarProductoScreen extends Activity{
 		initProducto();
 
 		
+	    //colocar el menú
+	    menuprincipal=Recursos.getMenuItemsSecundarios(this);
+		adaptermenu=new MenuAdapter(menuprincipal, this);
+        ListView lstv=(ListView)findViewById(R.id.menu_container_registroproducto_111);
+        lstv.setAdapter(adaptermenu);		
 
+	}
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		Recursos.validateSession(this);//validamos la sesión
+		
 	}
 	
 	private void initProducto(){
@@ -148,6 +177,35 @@ public class ActualizarProductoScreen extends Activity{
 
 	}
 
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.menu_producto1, menu);
+		return true;
+	}
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		switch (id) {
+		case R.id.menu_producto_action_gohome:
+			intent=new Intent(this,Main.class);
+			startActivity(intent);
+			ActualizarProductoScreen.this.finish();
+			break;
+		case R.id.menu_producto_action_goparent:
+			intent=new Intent(this,ListadoProductosScreen.class);
+			startActivity(intent);
+			ActualizarProductoScreen.this.finish();
+			break;		
+
+		} 
+		
+		return super.onOptionsItemSelected(item);
+	}
 	
 
 }

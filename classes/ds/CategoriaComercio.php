@@ -35,7 +35,7 @@
              function eliminarCategoriasComercio($idcomercio,$db=null){
                 	$SQLstr = "call rm_sp_eliminar_categoriascomercio
                     ('" . $idcomercio ."',@resultado);";
-               //  echo $SQLstr;
+                // echo $SQLstr;
            while(mysqli_more_results($db)&&mysqli_next_result($db)); 
             $resultado=array();    
             $sql = mysqli_query($db,$SQLstr);
@@ -65,7 +65,7 @@
             $this->categoriasarray=array();
             $SQLstr = "call rm_sp_obtener_categoriascomercio('" . $idcomercio ."');";
                 $sql=mysqli_query($bd,$SQLstr);
-          //  echo 'entre'.mysqli_error();
+          //  echo 'otro'.mysqli_error();
                     if($sql){
                           // echo 'entre';
                          //obtener los datos

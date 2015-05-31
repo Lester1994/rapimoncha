@@ -4,8 +4,13 @@ import java.util.ArrayList;
 
 import una.android.rapimoncha.Main;
 import una.android.rapimoncha.R;
+import una.android.rapimoncha.activities.modulos.configuracion.ListadoConfiguracionesScreen;
+import una.android.rapimoncha.activities.modulos.otros.AcercaDeScreen;
+import una.android.rapimoncha.activities.modulos.otros.ExitScreen;
+import una.android.rapimoncha.activities.modulos.usuario.LogoutScreen;
 import una.android.rapimoncha.entidades.Comercio;
 import una.android.rapimoncha.entidades.Usuario;
+import una.android.rapimoncha.recursos.Recursos;
 import una.android.rapimoncha.sw.SwUsuario;
 import android.app.Activity;
 import android.content.Context;
@@ -13,6 +18,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -22,6 +29,7 @@ import android.widget.Spinner;
 public class WelcomeScreen extends Activity {
  	ArrayList<Comercio>comercios;
  	Spinner spinnercomercios;
+ 	Intent intent;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 	
@@ -80,5 +88,46 @@ public class WelcomeScreen extends Activity {
 		}
 		ArrayAdapter<String>adapter=new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,lista);
 		spinnercomercios.setAdapter(adapter);
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.menu_welcomescreen, menu);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		switch (id) {
+		case R.id.menu_welcomescreen_action_agregarempresa:
+			intent=new Intent(this,RegistroComercioScreen.class);
+			startActivity(intent);
+			break;
+		case R.id.menu_welcomescreen_action_logout:
+			intent=new Intent(this,LogoutScreen.class);
+			startActivity(intent);
+			break;
+		case R.id.menu_welcomescreen_action_exit:
+			intent=new Intent(this,ExitScreen.class);
+			startActivity(intent);
+			
+			break;			
+
+		}
+		return super.onOptionsItemSelected(item);
+	}
+		
+	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		//Recursos.validateSession(this);//validamos la sesión
+		
 	}
 }

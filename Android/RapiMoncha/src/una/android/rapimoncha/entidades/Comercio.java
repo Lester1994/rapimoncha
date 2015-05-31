@@ -32,7 +32,12 @@ public class Comercio implements IJsonable {
 
 	public Comercio() {
 	}
+public void limpiarGeolocalizacion(){
+	if (this.geolocalizaciones != null) {
 
+		this.geolocalizaciones.clear();
+	}
+}
 	public int getIdComercio() {
 		return idComercio;
 	}
@@ -203,6 +208,14 @@ public class Comercio implements IJsonable {
 
 	}
 
+	public void limpiarProductos() {
+		if (this.productos == null) {
+			productos = new ArrayList<Producto>();
+
+		}
+		productos.clear();
+	}
+
 	public void addImagen(Galeria imagen) {
 		if (imagenes == null) {
 			imagenes = new ArrayList<Galeria>();
@@ -266,7 +279,7 @@ public class Comercio implements IJsonable {
 			json_comercio.put("t2comercio", this.t2Comercio);
 			json_comercio.put("emcomercio", this.emComercio);
 
-			// usuario	
+			// usuario
 			if (usuario != null) {
 				JSONArray js_usuariocomer = new JSONArray();
 				JSONObject obauxa = usuario.getJson();
@@ -400,5 +413,142 @@ public class Comercio implements IJsonable {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
+	}
+
+	public boolean generateFromJson(JSONObject json) {
+		boolean resp = true;
+		try {
+			try {
+				this.setIdComercio(json.getInt("idComercio"));
+				this.setNoComerncio(json.getString("noComercio"));
+				this.setDiComercio(json.getString("diComercio"));
+				this.setPrComercio(json.getString("prComercio"));
+				this.setT1Comercio(json.getString("t1Comercio"));
+				this.setT2Comercio(json.getString("t2Comercio"));
+				this.setEmmComercio(json.getString("emComercio"));
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+			// imagenes
+			try {
+				JSONArray imagenes = json.getJSONArray("imagenes");
+				if (imagenes != null) {
+					int sizeimagenes = imagenes.length();
+					for (int a = 0; a < sizeimagenes; a++) {
+						JSONObject jsimagen = imagenes.getJSONObject(a);
+						Galeria galeria = new Galeria();
+						galeria.generateFromJson(jsimagen);
+						addImagen(galeria);
+					}
+				}
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+			// geolocalizaciones
+			try {
+				JSONArray geolocalizaciones = json
+						.getJSONArray("geolocalizaciones");
+				if (geolocalizaciones != null) {
+					int sizegeo = geolocalizaciones.length();
+					for (int a = 0; a < sizegeo; a++) {
+						JSONObject jsgeo = geolocalizaciones.getJSONObject(a);
+						GeoLocalizacion geo = new GeoLocalizacion();
+						geo.generateFromJson(jsgeo);
+						addGeolocalizacion(geo);
+					}
+				}
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+
+			// preferencias
+			try {
+				JSONArray preferencias = json.getJSONArray("preferencias");
+				if (preferencias != null) {
+					int sizepref = preferencias.length();
+					for (int a = 0; a < sizepref; a++) {
+						JSONObject jspref = preferencias.getJSONObject(a);
+						Preferencia preferencia = new Preferencia();
+						preferencia.generateFromJson(jspref);
+						addPreferencia(preferencia);
+					}
+				}
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+
+			// clasificaciones
+			try {
+				JSONArray clasificaciones = json
+						.getJSONArray("clasificaciones");
+				if (clasificaciones != null) {
+					int sizeclas = clasificaciones.length();
+					for (int a = 0; a < sizeclas; a++) {
+						JSONObject jscla = clasificaciones.getJSONObject(a);
+						CategoriaComercio categoria = new CategoriaComercio();
+						categoria.generateFromJson(jscla);
+						addClasificacion(categoria);
+					}
+
+				}
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+
+			// subscripciones
+			try {
+				JSONArray subscripciones = json.getJSONArray("subscripciones");
+				if (subscripciones != null) {
+					int sizesub = subscripciones.length();
+					for (int a = 0; a < sizesub; a++) {
+						JSONObject jssubsc = subscripciones.getJSONObject(a);
+						Subcripcion subcripcion = new Subcripcion();
+						subcripcion.generateFromJson(jssubsc);
+						addSubscripcion(subcripcion);
+					}
+				}
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+
+			// promociones
+			try {
+				JSONArray promociones = json.getJSONArray("promociones");
+				if (promociones != null) {
+					int sizepromo = promociones.length();
+					for (int a = 0; a < sizepromo; a++) {
+						JSONObject jsonpromo = promociones.getJSONObject(a);
+						Promocion promocion = new Promocion();
+						promocion.generateFromJson(jsonpromo);
+						addPromocion(promocion);
+					}
+				}
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+			// productos
+			try {
+				JSONArray productos = json.getJSONArray("productos");
+				if (productos != null) {
+					int sizeprodu = productos.length();
+					for (int a = 0; a < sizeprodu; a++) {
+						JSONObject jsprodu = productos.getJSONObject(a);
+						Producto producto = new Producto();
+						producto.generateFromJson(jsprodu);
+						addProducto(producto);
+					}
+				}
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+			// solicitudes
+
+			// usuario
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+
+		return resp;
 	}
 }

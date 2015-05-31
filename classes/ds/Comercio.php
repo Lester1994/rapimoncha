@@ -10,6 +10,7 @@
 require_once $RM_DATAACCESS_DIR.'Usuario.php';
 
     class DS_Comercio{
+		var $error_general;
         function agregarPromocionesComercio($comercio,$db=null){
             $ds_promocion=new DS_Promocion();
             $respuestas=array();
@@ -63,7 +64,7 @@ require_once $RM_DATAACCESS_DIR.'Usuario.php';
         function actualizarCategoriasComercio($comercio,$db=null){
             $ds_Clasificacion=new DS_CategoriaComercio();
             $respuestas=array();
-             $sql= mysqli_query($db,"START TRANSACTION");
+           //  $sql= mysqli_query($db,"START TRANSACTION");
     
             $ds_Clasificacion->eliminarCategoriasComercio($comercio->getIdComercio(),$db);
                while(mysqli_more_results($db)&&mysqli_next_result($db)); 
@@ -95,13 +96,15 @@ require_once $RM_DATAACCESS_DIR.'Usuario.php';
              if($error_gene){
               //   echo "entreee rollback";
                   while(mysqli_more_results($db)&&mysqli_next_result($db));  
-                 mysqli_query($db,"ROLLBACK");
+               //  mysqli_query($db,"ROLLBACK");
                 $resp_final["respuesta"]=array("codigo"=>3,"mensaje"=>" aqui Proceso no completado (con errores)");
+				 $this->error_general= false;
              }else{
                //   echo "entreee commit";
                 while(mysqli_more_results($db)&&mysqli_next_result($db)); 
-                 mysqli_query($db,"COMMIT"); 
+              //   mysqli_query($db,"COMMIT"); 
                 $resp_final["respuesta"]=array("codigo"=>2,"mensaje"=>"Proceso  completado (sin errores)");
+				  $this->error_general=  true;
              }
             
            //  echo "<br>Resultado finaaaaaaal................<br>";
@@ -116,7 +119,7 @@ require_once $RM_DATAACCESS_DIR.'Usuario.php';
   function actualizarGeolocalizacionComercio($comercio,$db=null){
             $ds_geolocalizacion=new DS_Geolocalizacion();
             $respuestas=array();
-             $sql= mysqli_query($db,"START TRANSACTION");
+           //  $sql= mysqli_query($db,"START TRANSACTION");
     
             $ds_geolocalizacion->eliminarGeolocalizacionComercio($comercio->getIdComercio(),$db);
                while(mysqli_more_results($db)&&mysqli_next_result($db)); 
@@ -148,13 +151,72 @@ require_once $RM_DATAACCESS_DIR.'Usuario.php';
              if($error_gene){
               //   echo "entreee rollback";
                   while(mysqli_more_results($db)&&mysqli_next_result($db));  
-                 mysqli_query($db,"ROLLBACK");
+               //  mysqli_query($db,"ROLLBACK");
                 $resp_final["respuesta"]=array("codigo"=>3,"mensaje"=>" aqui Proceso no completado (con errores)");
+				  $this->error_general=  false;
              }else{
                //   echo "entreee commit";
                 while(mysqli_more_results($db)&&mysqli_next_result($db)); 
-                 mysqli_query($db,"COMMIT"); 
+               //  mysqli_query($db,"COMMIT"); 
                 $resp_final["respuesta"]=array("codigo"=>2,"mensaje"=>"Proceso geolocalizacion completado (sin errores)");
+				  $this->error_general=  true;
+             }
+            
+           //  echo "<br>Resultado finaaaaaaal................<br>";
+           
+           $resp_final["detalles"]=$respuestas;
+            $resp_final["comercio"]=$comercio;
+          //  echo '<br><br><br><br>RESPUESTA FINAL <br><br>'. json_encode($resp_final);
+	  
+
+        }                
+   
+  function actualizarGaleriaComercio($comercio,$db=null){
+            $ds_galeria=new DS_Galeria();
+            $respuestas=array();
+           //  $sql= mysqli_query($db,"START TRANSACTION");
+    
+            $ds_galeria->eliminarImagenComercio($comercio->getIdComercio(),$db);
+               while(mysqli_more_results($db)&&mysqli_next_result($db)); 
+                //  echo "<br>SECCION DE CATEGORIAS<br>";
+                 //registrar categoria comercio
+	  			if($comercio->getImagenes()){
+					foreach($comercio->getImagenes() as $aux){
+                  //  $db->connect(false);
+                     $res=$ds_galeria->agregarImagenComercio($aux,$comercio->getIdComercio(),$db);
+                  //   echo '<br>el dump>>>'. var_dump($res).'<br>';
+                    array_push($respuestas, $res);
+                    
+                   // $db->close();
+                 } 
+				}
+            
+          $error_gene=false;
+           //  echo "ya de hecho pase";
+             foreach($respuestas as $resp){
+              //   echo "<br>".var_dump($resp);
+                 
+                 if($resp["codigo"]!==2){
+                     $error_gene=true;
+                          
+                 }
+             }
+            
+            //preparar la respuesta final
+              $resp_final=array();
+            
+             if($error_gene){
+              //   echo "entreee rollback";
+                  while(mysqli_more_results($db)&&mysqli_next_result($db));  
+              //   mysqli_query($db,"ROLLBACK");
+                $resp_final["respuesta"]=array("codigo"=>3,"mensaje"=>"  Proceso imágenes no completado (con errores)");
+				  $this->error_general=  false;
+             }else{
+               //   echo "entreee commit";
+                while(mysqli_more_results($db)&&mysqli_next_result($db)); 
+              //   mysqli_query($db,"COMMIT"); 
+                $resp_final["respuesta"]=array("codigo"=>2,"mensaje"=>"Proceso imagenes completado (sin errores)");
+				  $this->error_general=  true;
              }
             
            //  echo "<br>Resultado finaaaaaaal................<br>";
@@ -163,9 +225,62 @@ require_once $RM_DATAACCESS_DIR.'Usuario.php';
             $resp_final["comercio"]=$comercio;
           //  echo '<br><br><br><br>RESPUESTA FINAL <br><br>'. json_encode($resp_final);
         
-        }                
+        }    
+		
+		
+  function actualizarPreferenciasComercio($comercio,$db=null){
+            $ds_preferencias=new DS_Preferencias();
+            $respuestas=array();
+           //  $sql= mysqli_query($db,"START TRANSACTION");
+    
+            $ds_preferencias->eliminarPreferenciaComercio($comercio->getIdComercio(),$db);
+               while(mysqli_more_results($db)&&mysqli_next_result($db)); 
+                //  echo "<br>SECCION DE CATEGORIAS<br>";
+                 //registrar categoria comercio
+                 foreach($comercio->getPreferencias() as $aux){
+                  //  $db->connect(false);
+                     $res=$ds_preferencias->agregarPreferenciaComercio($aux,$comercio->getIdComercio(),$db);
+                  //   echo '<br>el dump>>>'. var_dump($res).'<br>';
+                    array_push($respuestas, $res);
+                    
+                   // $db->close();
+                 } 
+            
+          $error_gene=false;
+           //  echo "ya de hecho pase";
+             foreach($respuestas as $resp){
+              //   echo "<br>".var_dump($resp);
+                 
+                 if($resp["codigo"]!==2){
+                     $error_gene=true;
+                          
+                 }
+             }
+            
+            //preparar la respuesta final
+              $resp_final=array();
+            
+             if($error_gene){
+              //   echo "entreee rollback";
+                  while(mysqli_more_results($db)&&mysqli_next_result($db));  
+             //    mysqli_query($db,"ROLLBACK");
+                $resp_final["respuesta"]=array("codigo"=>3,"mensaje"=>"Proceso preferencias no completado (con errores)");
+				  $this->error_general=  false;
+             }else{
+               //   echo "entreee commit";
+                while(mysqli_more_results($db)&&mysqli_next_result($db)); 
+             //    mysqli_query($db,"COMMIT"); 
+                $resp_final["respuesta"]=array("codigo"=>2,"mensaje"=>"Proceso preferencias completado (sin errores)");
+				  $this->error_general=  true;
+             }
+            
+           //  echo "<br>Resultado finaaaaaaal................<br>";
+           
+           $resp_final["detalles"]=$respuestas;
+            $resp_final["comercio"]=$comercio;
+          //  echo '<br><br><br><br>RESPUESTA FINAL <br><br>'. json_encode($resp_final);
         
-        
+        }         
         function agregarProductosComercio($comercio,$db=null){
             $ds_Producto=new DS_Producto();
             $respuestas=array();
@@ -407,7 +522,7 @@ function getComercio($idcomercio,$db=null){
             
             $sql=mysqli_query($db,$SQLstr);            
     
-            echo 'error 0001'.mysqli_error($db);
+          //  echo 'error 0001'.mysqli_error($db);
             while ($row=mysqli_fetch_row($sql)) {
               //  echo var_dump($imagen);
                    $imagen1=new EN_Galeria();
@@ -436,7 +551,7 @@ function getComercio($idcomercio,$db=null){
             
             $sql=mysqli_query($db,$SQLstr);            
     
-            echo 'error 0002'.mysqli_error($db);
+           // echo 'error 0002'.mysqli_error($db);
             while ($row=mysqli_fetch_row($sql)) {
                    $pref1=new EN_Preferencias();
                    $pref1->setIdPreferencia($row[0]);
@@ -467,7 +582,7 @@ function getComercio($idcomercio,$db=null){
             $SQLstr="call rm_sp_obtener_subscripcionescomercio(".$idcomercio.")";
             
             $sql=mysqli_query($db,$SQLstr);  
-            echo 'error 0003'.mysqli_error($db);
+         //   echo 'error 0003'.mysqli_error($db);
             while ($row=mysqli_fetch_row($sql)) {  
                    $subscripcion1=new EN_Subscripcion();
                    $subscripcion1->setIdSubscripcion($row[0]);
@@ -503,8 +618,8 @@ function getComercio($idcomercio,$db=null){
                      $produaux=new EN_Producto();
                      $produaux->setIdProducto($row[0]);
                      $produaux->setNoProducto($row[1]);
-                     $produaux->setPrProducto($row[2]);
-                     $produaux->setDeProducto($row[3]);
+                     $produaux->setDeProducto($row[2]);
+                     $produaux->setPrProducto($row[3]);
                      
                      array_push($productos,$produaux);
 
@@ -565,7 +680,7 @@ FROM rm08galeriaproductos where rm01idproducto=".$pr->getIdProducto();
                 foreach($solicitudes as &$sl){
                     $SQLstr="call rm_sp_obtener_usuariofromsolicitud(".$sl->getIdSolicitud().")";
                       $sql=mysqli_query($db,$SQLstr);
-                          echo '56565'.mysqli_error($db);
+                         // echo '56565'.mysqli_error($db);
                         if($sql){
                             $user=new EN_Usuario();
                          //obtener los datos
@@ -581,7 +696,7 @@ FROM rm08galeriaproductos where rm01idproducto=".$pr->getIdProducto();
 
                              }
                             $sl->setUsuario($user);
-                            echo 'pase por aqui';
+                           // echo 'pase por aqui';
 
                         }
                      while(mysqli_more_results($db)&&mysqli_next_result($db)); 
@@ -684,7 +799,133 @@ from rm06promociones where rm01idcomercio=".$idcomercio;
                    
         
     
-}        
+}
+		
+		
+ function actualizarComercio($comercio,$db=null){
+       
+            // $db->connect(true); 
+             $ds_Galeria=new DS_Galeria();
+             $ds_Clasificacion=new DS_CategoriaComercio();
+             $ds_Geolocalizacion=new DS_Geolocalizacion();
+             $ds_Preferencia=new DS_Preferencias();
+				$ds_Usuario=new DS_Usuario();
+             $respuestas=array();
+            $SQLstr = "call rm_sp_actualizar_comercio
+                    ('" . $comercio->noComercio . "','" . $comercio->diComercio . "','" . $comercio->prComercio . "','" .
+                        $comercio->t1Comercio . "','". $comercio->t2Comercio . "','" . 
+                        $comercio->emComercio . "','".$comercio->getIdComercio()."',@resultado);";
+            
+           // $sql= $db -> query("START TRANSACTION");
+          $sql= mysqli_query($db,"START TRANSACTION");
+           //  $db->cleanResult();  
+           // $sql = $db -> query($SQLstr);
+          $sql= mysqli_query($db,$SQLstr);
+
+           // $db->freeResult();          
+           // $db->cleanResult();
+           // $sql = $db -> query("select @resultado;");
+           while(mysqli_more_results($db)&&mysqli_next_result($db)); 
+           $sql= mysqli_query($db,"select @resultado;");
+            /* if (!$sql) {
+                    printf("Error: %s\n", mysqli_error($db));
+                    exit();
+             }*/
+           //  echo "<br>voy por aquiiii<br>";
+            while ($row = mysqli_fetch_row($sql)) {
+                $msg = $row[0];
+            }
+             
+             
+           //  $db->cleanResult();
+            // $db->close();
+           
+            $error = (substr($msg, 0, 2) === 'e:');
+            if($error){
+                $codigoresultado=3;
+                $mensaje="No se pudo actualizar el comercio";
+            }else{
+                $codigoresultado=2;
+                $mensaje="Se  pudo actualizar el comercio";
+            }
+            
+           
+             $xx=array("codigo"=>$codigoresultado,"msg"=>$mensaje);
+            array_push($respuestas,$xx);
+           //  echo var_dump($xx)."este es el primero<br><br><br>";
+      
+            
+          
+            //  echo "<br>................>>>>>".var_dump($respuestas)."----<br>este es el primero</br>";
+            $error_gene=false;
+             if(!$error){
+                //  echo "<br>SECCION DE registros<br>";
+                   //actualizar galeria
+                 
+				$this->actualizarGaleriaComercio($comercio,$db);
+				 $error_gene= $error_gene||!$this->error_general;
+				// echo 'Error aqúi '.$error_gene;
+                //  echo "<br>SECCION DE CATEGORIAS<br>";
+                 //actualizar categoria comercio
+ 				$this->actualizarCategoriasComercio($comercio,$db);
+				 $error_gene= $error_gene||!$this->error_general;
+				//  echo 'Error aqúi '.$error_gene;
+               //  echo "ni aqui fue";
+                //  echo "<br>SECCION DE GEOLOCALIZACION<br>";
+                 //actualizar geolocalizacion
+				 $this->actualizarGeolocalizacionComercio($comercio,$db);
+				 $error_gene= $error_gene||!$this->error_general;
+				///  echo 'Error aqúi '.$error_gene;
+                //  echo "<br>SECCION DE PREFERENCIAS<br>";
+                  //actualizar preferencia
+				$this->actualizarPreferenciasComercio($comercio,$db);
+				 $error_gene= $error_gene||!$this->error_general;
+				//  echo 'Error aqúi '.$error_gene;
+
+
+                                
+             }
+             else{
+           //   echo "<br>voy por aquiiii333<br>".var_dump($resultado).$msg;   
+             }
+      
+           //  echo "ya de hecho pase";
+             foreach($respuestas as $resp){
+              //   echo "<br>".var_dump($resp);
+                 
+                 if($resp["codigo"]!==2){
+                     $error_gene=true;
+                          
+                 }
+             }
+            
+            //preparar la respuesta final
+              $resp_final=array();
+            
+             if($error_gene){
+              //   echo "entreee rollback";
+                  while(mysqli_more_results($db)&&mysqli_next_result($db));  
+                 mysqli_query($db,"ROLLBACK");
+                $resp_final["codigo"]=3;
+				 $resp_final["mensaje"]="Proceso no completado (con errores)";
+             }else{
+               //   echo "entreee commit";
+                while(mysqli_more_results($db)&&mysqli_next_result($db)); 
+                 mysqli_query($db,"COMMIT"); 
+                $resp_final["codigo"]=2;
+				 $resp_final["mensaje"]="Proceso  completado (sin errores)";
+             }
+            
+           //  echo "<br>Resultado finaaaaaaal................<br>";
+           
+           $resp_final["detalles"]=$respuestas;
+            $resp_final["comercio"]=$comercio;
+            //echo "aqui paseeee!".var_dump($resp_final);
+        
+           // echo "no pude aqui ";
+            
+   echo json_encode($resp_final);
+        } 		
         
         
     }

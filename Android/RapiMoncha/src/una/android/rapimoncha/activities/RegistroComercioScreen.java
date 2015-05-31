@@ -2,9 +2,13 @@ package una.android.rapimoncha.activities;
 
 import java.util.ArrayList;
 
+import una.android.rapimoncha.Main;
 import una.android.rapimoncha.R;
+import una.android.rapimoncha.activities.adapter.MenuAdapter;
+import una.android.rapimoncha.activities.modulos.configuracion.ListadoConfiguracionesScreen;
 import una.android.rapimoncha.entidades.CategoriaComercio;
 import una.android.rapimoncha.entidades.Comercio;
+import una.android.rapimoncha.entidades.MenuVItem;
 import una.android.rapimoncha.entidades.Usuario;
 import una.android.rapimoncha.fragments.RegistroComercio1Fragment;
 import una.android.rapimoncha.fragments.RegistroComercio2Fragment;
@@ -14,16 +18,21 @@ import una.android.rapimoncha.fragments.RegistroComercio5Fragment;
 import una.android.rapimoncha.fragments.RegistroComercio6Fragment;
 import una.android.rapimoncha.fragments.RegistroComercioSkyFragment;
 import una.android.rapimoncha.interfaces.IGenComercio;
+import una.android.rapimoncha.recursos.Recursos;
 import una.android.rapimoncha.sw.SwCategoriasComercio;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class RegistroComercioScreen extends Activity {
@@ -36,6 +45,38 @@ public class RegistroComercioScreen extends Activity {
 	Button btn_next;
 	Comercio comercio;
 	ArrayList<CategoriaComercio> categorias;
+	
+	ArrayList<MenuVItem>menuprincipal;
+	MenuAdapter adaptermenu;
+	Intent intent;
+	
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.menu_comercio1, menu);
+		return true;
+	}
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		switch (id) {
+		case R.id.menu_comercio_action_gohome:
+			intent=new Intent(this,WelcomeScreen.class);
+			startActivity(intent);
+			RegistroComercioScreen.this.finish();
+			break;
+		
+
+		} 
+		
+		return super.onOptionsItemSelected(item);
+	}
+	
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +134,12 @@ public class RegistroComercioScreen extends Activity {
 			}
 		});
 		cargarFragment(0);
+		
+	    //colocar el menú
+	    menuprincipal=Recursos.getMenuItemsSecundarios(this);
+		adaptermenu=new MenuAdapter(menuprincipal, this);
+        ListView lstv=(ListView)findViewById(R.id.menu_container_registrocomercio_111);
+        lstv.setAdapter(adaptermenu);
 
 	}
 
@@ -154,5 +201,11 @@ public class RegistroComercioScreen extends Activity {
 	public void setCategoriasComercio(ArrayList<CategoriaComercio>categorias){
 		this.categorias=categorias;
 	}
-
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		Recursos.validateSession(this);//validamos la sesión
+		
+	}
 }

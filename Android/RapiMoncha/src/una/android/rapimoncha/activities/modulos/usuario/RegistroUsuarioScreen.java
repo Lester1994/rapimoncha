@@ -3,10 +3,13 @@ package una.android.rapimoncha.activities.modulos.usuario;
 import java.util.Calendar;
 
 import una.android.rapimoncha.R;
+import una.android.rapimoncha.activities.LoginScreen;
 import una.android.rapimoncha.entidades.Usuario;
+import una.android.rapimoncha.recursos.Recursos;
 import una.android.rapimoncha.sw.SwUsuario;
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,6 +31,7 @@ public class RegistroUsuarioScreen extends Activity {
 	TextView fenacimiento;
 	DatePickerDialog datepickerdialog;
 	Usuario usuario;
+	Intent intent;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -62,6 +66,10 @@ public class RegistroUsuarioScreen extends Activity {
 			actualizarUsuario();
 			SwUsuario sw=new SwUsuario();
 			sw.agregarusuario(usuario, this);
+		}else if(id==R.id.menu_registrarusuario_action_gologin){
+			intent = new Intent(this, LoginScreen.class);
+			startActivity(intent);
+			RegistroUsuarioScreen.this.finish();
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -109,5 +117,12 @@ public class RegistroUsuarioScreen extends Activity {
 				}, year, month, day);
 
 		fenacimiento.setText(year + "-" + month + "-" + day);
+	}
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		Recursos.validateSession(this);//validamos la sesión
+		
 	}
 }

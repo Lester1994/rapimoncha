@@ -62,4 +62,17 @@ public class Preferencia implements IJsonable{
         }
         return obaux;
     }
+    
+    public boolean generateFromJson(JSONObject json){
+		 boolean resp=true;
+		 try{
+			 this.setIdPreferencia(json.getInt("idPreferencia"));
+			 this.setHasServicioExpress(json.getInt("hasServicioExpress")==1);
+			 this.setContactoSinSubcripcion(json.getInt("isContactoSinSubscripcion")==1);
+			 this.setVerProductoSinSubscrib(json.getInt("isVerProductosSinSubscrib")==1);
+		 }catch(Exception ex){
+			 ex.printStackTrace();
+		 }
+		 return resp;
+    }
 }

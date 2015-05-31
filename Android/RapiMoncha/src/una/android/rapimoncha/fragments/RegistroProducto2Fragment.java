@@ -70,7 +70,7 @@ public RegistroProducto2Fragment() {
 
 			}
 		});
-		restoreFragment();
+		
 		GridView grd = (GridView) view.findViewById(R.id.grid_imgproducto);
 		adapter = new GaleriaAdapter(imagenes, getActivity());
 		Log.i("Tamaño de la lista",imagenes.size()+"");
@@ -157,6 +157,7 @@ public RegistroProducto2Fragment() {
 	}
 	public void setProducto(Producto producto) {
 		this.producto = producto;
+		restoreFragment();
 	}
 	
 }

@@ -52,4 +52,17 @@ public class GeoLocalizacion implements IJsonable{
         }
         return obaux;
     }
+    
+    public boolean generateFromJson(JSONObject json){
+		 boolean resp=true;
+		 try{
+			 this.setIdLocalizacion(json.getInt("idlocalizacion"));
+			 this.setLatitud(json.getDouble("latitud"));
+			 this.setLongitud(json.getDouble("longitud"));
+			 
+		 }catch(Exception ex){
+			 ex.printStackTrace();
+		 }
+		 return resp;
+    }
 }

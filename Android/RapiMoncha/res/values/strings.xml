@@ -5,6 +5,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string name="activity_main_titulo">Panel de Control</string>
     <!-- ACTIVITY splash screen -->
     <string name="activity_splashscreen_titulo">Inicio</string>
     <string name="activity_splashscreen_descripcionimagen">Logo de la aplicación. RapiMoncha</string>
@@ -47,6 +48,10 @@
     <string name="fragment_registrocomerciosky_img_icon_description">Icono de la ventana, registro de comercio</string>
     <string name="fragment_registrocomerciosky_"></string>
 
+    <!-- FRAGMENT actualizar comercio sky -->
+    <string name="fragment_actualizarcomerciosky_lbl_datosimportantes">Empezamos la actualización, se cuidadoso!</string>
+    <string name="fragment_actualizarcomerciosky_lbl_titulobienvenida">Procedamos a iniciar!</string>
+
     <!-- FRAGMENT registro comercio 1 -->
     <string name="fragment_registrocomercio1_lblnocomercio">Nombre del comercio</string>
     <string name="fragment_registrocomercio1_lblprocomercio">Propietario</string>
@@ -88,6 +93,12 @@
     <string name="fragment_registrocomercio5_lbl_agradecimientorc">Esperamos que sea de mucha ayuda!</string>
     <string name="fragment_registrocomercio5_btn_finalizar">Realizar registro</string>
     <string name="fragment_registrocomercio5_java_msgaceptarterminos">Debes aceptar los términos!</string>
+
+    <!-- FRAGMENT actualizar comercio 6 -->
+    <string name="fragment_actualizarcomercio5_lbl_scr5notasextra">Su empresa está a punto de actualizarse,
+         ¿Está seguro que quiere actualizar?!</string>
+    <string name="fragment_actualizarcomercio5_lbl_src5aceptacontrato">Estoy seguro!</string>
+    <string name="fragment_actualizarcomercio5_btn_finalizar">Si lo estoy!</string>
 
     <!-- ACTIVITY main -->
     <string name="activity_main_descripcion_btn_promociones">Módulo de promociones</string>
@@ -191,12 +202,27 @@
     <!-- Funcionalidad autenticacion de usuario esta no se traduce -->
     <string name="function_userloginstatus_usernamekey">actual_username</string>
     <string name="function_userloginstatus_statuskey">actual_username_status</string>
+    <string name="function_userloginstatus_exitkey">exit_status</string>
     <string name="function_userloginstatus_usernamedefault">0</string>
     <string name="function_userloginstatus_statusdefault">0</string>
 
     <!-- activity listado de productos para s u modulo -->
     <string name="activity_listadoproductos_titulo">Productos</string>
     <string name="activity_listadoproductos_"></string>
+
+    <!-- MODULO DE SOLICITITUDES -->
+    <!-- Seccion de listview adapter -->
+    <string name="layout_solicitud_listviewitem_lblusuariosolicitante">Solicitado por: </string>
+    <string name="layout_solicitud_listviewitem_lblfechasolicitud">Día</string>
+    <string name="layout_solicitud_listviewitem_lblproductossolicitud">Productos: </string>
+    <string name="layout_solicitud_listviewitem_lblcostofinalsolicitud">Costo :</string>
+    <string name="layout_solicitud_listviewitem_lblesperohasta">Límite: </string>
+    <string name="layout_solicitud_listviewitem_btnresolversolicitud">Resolver</string>
+    <string name="layout_solicitud_listviewitem_btnresolversolicitud_resuelto">Eliminar</string>
+    <string name="layout_solicitud_listviewitem_"></string>
+
+    <!-- activity listado de solicitudes para s u modulo -->
+    <string name="activity_listadosolicitudes_titulo">Solicitudes</string>
 
     <!-- SECCION DE MENUS -->
     <!-- Menú modulo de productos -->
@@ -205,4 +231,110 @@
     <string name="menu_mproducto_itemdelete">Eliminar</string>
     <string name="menu_mproducto_"></string>
 
+    <!-- ACTIVITY detalle solicitud -->
+    <string name="activity_detalle_solicitud_lbldetallesolicitante">Solicitante:</string>
+    <string name="activity_detalle_solicitud_lbldetallefecha">Fecha:</string>
+    <string name="activity_detalle_solicitud_lbldetalleesperohasta">Espero hasta:</string>
+    <string name="activity_detalle_solicitud_lbldetallecosto">Costo:</string>
+    <string name="activity_detalle_solicitud_lbldetalleestado">Estado:</string>
+    <string name="activity_detalle_solicitud_lbldetalleproductos">Detalles:</string>
+    <string name="activity_detalle_solicitud_lbltitulodetallesolicitud">Detalle</string>
+    <string name="activity_detalle_solicitud_titulo">Detalle de la solicitud</string>
+    <string name="activity_detalle_solicitud_"></string>
+    
+    <!-- ACTIVITy detalle usuario -->
+    <string name="activity_detalle_usuario_titulo">Datos de Usuario:</string>
+    <string name="activity_detalle_usuario_lblnombreusuario">Nombre: </string>
+    <string name="activity_detalle_usuario_lblap1usuario">Primer Apellido:</string>
+    <string name="activity_detalle_usuario_lblap2usuario">Segundo Apellido:</string>
+    <string name="activity_detalle_usuario_lblfenacimiento">Fecha Nac:</string>
+    <string name="activity_detalle_usuario_lblsexousuario">Sexo: </string>
+    <string name="activity_detalle_usuario_lblusernameusuario">Username: </string>
+
+    <!-- Activity Acerca De la aplicación -->
+    <string  name="activity_acercade_lblacercadetexto">RapiMoncha es una aplicación movil para facilitar el comercio de distintos servicios express, en donde se pueda hacer control de lo que se haga y ofrezca. Visita nuestra página.</string>
+    <string  name="activity_acercade_img_acercaiconapp_description">Esta es una imagen de la aplicación. No tiene utilidad, solo muestra el logo. Rapimoncha</string>
+    <string  name="activity_acercade_lblacercadecopyright">UNA 2014 - Proyecto Móviles</string>
+    <string  name="activity_acercade_titulo">Acerca de ...</string>
+    
+    <!-- Activity logout de la aplicación -->
+    <string name="activity_logout_img_logout_icon_description">Imagen icono para mostrar que se esta saliendo de la aplicación.</string>
+    <string name="activity_logout_lbl_description_text_msg0">Iniciando la salida...</string>
+    <string name="activity_logout_lbl_description_text_msg1">Se está saliendo de la sesión...</string>
+    <string name="activity_logout_lbl_description_text_msg2">Se está limpiando los datos innecesesarios...</string>
+    <string name="activity_logout_lbl_description_text_msg3">Iniciando Login...</string>
+    <string name="activity_logout_titulo">Cerrando Sesión</string>
+    <string name="activity_logout_"></string>
+    
+    <!-- Activity logout de la aplicación -->
+    <string name="activity_exit_lbl_description_text_msg0">Iniciando la salida...</string>
+    <string name="activity_exit_lbl_description_text_msg1">Se está saliendo de la aplicación...</string>
+    <string name="activity_exit_lbl_description_text_msg2">Se está limpiando los datos innecesesarios...</string>
+    <string name="activity_exit_lbl_description_text_msg3">Cerrando Sesión...</string>
+    <string name="activity_exit_titulo">Saliendo ... </string>
+    <string name="activity_exit_"></string>    
+  
+    <!-- SECCION DE MENUS -->
+    <string name="menu_principal_vertical_home">Inicio</string>
+    <string name="menu_principal_vertical_promociones">Promociones</string>
+    <string name="menu_principal_vertical_mipagina">Mi página</string>
+    <string name="menu_principal_vertical_subscriptores">Subscriptores</string>
+    <string name="menu_principal_vertical_solicitudes">Solicitudes</string>
+    <string name="menu_principal_vertical_configuracion">Configuración</string>
+    <string name="menu_principal_vertical_productos">Productos</string>
+    <string name="menu_principal_vertical_acercade">Acerca de</string>
+    <string name="menu_principal_vertical_logout">Cerrar Sesión</string>
+    <string name="menu_principal_vertical_exit">Salir de la Aplicación</string>
+    <string name="menu_principal_vertical_cambiarcuenta">Cambiar de Cuenta</string>
+    <string name="menu_principal_vertical_"></string>
+    
+    <string name="menu_principal_superior_configuracion">Configuraciones</string>
+    <string name="menu_principal_superior_logout">Cerrar Sesión</string>
+    <string name="menu_principal_superior_exit">Salir</string>
+    <string name="menu_principal_superior_acercade">Acerca de ...</string>
+    <string name="menu_principal_superior_"></string>
+    
+    <string name="menu_welcomescreen_superior_gregarempresa">Agregar Empresa</string>
+    <string name="menu_welcomescreen_superior_logout">Cerrar Sesión</string>
+    <string name="menu_welcomescreen_superior_exit">Salir de la App</string>
+
+    <string name="menu_configuracion_superior_gohome">Ir a Principal</string>
+    
+    <string name="menu_producto_superior_gohome">Ir a Principal</string>
+    <string name="menu_producto_superior_goparent">Regresar a Productos</string>
+    
+    <string name="menu_detallesolicitud_superior_goparent">Ir a Solicitudes</string>
+    
+    <string name="menu_detalleusuario_superior_goparent">Ir a Solicitudes</string>
+    
+    <string name="menu_datosloginusuario_superior_gologin">Iniciar Sesión</string>
+    <string name="menu_datosloginusuario_superior_exit">Salir</string>
+    
+    <string name="menu_registrousuario_superior_gologin">Iniciar Sesión</string>
+    
+    <string name="menu_comercio_superior_gohome">Ir a Principal</string>
+    
+    
+    
+    <!-- Activity listaod de configuraciones -->
+    <string name="activity_listadoconfiguraciones_opcion_ActualizarComercio">Actualizar Comercio</string>
+    <string name="activity_listadoconfiguraciones_opcion_Acerca">Acerca de</string>
+    <string name="activity_listadoconfiguraciones_opcion_Preferencias">Preferencias</string>
+    <string name="activity_listadoconfiguraciones_titulo">Configuraciones</string>
+    <string name="activity_listadoconfiguraciones_opcion_exit">Salir de la Aplicación</string>
+    <string name="activity_listadoconfiguraciones_opcion_valoracion">Evalua la Aplicación</string>
+    <string name="activity_listadoconfiguraciones_"></string>
+    
+    <!-- Activity evaluación de la app -->
+    <string name="activity_evaluacion_aplicacion_utilidad">Puntaje en utilidad</string>
+    <string name="activity_evaluacion_aplicacion_facilidad">Puntaje en facilidad</string>
+    <string name="activity_evaluacion_aplicacion_estilo">Puntaje en estilo</string>
+    <string name="activity_evaluacion_aplicacion_soporte">Puntaje en soporte</string>
+    <string name="activity_evaluacion_aplicacion_notas">Observaciones</string>
+    <string name="activity_evaluacion_aplicacion_notashint">Algo más que guste decir de la aplicación.</string>
+    <string name="activity_evaluacion_aplicacion_titulo">Valoración de la App</string>
+    <string name="activity_evaluacion_aplicacion_"></string>
+    
+    <string name="menu_evaluacionapp_superior_save">Guardar</string>
+    <string name="menu_evaluacionapp_superior_goparent">Ir a configuraciones</string>
 </resources>

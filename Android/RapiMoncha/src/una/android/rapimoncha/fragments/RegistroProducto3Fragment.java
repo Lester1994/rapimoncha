@@ -37,6 +37,7 @@ public class RegistroProducto3Fragment extends Fragment{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				comercio.limpiarProductos();
 				comercio.addProducto(producto);
 				Log.i("Objeto final",comercio.toString());
 				

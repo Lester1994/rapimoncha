@@ -44,4 +44,16 @@ public class Galeria implements IJsonable,Serializable {
     public void setDtImagen(String dtImagen) {
         this.dtImagen = dtImagen;
     }
+    
+    public boolean generateFromJson(JSONObject json){
+		 boolean resp=true;
+		 try{
+			 this.setIdImagen(json.getInt("idimagen"));
+			 this.setDtImagen(json.getString("dtimagen"));
+			 
+		 }catch(Exception ex){
+			 ex.printStackTrace();
+		 }
+		 return resp;
+    }
 }

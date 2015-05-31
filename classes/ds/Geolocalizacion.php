@@ -39,10 +39,11 @@
         function eliminarGeolocalizacionComercio($idcomercio,$db=null){
                 	$SQLstr = "call rm_sp_eliminar_geolocalizacioncomercio
                     ('"  . $idcomercio ."',@resultado);";
-            //echo $SQLstr;
+          
             $resultado=array();
              while(mysqli_more_results($db)&&mysqli_next_result($db)); 
             $sql = mysqli_query($db,$SQLstr);
+			//  echo $SQLstr.mysqli_error($db);
          if(!$sql){
           echo mysqli_error($db);
              exit();
@@ -53,6 +54,7 @@
             while ($row = mysqli_fetch_row($sql)) {
                 $msg = $row[0];
             }
+		//	echo 'se borraron de geolocalizacion '.mysqli_affected_rows($db);
             $error = (substr($msg, 0, 2) === 'e:');
             if($error){
                 $codigoresultado=3;

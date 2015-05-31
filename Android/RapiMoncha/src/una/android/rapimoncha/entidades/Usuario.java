@@ -8,6 +8,7 @@ import android.util.Log;
 
 import una.android.rapimoncha.interfaces.IJsonable;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -15,7 +16,7 @@ import java.util.Calendar;
 /**
  * Created by Lester on 31/03/2015.
  */
-public class Usuario implements IJsonable {
+public class Usuario implements IJsonable,Serializable {
     private int idUsuario;
     private String noUsuario;
     private String a1Usuario;
@@ -26,6 +27,9 @@ public class Usuario implements IJsonable {
     private String password;
     public String fechanacString;
 
+    public String getNombreCompleto(){
+    	return this.noUsuario+" "+this.a1Usuario;
+    }
     public Usuario() {
     }
 
@@ -136,4 +140,21 @@ public class Usuario implements IJsonable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	 public boolean generateFromJson(JSONObject json){
+	    	boolean resp=true;
+	    	try{
+	    	this.idUsuario=json.getInt("idUsuario");
+	    	this.noUsuario=json.getString("noUsuario");
+	    	this.a1Usuario=json.getString("a1Usuario");
+	    	this.a2Usuario=json.getString("a2Usuario");
+	    	this.fechanacString=json.getString("feNacimie");
+	    	this.seUsuario=json.getString("seUsuario");
+
+	    	}catch(Exception ex){
+	    		ex.printStackTrace();
+	    	}
+	    	
+	    	return resp;
+	    }
 }
