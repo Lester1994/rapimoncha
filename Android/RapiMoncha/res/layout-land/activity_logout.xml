@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ProgressBar
+        android:id="@+id/prg_logout_percent"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lbl_description_text"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/img_logout_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/prg_logout_percent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/activity_logout_img_logout_icon_description"
+        android:src="@drawable/icon_exiting" />
+
+    <TextView
+        android:id="@+id/lbl_description_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:text="@string/activity_logout_lbl_description_text_msg1"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>

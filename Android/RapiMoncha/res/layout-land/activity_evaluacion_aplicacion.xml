@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/lblutilidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/activity_evaluacion_aplicacion_utilidad"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/lblnotas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rtbsoporte"
+        android:layout_marginLeft="10dp"
+        android:text="@string/activity_evaluacion_aplicacion_notas"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <RatingBar
+        android:id="@+id/rtbutilidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="1.0" />
+
+    <TextView
+        android:id="@+id/lblestilo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:text="@string/activity_evaluacion_aplicacion_estilo"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <RatingBar
+        android:id="@+id/rtbsoporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rtbestilo"
+        android:layout_below="@+id/lblestilo"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="1.0" />
+
+    <TextView
+        android:id="@+id/lblsoporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rtbestilo"
+        android:layout_marginLeft="10dp"
+        android:text="@string/activity_evaluacion_aplicacion_soporte"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/txtnotas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rtbsoporte"
+        android:layout_alignRight="@+id/rtbsoporte"
+        android:layout_alignTop="@+id/lblnotas"
+        android:ems="10"
+        android:gravity="start"
+        android:hint="@string/activity_evaluacion_aplicacion_notashint" />
+
+    <RatingBar
+        android:id="@+id/rtbfacilidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rtbestilo"
+        android:layout_alignLeft="@+id/rtbutilidad"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="1.0" />
+
+    <TextView
+        android:id="@+id/lblfacilidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rtbutilidad"
+        android:layout_marginLeft="10dp"
+        android:text="@string/activity_evaluacion_aplicacion_facilidad"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <RatingBar
+        android:id="@+id/rtbestilo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rtbfacilidad"
+        android:layout_centerVertical="true"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="1.0" />
+
+</RelativeLayout>

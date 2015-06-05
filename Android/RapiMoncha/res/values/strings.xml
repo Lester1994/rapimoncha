@@ -19,7 +19,7 @@
     <string name="activity_welcomescreen_btnregistro">Agregar tu empresa</string>
     <string name="activity_welcomescreen_lblirlogin">Ya tengo una cuenta!</string>
     <string name="activity_welcomescreen_titulo">Bienvenido</string>
-    <string name="activity_welcomescreen_lblmiempresas">Empresas registradas por ti</string>
+    <string name="activity_welcomescreen_lblmiempresas">Empresas registradas por usted</string>
     <string name="activity_welcomescreen_btniniciarempresa">Ingresar!</string>
     <string name="activity_welcomescreen_"></string>
 
