@@ -25,11 +25,12 @@
 
     <Spinner
         android:id="@+id/spinnerempresas"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="165dp" />
+        android:layout_marginTop="165dp"
+        android:gravity="center_horizontal" />
 
     <Button
         android:id="@+id/btniniciarempresa"
