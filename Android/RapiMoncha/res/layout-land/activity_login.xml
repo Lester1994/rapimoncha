@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+        <requestFocus />
+    <EditText
+        android:id="@+id/txtpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtusername"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:inputType="textPassword"  
+        android:hint="@string/activity_login_passwordhint"
+        android:text=""      
+        android:ems="10" >
+
+    </EditText>
+
+    <ImageView
+        android:id="@+id/imagecurso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="62dp"
+        android:layout_toLeftOf="@+id/txtpassword"
+        android:contentDescription="@string/activity_login_icono_descripcion"
+        android:src="@drawable/icon_keylogin" />
+
+    <EditText
+        android:id="@+id/txtusername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="41dp"
+        android:layout_toRightOf="@+id/imagecurso"
+        android:ems="10"
+        android:hint="@string/activity_login_usernamehint" />
+
+    <TextView
+        android:id="@+id/lblregistrarse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtpassword"
+        android:layout_alignRight="@+id/txtusername"
+        android:layout_below="@+id/txtpassword"
+        android:layout_marginTop="27dp"
+        android:clickable="true"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/activity_login_lblregistrarse"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtusername"
+        android:layout_marginLeft="23dp"
+        android:layout_toRightOf="@+id/txtpassword"
+        android:text="@string/activity_login_btnlogin" />
+
+</RelativeLayout>

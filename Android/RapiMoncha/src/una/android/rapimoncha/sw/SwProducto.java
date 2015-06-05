@@ -81,7 +81,7 @@ public class SwProducto {
 			super.onPreExecute();
 			pDialog = new ProgressDialog(context);
 			pDialog.setMessage(context.getResources().getString(
-					R.string.sw_comercio_java_msginiciocategoriacomercio));
+					R.string.sw_producto_java_msginicioproductoscomercioget));
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(false);
 			pDialog.show();
@@ -145,13 +145,12 @@ public class SwProducto {
 			context.runOnUiThread(new Runnable() {
 				public void run() {
 					if (success == Recursos.SW_CO_EXITO) {
-						Toast.makeText(context.getApplicationContext(), msg,
-								Toast.LENGTH_LONG).show();
+						//Toast.makeText(context.getApplicationContext(), msg,Toast.LENGTH_LONG).show();
 						((ListadoProductosScreen)context).setProductos(productos);
 					} else {
 						Toast.makeText(
 								context.getApplicationContext(),
-								R.string.sw_comercio_java_msgfincategoriacomercio_error,
+								R.string.sw_producto_java_msgfinproductoscomercioget_error,
 								Toast.LENGTH_LONG).show();
 
 					}
@@ -175,7 +174,7 @@ public class SwProducto {
 			super.onPreExecute();
 			pDialog = new ProgressDialog(context);
 			pDialog.setMessage(context.getResources().getString(
-					R.string.sw_comercio_java_msginiciocategoriacomercio));
+					R.string.sw_producto_java_msginicioproductocomercioget));
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(false);
 			pDialog.show();
@@ -231,13 +230,12 @@ public class SwProducto {
 			context.runOnUiThread(new Runnable() {
 				public void run() {
 					if (success == Recursos.SW_CO_EXITO) {
-						Toast.makeText(context.getApplicationContext(), msg,
-								Toast.LENGTH_LONG).show();
+						//Toast.makeText(context.getApplicationContext(), msg,Toast.LENGTH_LONG).show();
 						((ActualizarProductoScreen)context).setProducto(producto);
 					} else {
 						Toast.makeText(
 								context.getApplicationContext(),
-								R.string.sw_comercio_java_msgfincategoriacomercio_error,
+								R.string.sw_producto_java_msgfinproductocomercioget_error,
 								Toast.LENGTH_LONG).show();
 
 					}
@@ -259,7 +257,7 @@ public class SwProducto {
 		protected void onPreExecute() {
 			super.onPreExecute();
 			pDialog = new ProgressDialog(context);
-			pDialog.setMessage(context.getResources().getString(R.string.sw_comercio_java_msginicioregistroproduct));
+			pDialog.setMessage(context.getResources().getString(R.string.sw_comercio_java_msginicioactualizarproduct));
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(false);
 			pDialog.show();
@@ -310,7 +308,8 @@ public class SwProducto {
 			context.runOnUiThread(new Runnable() {
 				public void run() {
 					if (success == Recursos.SW_CO_EXITO) {
-						Toast.makeText(context.getApplicationContext(), msg,
+						Toast.makeText(context.getApplicationContext(),
+								R.string.sw_comercio_java_msgfinactualizarproduct_exito,
 								Toast.LENGTH_LONG).show();
 
 						Intent intent = new Intent(context
@@ -320,7 +319,7 @@ public class SwProducto {
 						context.finish();
 					}else{
 						Toast.makeText(context.getApplicationContext(),
-								R.string.sw_comercio_java_msgfinregistroproduct_error,
+								R.string.sw_comercio_java_msgfinactualizarproduct_error,
 								Toast.LENGTH_LONG).show();
 						
 					}
@@ -341,7 +340,7 @@ public class SwProducto {
  		protected void onPreExecute() {
  			super.onPreExecute();
  			pDialog = new ProgressDialog(context);
- 			pDialog.setMessage(context.getResources().getString(R.string.sw_comercio_java_msginicioregistroproduct));
+ 			pDialog.setMessage(context.getResources().getString(R.string.sw_comercio_java_msginicioeliminarproduct));
  			pDialog.setIndeterminate(false);
  			pDialog.setCancelable(false);
  			pDialog.show();
@@ -394,7 +393,8 @@ public class SwProducto {
  			context.runOnUiThread(new Runnable() {
  				public void run() {
  					if (success == Recursos.SW_CO_EXITO) {
- 						Toast.makeText(context.getApplicationContext(), msg,
+ 						Toast.makeText(context.getApplicationContext(),
+ 								R.string.sw_comercio_java_msgfineliminarproduct_exito,
  								Toast.LENGTH_LONG).show();
 
  						Intent intent = new Intent(context
@@ -404,7 +404,7 @@ public class SwProducto {
  						context.finish();
  					}else{
  						Toast.makeText(context.getApplicationContext(),
- 								R.string.sw_comercio_java_msgfinregistroproduct_error,
+ 								R.string.sw_comercio_java_msgfineliminarrproduct_error,
  								Toast.LENGTH_LONG).show();
  						
  					}

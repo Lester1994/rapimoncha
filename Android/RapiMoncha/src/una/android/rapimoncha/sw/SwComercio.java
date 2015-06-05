@@ -11,11 +11,15 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import una.android.rapimoncha.Main;
 import una.android.rapimoncha.R;
 import una.android.rapimoncha.activities.modulos.comercio.ActualizarComercioScreen;
+import una.android.rapimoncha.activities.modulos.comercio.ListadoComerciosScreen;
+import una.android.rapimoncha.activities.modulos.comercio.MiPaginaScreen;
+import una.android.rapimoncha.activities.modulos.comercio.PaginaComercioScreen;
 import una.android.rapimoncha.activities.modulos.producto.ActualizarProductoScreen;
 import una.android.rapimoncha.entidades.Comercio;
 import una.android.rapimoncha.recursos.Recursos;
@@ -29,6 +33,7 @@ import android.widget.Toast;
 public class SwComercio {
 	Activity context;
 	Comercio comercio;
+	ArrayList<Comercio>comercios;
 	ProgressDialog pDialog;
 	int success = 0;
 	int idcomercio;
@@ -56,7 +61,21 @@ public class SwComercio {
 		this.context=context;
 		new SwComercioGet().execute();
 	}
-
+	
+	public void getComercios(Activity context){
+		this.context=context;
+		new SwComerciosGet().execute();
+	}
+	public void getComerciob(int idcomercio,Activity context){
+		this.idcomercio=idcomercio;
+		this.context=context;
+		new SwComercioGetb().execute();
+	}
+	public void getComercioc(int idcomercio,Activity context){
+		this.idcomercio=idcomercio;
+		this.context=context;
+		new SwComercioGetc().execute();
+	}
 	class SwComercioAgregar extends AsyncTask<String, String, String> {
 		String msg = "";
 
@@ -230,7 +249,7 @@ public class SwComercio {
 			super.onPreExecute();
 			pDialog = new ProgressDialog(context);
 			pDialog.setMessage(context.getResources().getString(
-					R.string.sw_comercio_java_msginiciocategoriacomercio));
+					R.string.sw_comercio_java_msginiciogetcomer));
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(false);
 			pDialog.show();
@@ -287,13 +306,12 @@ public class SwComercio {
 			context.runOnUiThread(new Runnable() {
 				public void run() {
 					if (success == Recursos.SW_CO_EXITO) {
-						Toast.makeText(context.getApplicationContext(), msg,
-								Toast.LENGTH_LONG).show();
+						//Toast.makeText(context.getApplicationContext(), msg,Toast.LENGTH_LONG).show();
 						((ActualizarComercioScreen)context).setComercio(comercio);
 					} else {
 						Toast.makeText(
 								context.getApplicationContext(),
-								R.string.sw_comercio_java_msgfincategoriacomercio_error,
+								R.string.sw_comercio_java_msgfingetcomer_error,
 								Toast.LENGTH_LONG).show();
 
 					}
@@ -386,5 +404,265 @@ public class SwComercio {
 
 	}
 	
+	class SwComercioGetb extends AsyncTask<String, String, String> {
+		String msg = "";
+
+		/**
+		 * Before starting background thread Show Progress Dialog
+		 * */
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			pDialog = new ProgressDialog(context);
+			pDialog.setMessage(context.getResources().getString(
+					R.string.sw_comercio_java_msginiciogetcomer));
+			pDialog.setIndeterminate(false);
+			pDialog.setCancelable(false);
+			pDialog.show();
+		}
+
+		protected String doInBackground(String... params) {
+			String resul = "1";
+
+			HttpClient httpClient = new DefaultHttpClient();
+			// String id = txtId.getText().toString();
+
+			// HttpGet post = new HttpGet(
+			// "http://10.211.55.2:8090/exa1/loguin.php?mail="+params[0].toString()+"&&pass="+params[1].toString());
+			HttpPost post = new HttpPost(Recursos.getWebServiceComercio());
+
+			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+			nameValuePairs.add(new BasicNameValuePair("accion","obtener_comercio"));
+			nameValuePairs.add(new BasicNameValuePair("data",idcomercio+""));
+			
+			try {
+				post.setEntity(new UrlEncodedFormEntity(nameValuePairs, "UTF-8"));
+			} catch (Exception ex) {
+				Log.i("Error", ex.getMessage());
+			}
+			try {
+				Log.i("Resultado", post.toString());
+				HttpResponse resp = httpClient.execute(post);
+				String respStr = EntityUtils.toString(resp.getEntity());
+				Log.i("Mensaje", respStr);
+				JSONObject respJSON = new JSONObject(respStr);
+
+				success = respJSON.getInt("codigo");
+				Log.i("success",success+" este es el codigo");
+				msg = respJSON.getString("mensaje");
+				JSONObject resps = respJSON.getJSONObject("detalles");
+				if (resps != null) {
+					comercio=new Comercio();
+					comercio.generateFromJson(resps);
+				}
+			} catch (Exception ex) {
+				Log.i("ServicioRest", ex.getMessage());
+				ex.printStackTrace();
+			}
+			return resul;
+		}
+
+		/**
+		 * After completing background task Dismiss the progress dialog
+		 * **/
+		protected void onPostExecute(String file_url) {
+			// dismiss the dialog after getting all products
+			pDialog.dismiss();
+			// updating UI from Background Thread
+			context.runOnUiThread(new Runnable() {
+				public void run() {
+					if (success == Recursos.SW_CO_EXITO) {
+						//Toast.makeText(context.getApplicationContext(), msg,Toast.LENGTH_LONG).show();
+						((MiPaginaScreen)context).setComercio(comercio);
+					} else {
+						Toast.makeText(
+								context.getApplicationContext(),
+								R.string.sw_comercio_java_msgfingetcomer_error,
+								Toast.LENGTH_LONG).show();
+
+					}
+				}
+			});
+
+		}
+
+	}
+	
+	class SwComerciosGet extends AsyncTask<String, String, String> {
+		String msg = "";
+
+		/**
+		 * Before starting background thread Show Progress Dialog
+		 * */
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			pDialog = new ProgressDialog(context);
+			pDialog.setMessage(context.getResources().getString(
+					R.string.sw_comercio_java_msginiciogetcomers));
+			pDialog.setIndeterminate(false);
+			pDialog.setCancelable(false);
+			pDialog.show();
+		}
+
+		protected String doInBackground(String... params) {
+			String resul = "1";
+
+			HttpClient httpClient = new DefaultHttpClient();
+			// String id = txtId.getText().toString();
+
+			// HttpGet post = new HttpGet(
+			// "http://10.211.55.2:8090/exa1/loguin.php?mail="+params[0].toString()+"&&pass="+params[1].toString());
+			HttpPost post = new HttpPost(Recursos.getWebServiceComercio());
+
+			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
+			nameValuePairs.add(new BasicNameValuePair("accion","obtener_comercios"));
+			
+			
+			try {
+				post.setEntity(new UrlEncodedFormEntity(nameValuePairs, "UTF-8"));
+			} catch (Exception ex) {
+				Log.i("Error", ex.getMessage());
+			}
+			try {
+				Log.i("Resultado", post.toString());
+				HttpResponse resp = httpClient.execute(post);
+				String respStr = EntityUtils.toString(resp.getEntity());
+				Log.i("Mensaje", respStr);
+				JSONObject respJSON = new JSONObject(respStr);
+
+				success = respJSON.getInt("codigo");
+				Log.i("success",success+" este es el codigo");
+				msg = respJSON.getString("mensaje");
+				JSONArray resps = respJSON.getJSONArray("detalles");
+				if (resps != null) {
+					int size=resps.length();
+					for(int a=0;a<size;a++){
+						JSONObject obj=resps.getJSONObject(a);
+						Comercio aux=new Comercio();
+						aux.generateFromJson(obj);
+						if(comercios==null){
+							comercios=new ArrayList<Comercio>();
+						}
+						comercios.add(aux);
+						
+					}
+				}
+			} catch (Exception ex) {
+				Log.i("ServicioRest", ex.getMessage());
+				ex.printStackTrace();
+			}
+			return resul;
+		}
+
+		/**
+		 * After completing background task Dismiss the progress dialog
+		 * **/
+		protected void onPostExecute(String file_url) {
+			// dismiss the dialog after getting all products
+			pDialog.dismiss();
+			// updating UI from Background Thread
+			context.runOnUiThread(new Runnable() {
+				public void run() {
+					if (success == Recursos.SW_CO_EXITO) {
+						//Toast.makeText(context.getApplicationContext(), msg,Toast.LENGTH_LONG).show();
+						((ListadoComerciosScreen)context).setComercios(comercios);
+					} else {
+						Toast.makeText(
+								context.getApplicationContext(),
+								R.string.sw_comercio_java_msgfingetcomers_error,
+								Toast.LENGTH_LONG).show();
+
+					}
+				}
+			});
+
+		}
+
+	}
+	
+	class SwComercioGetc extends AsyncTask<String, String, String> {
+		String msg = "";
+
+		/**
+		 * Before starting background thread Show Progress Dialog
+		 * */
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			pDialog = new ProgressDialog(context);
+			pDialog.setMessage(context.getResources().getString(
+					R.string.sw_comercio_java_msginiciogetcomer));
+			pDialog.setIndeterminate(false);
+			pDialog.setCancelable(false);
+			pDialog.show();
+		}
+
+		protected String doInBackground(String... params) {
+			String resul = "1";
+
+			HttpClient httpClient = new DefaultHttpClient();
+			// String id = txtId.getText().toString();
+
+			// HttpGet post = new HttpGet(
+			// "http://10.211.55.2:8090/exa1/loguin.php?mail="+params[0].toString()+"&&pass="+params[1].toString());
+			HttpPost post = new HttpPost(Recursos.getWebServiceComercio());
+
+			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+			nameValuePairs.add(new BasicNameValuePair("accion","obtener_comercio"));
+			nameValuePairs.add(new BasicNameValuePair("data",idcomercio+""));
+			
+			try {
+				post.setEntity(new UrlEncodedFormEntity(nameValuePairs, "UTF-8"));
+			} catch (Exception ex) {
+				Log.i("Error", ex.getMessage());
+			}
+			try {
+				Log.i("Resultado", post.toString());
+				HttpResponse resp = httpClient.execute(post);
+				String respStr = EntityUtils.toString(resp.getEntity());
+				Log.i("Mensaje", respStr);
+				JSONObject respJSON = new JSONObject(respStr);
+
+				success = respJSON.getInt("codigo");
+				Log.i("success",success+" este es el codigo");
+				msg = respJSON.getString("mensaje");
+				JSONObject resps = respJSON.getJSONObject("detalles");
+				if (resps != null) {
+					comercio=new Comercio();
+					comercio.generateFromJson(resps);
+				}
+			} catch (Exception ex) {
+				Log.i("ServicioRest", ex.getMessage());
+				ex.printStackTrace();
+			}
+			return resul;
+		}
+
+		/**
+		 * After completing background task Dismiss the progress dialog
+		 * **/
+		protected void onPostExecute(String file_url) {
+			// dismiss the dialog after getting all products
+			pDialog.dismiss();
+			// updating UI from Background Thread
+			context.runOnUiThread(new Runnable() {
+				public void run() {
+					if (success == Recursos.SW_CO_EXITO) {
+						//Toast.makeText(context.getApplicationContext(), msg,Toast.LENGTH_LONG).show();
+						((PaginaComercioScreen)context).setComercio(comercio);
+					} else {
+						Toast.makeText(
+								context.getApplicationContext(),
+								R.string.sw_comercio_java_msgfingetcomer_error,
+								Toast.LENGTH_LONG).show();
+
+					}
+				}
+			});
+
+		}
+
+	}
 	
 }

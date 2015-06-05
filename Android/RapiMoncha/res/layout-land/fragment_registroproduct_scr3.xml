@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/lbl_registroproduct03_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="46dp"
+        android:layout_toLeftOf="@+id/img_imagendescrip_product"
+        android:text="@string/fragment_registroproducto3_lbl_registroproduct03_titulo"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageView
+        android:id="@+id/img_imagendescrip_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/icon_finishregistro"
+        android:contentDescription="@string/fragment_registrocomercio5_img_imagendescripsc5" />
+
+    <TextView
+        android:id="@+id/lbl_agradecimientorc_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/fragment_registroproducto3_lbl_agradecimientorc_product"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/btn_finalizar_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lbl_agradecimientorc_product"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp"
+        android:text="@string/fragment_registroproducto3_btn_finalizar_product" />
+
+    <TextView
+        android:id="@+id/lbl_scr5notasextra_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbl_registroproduct03_titulo"
+        android:layout_below="@+id/img_imagendescrip_product"
+        android:layout_toLeftOf="@+id/img_imagendescrip_product"
+        android:text="@string/fragment_registroproducto3_lbl_scr5notasextra_product"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>

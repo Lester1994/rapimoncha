@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  >
+
+    <TextView
+        android:id="@+id/lbl_src5_titulo_pref"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/fragment_registrocomercio5_lbl_src5_titulo_pref"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/lblcontactosinsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/lbl_src5_titulo_pref"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="15dp"
+        android:layout_toLeftOf="@+id/switchcontactosinsub"
+        android:text="@string/fragment_registrocomercio5_lblcontactosinsub"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Switch
+        android:id="@+id/switchcontactosinsub"
+        android:layout_width="wrap_content"
+        
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/lblcontactosinsub"
+        android:layout_toRightOf="@+id/lbl_src5_titulo_pref"
+        android:textOn="fragment_registrocomercio5_switch_on"
+        android:textOff="fragment_registrocomercio5_switch_off" />
+
+    <TextView
+        android:id="@+id/lblprodusinsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lblcontactosinsub"
+        android:layout_alignRight="@+id/lblcontactosinsub"
+        android:layout_below="@+id/lblcontactosinsub"
+        android:layout_marginTop="20dp"
+        android:text="@string/fragment_registrocomercio5_lblprodusinsub"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Switch
+        android:id="@+id/switchprodusinsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblprodusinsub"
+        android:layout_alignBottom="@+id/lblprodusinsub"
+        android:layout_toRightOf="@+id/lblprodusinsub"
+                android:textOn="fragment_registrocomercio5_switch_on"
+        android:textOff="fragment_registrocomercio5_switch_off" />
+
+    <TextView
+        android:id="@+id/lblsevicioexpress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lblprodusinsub"
+        android:layout_alignRight="@+id/lblprodusinsub"
+        android:layout_below="@+id/switchprodusinsub"
+        android:layout_marginTop="20dp"
+        android:text="@string/fragment_registrocomercio5_lblsevicioexpress"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Switch
+        android:id="@+id/switchservicioexpress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/lblsevicioexpress"
+        android:layout_toRightOf="@+id/lblsevicioexpress"
+                android:textOn="fragment_registrocomercio5_switch_on"
+        android:textOff="fragment_registrocomercio5_switch_off" />
+
+</RelativeLayout>

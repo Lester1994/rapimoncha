@@ -63,7 +63,7 @@ public class SwSolicitud {
 			super.onPreExecute();
 			pDialog = new ProgressDialog(context);
 			pDialog.setMessage(context.getResources().getString(
-					R.string.sw_comercio_java_msginiciocategoriacomercio));
+					R.string.sw_solicitud_java_msginiciosolicitudescomercioget));
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(false);
 			pDialog.show();
@@ -127,13 +127,12 @@ public class SwSolicitud {
 			context.runOnUiThread(new Runnable() {
 				public void run() {
 					if (success == Recursos.SW_CO_EXITO) {
-						Toast.makeText(context.getApplicationContext(), msg,
-								Toast.LENGTH_LONG).show();
+						//Toast.makeText(context.getApplicationContext(), msg,	Toast.LENGTH_LONG).show();
 						((ListadoSolicitudesScreen)context).setSolicitudes(solicitudes);
 					} else {
 						Toast.makeText(
 								context.getApplicationContext(),
-								R.string.sw_comercio_java_msgfincategoriacomercio_error,
+								R.string.sw_solicitud_java_msgfinsolicitudescomercioget_error,
 								Toast.LENGTH_LONG).show();
 
 					}
@@ -209,7 +208,7 @@ public class SwSolicitud {
 				public void run() {
 					if (success == Recursos.SW_CO_EXITO) {
 						Log.i("Ayyda",msg);
-						Toast.makeText(context.getApplicationContext(), "esta es la respuesta "+msg,Toast.LENGTH_LONG).show();
+						//Toast.makeText(context.getApplicationContext(), "esta es la respuesta "+msg,Toast.LENGTH_LONG).show();
 						((ListadoSolicitudesScreen)context).initSolicitudes();
 					} else {
 						Toast.makeText(
@@ -291,7 +290,7 @@ public class SwSolicitud {
 				public void run() {
 					if (success == Recursos.SW_CO_EXITO) {
 						Log.i("Ayyda",msg);
-						Toast.makeText(context.getApplicationContext(), "esta es la respuesta "+msg,Toast.LENGTH_LONG).show();
+						//Toast.makeText(context.getApplicationContext(), "esta es la respuesta "+msg,Toast.LENGTH_LONG).show();
 						((ListadoSolicitudesScreen)context).initSolicitudes();
 					} else {
 						Toast.makeText(

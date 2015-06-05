@@ -3,8 +3,8 @@ package una.android.rapimoncha;
 import java.util.ArrayList;
 
 import una.android.rapimoncha.activities.adapter.MenuAdapter;
-import una.android.rapimoncha.activities.modulos.RegistroProductoScreen;
-import una.android.rapimoncha.activities.modulos.comercio.ActualizarComercioScreen;
+import una.android.rapimoncha.activities.modulos.comercio.ListadoComerciosScreen;
+import una.android.rapimoncha.activities.modulos.comercio.MiPaginaScreen;
 import una.android.rapimoncha.activities.modulos.configuracion.ListadoConfiguracionesScreen;
 import una.android.rapimoncha.activities.modulos.otros.AcercaDeScreen;
 import una.android.rapimoncha.activities.modulos.otros.ExitScreen;
@@ -20,7 +20,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -74,6 +73,30 @@ public class Main extends Activity {
 				
 			}
 		});
+		ImageButton btn_main_myhome=(ImageButton)findViewById(R.id.btn_main_myhome);
+		btn_main_myhome.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent=new Intent(Main.this,MiPaginaScreen.class);
+				startActivity(intent);
+				
+			}
+		});	
+		ImageButton btn_main_home=(ImageButton)findViewById(R.id.btn_main_home);
+		btn_main_home.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent=new Intent(Main.this,ListadoComerciosScreen.class);
+				startActivity(intent);
+				
+			}
+		});			
+		
+		
 		
 
 	}

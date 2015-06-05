@@ -20,7 +20,7 @@ import una.android.rapimoncha.activities.modulos.usuario.LogoutScreen;
 import una.android.rapimoncha.entidades.MenuVItem;
 
 public class Recursos {
-	public static String SW_IP_ADRESS = "192.168.43.127";
+	public static String SW_IP_ADRESS = "192.168.10.138";
 	public static String SW_NU_PORT = ":8080/";
 	public static String SW_NO_PROTOCOL = "http://";
 	public static String SW_URL_WEBSERVICESERVER = "sites/Hidden_pages_chesdev/rapimoncha/trunk/classes/ln/";
@@ -86,7 +86,7 @@ public class Recursos {
 					null);
 
 			Log.i("Valor a quiuser",username+status+" <<<<<<<");
-			if (username == null || status == null) {
+			if ((username == null || status == null)&&exitstatus!=null) {
 				Log.i("Valor a quiuser",username+status+" <<<<<<< entrado");
 				activity.finish();
 			}

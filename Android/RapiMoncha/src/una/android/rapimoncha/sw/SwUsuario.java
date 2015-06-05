@@ -304,8 +304,7 @@ public class SwUsuario {
 			context.runOnUiThread(new Runnable() {
 				public void run() {
 					if (success == Recursos.SW_CO_EXITO) {
-						Toast.makeText(context.getApplicationContext(), msg,
-								Toast.LENGTH_LONG).show();
+						//Toast.makeText(context.getApplicationContext(), msg,Toast.LENGTH_LONG).show();
 						((WelcomeScreen)context).setComercios(comercios);
 					} else {
 						Toast.makeText(

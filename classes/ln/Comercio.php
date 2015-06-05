@@ -42,12 +42,19 @@ require_once $RM_ENTITIES_DIR.'Comercio.php';
                $ds_comer=new DS_Comercio();
                $ds_comer->getComercio($idcomercio,$dbase);
         }   
+   function getComercios($dbase){
+               $ds_comer=new DS_Comercio();
+               $ds_comer->getComercio2($dbase);
+    }   		
         
     }
 
 if(isset($accion)&&(strlen($accion)>3)){
 		switch($accion){
-
+			case 'obtener_comercios':
+					$comer=new LN_Comercio();
+					$comer->getComercios($dbase);
+			break;
 			case 'agregar_comercio':
 					$en_comer=new EN_Comercio();
 					$en_comer->generarComercio($data);
@@ -93,10 +100,12 @@ if(isset($accion)&&(strlen($accion)>3)){
 		}	
 	
 }else{
-	$resp=array();
+	/*$resp=array();
 	$resp['codigo']=2;
 	$resp['mensaje']='Solicitud incorrecta';
-	echo json_encode($resp);
+	echo json_encode($resp);*/
+	$comer=new LN_Comercio();
+	$comer->getComercios($dbase);
 	return;
 }
 

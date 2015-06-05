@@ -165,9 +165,10 @@
     <TextView
         android:id="@+id/lblusername"
         android:layout_width="150dp"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/lblfechanacimiento"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/lblfechanac"
         android:text="@string/activity_registrousuario_lblusername"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 

@@ -925,7 +925,68 @@ from rm06promociones where rm01idcomercio=".$idcomercio;
            // echo "no pude aqui ";
             
    echo json_encode($resp_final);
-        } 		
+        } 	
+		
+		
+		
+        
+        
+        
+function getComercio2($db=null){
+	
+
+                
+                
+                
+	
+        	$comercios=array();
+            while(mysqli_more_results($db)&&mysqli_next_result($db)); 
+            $SQLstr="SELECT  rm01idcomercio,  rm02nomco,  rm03dirco,  rm04proco,  rm05telco,  rm06te2co,  rm07emaco
+                     FROM rm01comercios ";
+            
+            $sql=mysqli_query($db,$SQLstr);
+    
+            while ($row=mysqli_fetch_row($sql)) {
+				
+				$comercio_resp=new EN_Comercio();
+                $comercio_resp->setIdComercio($row[0]);
+                $comercio_resp->setNoComercio($row[1]);
+                $comercio_resp->setDiComercio($row[2]);
+                $comercio_resp->setPrComercio($row[3]);
+                $comercio_resp->setT1Comercio($row[4]);
+                $comercio_resp->setT2Comercio($row[5]);
+                $comercio_resp->setEmComercio($row[6]);                    
+                array_push($comercios,$comercio_resp);
+			}
+		
+	foreach($comercios as &$com){
+            while(mysqli_more_results($db)&&mysqli_next_result($db)); 
+            $SQLstr="    SELECT  rm01idimagen,  rm02datoimagen,  rm01idcomercio FROM
+			rm02galeriacomercio WHERE rm01idcomercio=".$com->getIdComercio(). " limit 1";
+            
+            $sql=mysqli_query($db,$SQLstr);            
+    
+          //  echo 'error 0001'.mysqli_error($db);
+            while ($row=mysqli_fetch_row($sql)) {
+              //  echo var_dump($imagen);
+                   $imagen1=new EN_Galeria();
+                   $imagen1->setIdImagen($row[0]);
+                   $imagen1->setDtImagen($row[1]);
+                   $com->addImagen($imagen1);
+            }
+				
+				
+            while(mysqli_more_results($db)&&mysqli_next_result($db)); 
+		}
+			
+                $resp=array();
+                $resp['codigo']=2;
+                $resp['mensaje']='Correcto';
+                $resp['detalles']=$comercios;
+                
+                echo json_encode($resp);
+                return true;
+}		
         
         
     }

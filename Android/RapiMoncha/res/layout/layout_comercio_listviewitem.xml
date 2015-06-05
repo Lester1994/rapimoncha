@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/comercioicon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/icon_tools"
+        android:contentDescription="@string/activity_comercio_listviewitem_comercioicon_description" />
+
+    <TextView
+        android:id="@+id/comercionom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/comercioicon"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="22dp"
+        android:text="@string/activity_comercio_listviewitem_comercionom"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/comerciopropie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/comercionom"
+        android:layout_below="@+id/comercionom"
+        android:layout_marginTop="5dp"
+        android:text="@string/activity_comercio_listviewitem_comerciopropie"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/comerciotel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/comerciopropie"
+        android:layout_below="@+id/comerciopropie"
+        android:layout_marginTop="5dp"
+        android:text="@string/activity_comercio_listviewitem_comerciotel"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/comercioemail"
+        android:layout_marginTop="14dp"
+        android:gravity="center"
+        android:text="- - - - - - - - - - - - - - - - - -"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/comercioemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/comerciotel"
+        android:layout_below="@+id/comerciotel"
+        android:layout_marginTop="5dp"
+        android:text="@string/activity_comercio_listviewitem_comercioemail"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/comercionom_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/comercionom"
+        android:layout_alignBottom="@+id/comercionom"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/comerciopropie"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/comerciopropie_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/comerciotel"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/comerciopropie"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/comerciotel_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/comerciotel"
+        android:layout_alignLeft="@+id/comerciopropie_data"
+        android:layout_alignParentRight="true"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/comercioemail_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/comerciotel_data"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/comercioemail"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>

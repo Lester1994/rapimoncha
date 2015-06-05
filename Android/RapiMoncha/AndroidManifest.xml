@@ -99,9 +99,21 @@
             android:label="@string/activity_exit_titulo" >
         </activity> 
          <activity
+            android:name="una.android.rapimoncha.activities.modulos.comercio.MiPaginaScreen"
+            android:label="@string/activity_mipagina_titulo" >
+        </activity>         
+         <activity
             android:name="una.android.rapimoncha.activities.modulos.configuracion.ListadoConfiguracionesScreen"
             android:label="@string/activity_listadoconfiguraciones_titulo" >
-        </activity>                                          
+        </activity> 
+         <activity
+            android:name="una.android.rapimoncha.activities.modulos.comercio.ListadoComerciosScreen"
+            android:label="@string/activity_comercio_listado_titulo" >
+        </activity>   
+         <activity
+            android:name="una.android.rapimoncha.activities.modulos.comercio.PaginaComercioScreen"
+            android:label="@string/activity_paginacomercio_titulo" >
+        </activity>                                                          
         <activity
             android:name="una.android.rapimoncha.activities.SplashScreen"
             android:configChanges="orientation"

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/lbldatosloginusernamedata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbldatosloginusername"
+        android:layout_below="@+id/lbldatosloginusername"
+        android:layout_toLeftOf="@+id/lbldatosloginiralogin"
+        android:text="@string/activity_datosloginusuario_lbldatosloginusernamedata"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/lbldatosloginpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbldatosloginusernamedata"
+        android:layout_below="@+id/lbldatosloginusernamedata"
+        android:layout_marginTop="10dp"
+        android:text="@string/activity_datosloginusuario_lbldatosloginpassword"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/lbldatosloginpassworddata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbldatosloginpassword"
+        android:layout_alignRight="@+id/lbldatosloginusernamedata"
+        android:layout_below="@+id/lbldatosloginpassword"
+        android:layout_marginTop="14dp"
+        android:text="@string/activity_datosloginusuario_lbldatosloginpassworddata"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/lbldatosloginiralogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:text="@string/activity_datosloginusuario_lbldatosloginiralogin"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/lbldatosloginusername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/activity_datosloginusuario_lbldatosloginusername"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/lbldatosloginnotas"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lbldatosloginpassworddata"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:text="@string/activity_datosloginusuario_lbldatosloginnotas"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>

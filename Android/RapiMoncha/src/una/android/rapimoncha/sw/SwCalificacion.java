@@ -49,7 +49,7 @@ public class SwCalificacion {
 			super.onPreExecute();
 			pDialog = new ProgressDialog(context);
 			pDialog.setMessage(context.getResources().getString(
-					R.string.sw_usuario_java_msginicioregistrouser));
+					R.string.sw_solicitud_java_msginiciocalificacioncomercio));
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(false);
 			pDialog.show();

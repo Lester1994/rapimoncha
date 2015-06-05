@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/lblnoproducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/lbltitulofragmentrc01"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/fragment_registroproducto1_lblnoproducto"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/lbltitulofragmentrc01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lblnoproducto"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="34dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="@string/fragment_registroproducto1_lbltitulofragmentrc01"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/lbl_rc1notas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/fragment_registroproducto1_lbl_rc01notas"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/txtnoproducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lblnoproducto"
+        android:layout_alignRight="@+id/lbltitulofragmentrc01"
+        android:layout_below="@+id/lblnoproducto"
+        android:ems="10"
+        android:hint="@string/fragment_registroproducto1_lblnoproducto_hint"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/lbldeproducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtnoproducto"
+        android:layout_below="@+id/txtnoproducto"
+        android:text="@string/fragment_registroproducto1_lbldeproducto"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/txtdeproducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbldeproducto"
+        android:layout_alignRight="@+id/txtnoproducto"
+        android:layout_below="@+id/lbldeproducto"
+        android:ems="10"
+        android:hint="@string/fragment_registroproducto1_lbldeproducto_hint"
+        android:inputType="textMultiLine" />
+
+    <TextView
+        android:id="@+id/lblpeproducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtdeproducto"
+        android:layout_below="@+id/txtdeproducto"
+        android:text="@string/fragment_registroproducto1_lblpeproducto"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/txtpeproducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lblpeproducto"
+        android:layout_alignRight="@+id/txtdeproducto"
+        android:layout_below="@+id/lblpeproducto"
+        android:ems="10"
+        android:hint="@string/fragment_registroproducto1_lblpeproducto_hint"
+        android:inputType="numberDecimal" />
+
+</RelativeLayout>

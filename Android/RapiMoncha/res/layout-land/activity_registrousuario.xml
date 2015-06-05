@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/lblnousuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/activity_registrousuario_lblnousuario"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/lblrpassword2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtrpassword1"
+        android:layout_below="@+id/txtrpassword1"
+        android:text="@string/activity_registrousuario_lblrpassword2"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/txtrpassword2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lblrpassword2"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/lblrpassword2"
+        android:ems="10"
+        android:hint="@string/activity_registrousuario_txtrpassword1_hint"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/txtap1usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/txtnousuario"
+        android:layout_toLeftOf="@+id/lblap2usuario"
+        android:layout_toRightOf="@+id/txtnousuario"
+        android:ems="10"
+        android:hint="@string/activity_registrousuario_txtap1usuario_hint"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/txtap2usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtap1usuario"
+        android:layout_alignBottom="@+id/txtap1usuario"
+        android:layout_toRightOf="@+id/txtap1usuario"
+        android:ems="10"
+        android:hint="@string/activity_registrousuario_txtap2usuario_hint"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/lblfechanacimiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtnousuario"
+        android:layout_marginTop="18dp"
+        android:text="@string/activity_registrousuario_lblfechanacimiento"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/lblap2usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblnousuario"
+        android:layout_alignBottom="@+id/lblnousuario"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="70dp"
+        android:text="@string/activity_registrousuario_lblap2usuario"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/lblap1usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtnousuario"
+        android:layout_marginRight="54dp"
+        android:layout_toLeftOf="@+id/lblap2usuario"
+        android:text="@string/activity_registrousuario_lblap1usuario"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/txtnousuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lblnousuario"
+        android:layout_below="@+id/lblnousuario"
+        android:layout_toLeftOf="@+id/lblap1usuario"
+        android:ems="10"
+        android:hint="@string/activity_registrousuario_txtnousuario_hint"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/txtrusername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/txtap1usuario"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/txtnousuario"
+        android:ems="10"
+        android:hint="@string/activity_registrousuario_txtusername_hint" />
+
+    <EditText
+        android:id="@+id/txtrpassword1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtrusername"
+        android:layout_alignBottom="@+id/txtrusername"
+        android:layout_alignLeft="@+id/lblrpassword1"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:hint="@string/activity_registrousuario_txtrpassword1_hint"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/lblusername"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblfechanacimiento"
+        android:layout_alignBottom="@+id/lblfechanacimiento"
+        android:layout_toRightOf="@+id/txtnousuario"
+        android:text="@string/activity_registrousuario_lblusername"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Spinner
+        android:id="@+id/spinnersexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtrusername"
+        android:layout_alignTop="@+id/lblrpassword2"
+        android:layout_toLeftOf="@+id/lblrpassword2"
+        android:entries="@array/rm_listado_sexos" />
+
+    <TextView
+        android:id="@+id/lblsexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/lblfechanac"
+        android:layout_below="@+id/lblrpassword2"
+        android:text="@string/activity_registrousuario_lblsexo"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/lblfechanac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:text="@string/activity_registrousuario_lblfechanac"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/lblrpassword1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblusername"
+        android:layout_alignBottom="@+id/lblusername"
+        android:layout_alignLeft="@+id/txtap2usuario"
+        android:text="@string/activity_registrousuario_lblrpassword1"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>

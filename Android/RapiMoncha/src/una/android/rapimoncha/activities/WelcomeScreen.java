@@ -30,6 +30,7 @@ public class WelcomeScreen extends Activity {
  	ArrayList<Comercio>comercios;
  	Spinner spinnercomercios;
  	Intent intent;
+ 	boolean yaabierto;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 	
@@ -127,7 +128,10 @@ public class WelcomeScreen extends Activity {
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		//Recursos.validateSession(this);//validamos la sesión
+		if (yaabierto) {
+			Recursos.validateSession(this);// validamos la sesión
+		}
+		yaabierto = true;
 		
 	}
 }

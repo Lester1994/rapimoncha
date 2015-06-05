@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/icon_splash" >
+
+    <Button
+        android:id="@+id/btnregistro"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="#CCCCCC"
+        android:text="@string/activity_welcomescreen_btnregistro" />
+
+    <Spinner
+        android:id="@+id/spinnerempresas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/lblmiempresas"
+        android:gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/btniniciarempresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerempresas"
+        android:layout_marginTop="26dp"
+        android:layout_toRightOf="@+id/lblmiempresas"
+        android:text="@string/activity_welcomescreen_btniniciarempresa" />
+
+    <TextView
+        android:id="@+id/lblmiempresas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:text="@string/activity_welcomescreen_lblmiempresas"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>
